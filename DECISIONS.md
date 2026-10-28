@@ -169,3 +169,36 @@ configs `configs/single/`; runs `/N/scratch/jindjia/arli/runs_single/sa_<method>
 - D24 **Reporting.** Training jobs call `scripts/report_single.py` at each 100k milestone and at completion: dedicated
   clone `/N/scratch/jindjia/arli/report_repo`, atomic lock dir `/N/scratch/jindjia/arli/report_single.lock`,
   commits only `results/single_actor_comparison/` to main (rebase/retry). Reporting failures never stop training.
+
+## Warm-start final-step experiment (2026-10-28) — separate from the from-scratch comparisons
+
+Code `src/arli/warmstart_final.py`, `src/arli/train_warmstart.py`; configs `configs/warmstart/ws_{A,B}_seed{0,1}.yaml`;
+runs `/N/scratch/jindjia/arli/runs_warmstart/ws_<branch>_seed<s>/`; figure `scripts/plot_warmstart.py` →
+`results/warmstart_final/`; worktree `streaming_arli_ws` (branch `warmstart-final`).
+
+- D25 **Common start.** Seed 0: `r2_arli_seed0/ckpt/agent_0600124.msgpack` (600k eval milestone, 600,124 online steps,
+  eval 45/50, sha256 4e52b142…); seed 1: `r2_arli_seed1_std030/ckpt/agent_0600139.msgpack` (600,139 steps, 42/50,
+  sha256 2fee1477…). Resolved from `evals.jsonl` at runtime; both branches of a seed read the same bytes; source run,
+  step and sha256 written to `provenance.json` and re-verified at every resume.
+- D26 **Branches.** A: restore the ARLI actor, critic, target critic, temperature and their Adam states; keep training
+  them. B: ARLI actor frozen (never passed to an optimizer; its parameter hash is checked at every checkpoint and eval);
+  it still samples the initial noise exactly as in ARLI. A separate residual actor (from-scratch `final_step_only`
+  architecture, 1,176,214 params) + its own 10-critic ensemble (2,057,696) + temperature + Adam states; called once per
+  chunk before iteration k = 9 with o_{m_j+9}, q, X_9, committed actions, (τ_9, δ, f); X~_9 = X_9 + 0.2·broadcast_50(a).
+  No parameters, encoders or optimizers shared between the two actors. The old ARLI critic is not used.
+- D27 **Initialisation of the residual actor.** Mean head kernel and bias exactly 0 (mean correction exactly 0); log-std
+  head kernel 0, bias log 0.1 → sampled a = tanh(N(0, 0.1²)): non-zero, |0.2·a| ≈ 0.016 per dimension at start.
+- D28 **Sampler.** Both branches use the step-wise sampler (prefix once on o_{s_j}, 10 frozen iterations). A therefore
+  differs numerically (≤0.005 rad, D12c) from R2's while-loop sampler; a zero-correction B is bit-identical to A
+  (CPU fake-sampler test and real-stack GPU check).
+- D29 **Objective / budget.** B: SAC on one decision per executed chunk: target r_j + γ^25·mask_j·mean Q̄(z_{j+1,9}, a'),
+  a' ~ π_res(z_{j+1,9}); γ^25 = the physical interval between consecutive k = 9 calls (25 env steps in steady state;
+  startup chunk keeps ARLI's per-chunk convention). A: ARLI's chunk-level transitions (γ^25). Both: fresh replay;
+  first 256 executed chunks collected without updates (inside the +300k budget); then 25 updates per executed chunk,
+  batch 256, one learner per branch (B does not get twice the updates). +300k online env steps, eval at +0 and every
+  +25k on the same 50 held-out seeds.
+- D30 **Bug found in the from-scratch `final_step_only` runs (sa_final_step_only_seed{0,1}).** Their k = 9 decisions
+  bootstrap from the next chunk's k = 9 call (25 steps later) but are stored with discount γ^16 (`single_actor.transitions`
+  computes the interval to the next chunk's k = 0 point, correct only for shared_every_step). 943 of 1,016 stored
+  transitions in an early replay part use γ^16. Effective per-chunk discount 0.984 instead of 0.975. Those runs were
+  left untouched (still running); the warm-start code uses γ^25 and tests the interval against physical call times.
