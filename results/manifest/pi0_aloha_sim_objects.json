@@ -1,0 +1,147 @@
+{
+ "source": "gs://openpi-assets/checkpoints/pi0_aloha_sim/",
+ "cited_as": "s3://openpi-assets/checkpoints/pi0_aloha_sim/",
+ "local": "/N/scratch/jindjia/arli/checkpoints/pi0_aloha_sim",
+ "objects": [
+  {
+   "name": "checkpoints/pi0_aloha_sim/assets/lerobot/aloha_sim_transfer_cube_human/norm_stats.json",
+   "size": 5375,
+   "md5_b64": "1Y/Kwu+ISNlHGEyhgmyPgQ==",
+   "generation": "1748456809035630",
+   "updated": "2025-05-28T18:26:49.086Z"
+  },
+  {
+   "name": "checkpoints/pi0_aloha_sim/params/_METADATA",
+   "size": 21131,
+   "md5_b64": "1yd3Jwujof95jEdiNVRyPQ==",
+   "generation": "1748456809975560",
+   "updated": "2025-05-28T18:26:50.042Z"
+  },
+  {
+   "name": "checkpoints/pi0_aloha_sim/params/_sharding",
+   "size": 12457,
+   "md5_b64": "2Dn7ChFf9T+yPICiYa+t5A==",
+   "generation": "1748456809925565",
+   "updated": "2025-05-28T18:26:49.971Z"
+  },
+  {
+   "name": "checkpoints/pi0_aloha_sim/params/d/491a2b69f630cb1af7c1eb31784147f8",
+   "size": 2172,
+   "md5_b64": "nlmQaY23r+o8+7MG15CSVg==",
+   "generation": "1748456808241535",
+   "updated": "2025-05-28T18:26:48.307Z"
+  },
+  {
+   "name": "checkpoints/pi0_aloha_sim/params/manifest.ocdbt",
+   "size": 117,
+   "md5_b64": "JOieaBQUGEJhpCLd9Q5NRw==",
+   "generation": "1748456807529255",
+   "updated": "2025-05-28T18:26:47.593Z"
+  },
+  {
+   "name": "checkpoints/pi0_aloha_sim/params/ocdbt.process_0/d/04e1abe7d7bee0b72bc2ccc4acd51e6d",
+   "size": 615863781,
+   "md5_b64": "u6vc01csByeC8ETyt++x4g==",
+   "generation": "1748456825885846",
+   "updated": "2025-05-28T18:27:05.962Z"
+  },
+  {
+   "name": "checkpoints/pi0_aloha_sim/params/ocdbt.process_0/d/07397b65b4ed727ba7a208778725168a",
+   "size": 5360,
+   "md5_b64": "PU1Ae1Xdz4IK3+h32KBb/w==",
+   "generation": "1748456808797363",
+   "updated": "2025-05-28T18:26:48.856Z"
+  },
+  {
+   "name": "checkpoints/pi0_aloha_sim/params/ocdbt.process_0/d/30c0844499e9a74b299b4acf1d892b16",
+   "size": 213,
+   "md5_b64": "QaQyI+7mjGABv5noXvL+Jg==",
+   "generation": "1748456809409134",
+   "updated": "2025-05-28T18:26:49.478Z"
+  },
+  {
+   "name": "checkpoints/pi0_aloha_sim/params/ocdbt.process_0/d/3454ef21b44daf9a80117d2205930dfc",
+   "size": 2240218352,
+   "md5_b64": "tW+gKHkhGI9LBEbNsa9uow==",
+   "generation": "1748456868624983",
+   "updated": "2025-05-28T18:27:48.702Z"
+  },
+  {
+   "name": "checkpoints/pi0_aloha_sim/params/ocdbt.process_0/d/3492325ff87f75fe731e3f0e1568a284",
+   "size": 132968002,
+   "md5_b64": "c/d5p08fc8ReQFCtkfmWbw==",
+   "generation": "1748456810189211",
+   "updated": "2025-05-28T18:26:50.245Z"
+  },
+  {
+   "name": "checkpoints/pi0_aloha_sim/params/ocdbt.process_0/d/38f5f89a89ba4de6f36dae38afb812df",
+   "size": 972323640,
+   "md5_b64": "0fWZOjGT5R/TwPr0EKhKxg==",
+   "generation": "1748456838887130",
+   "updated": "2025-05-28T18:27:18.990Z"
+  },
+  {
+   "name": "checkpoints/pi0_aloha_sim/params/ocdbt.process_0/d/4bf4bb1583b53cf4763eb2c076cfe909",
+   "size": 1680,
+   "md5_b64": "s9ibDK/lC3+jEx6A9up5zw==",
+   "generation": "1748456806802252",
+   "updated": "2025-05-28T18:26:46.866Z"
+  },
+  {
+   "name": "checkpoints/pi0_aloha_sim/params/ocdbt.process_0/d/5a69fee77c2cf84d3a2b35d9ea1d024b",
+   "size": 1120115856,
+   "md5_b64": "1rzQw5+1S1zBBBh9vf6jvg==",
+   "generation": "1748456834123363",
+   "updated": "2025-05-28T18:27:14.233Z"
+  },
+  {
+   "name": "checkpoints/pi0_aloha_sim/params/ocdbt.process_0/d/89c4de373fec21a170a2c1e8260887d1",
+   "size": 1120131777,
+   "md5_b64": "u3FIuVKlC/3/MF+4MI1CIg==",
+   "generation": "1748456837763694",
+   "updated": "2025-05-28T18:27:17.868Z"
+  },
+  {
+   "name": "checkpoints/pi0_aloha_sim/params/ocdbt.process_0/d/a0854df81ac9825231de7438b7f190e0",
+   "size": 1553485960,
+   "md5_b64": "ve8UTU2AM9CR1uErJE+kaw==",
+   "generation": "1748456848130774",
+   "updated": "2025-05-28T18:27:28.260Z"
+  },
+  {
+   "name": "checkpoints/pi0_aloha_sim/params/ocdbt.process_0/d/a2581300d76d041a128b3655b355e2e0",
+   "size": 2240241927,
+   "md5_b64": "F3qucvWf+1NoeAu5LROMPw==",
+   "generation": "1748456867235149",
+   "updated": "2025-05-28T18:27:47.323Z"
+  },
+  {
+   "name": "checkpoints/pi0_aloha_sim/params/ocdbt.process_0/d/b7ffa1e5fe2c4d883c7630d8eab57645",
+   "size": 1957442524,
+   "md5_b64": "JpVa2Da7skIKjnIEbkXcaw==",
+   "generation": "1748456867077742",
+   "updated": "2025-05-28T18:27:47.195Z"
+  },
+  {
+   "name": "checkpoints/pi0_aloha_sim/params/ocdbt.process_0/d/d526dfedf24bfc5e856a5c9dce64f4dc",
+   "size": 129749,
+   "md5_b64": "VuteAa/7K2ThxJC1qUg/Pg==",
+   "generation": "1748456809100156",
+   "updated": "2025-05-28T18:26:49.166Z"
+  },
+  {
+   "name": "checkpoints/pi0_aloha_sim/params/ocdbt.process_0/d/ff7729acbdf8e670028ac31100202c9f",
+   "size": 61143919,
+   "md5_b64": "7pLMDkU3MKlFBTs4GaVLTg==",
+   "generation": "1748456810806928",
+   "updated": "2025-05-28T18:26:50.854Z"
+  },
+  {
+   "name": "checkpoints/pi0_aloha_sim/params/ocdbt.process_0/manifest.ocdbt",
+   "size": 671,
+   "md5_b64": "Cg54eKeclpy+x9W9jxvW7Q==",
+   "generation": "1748456806227792",
+   "updated": "2025-05-28T18:26:46.286Z"
+  }
+ ]
+}

@@ -1,0 +1,4 @@
+# R2: full ARLI (paper-based reconstruction), AlohaTransferCube, no RTC, seed 0.
+name: r2_arli_seed0
+method: arli
+seed: 0

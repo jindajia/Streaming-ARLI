@@ -1,0 +1,9 @@
+name: smoke_dsrl
+method: dsrl
+seed: 0
+prefill_transitions: 20
+online_env_steps: 500
+eval_interval: 500
+eval_episodes: 2
+video_episodes: 0
+log_update_every: 100

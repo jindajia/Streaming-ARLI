@@ -1,0 +1,11 @@
+# Smoke test: tiny budgets, exercises prefill -> updates -> eval -> checkpoint -> resume.
+name: smoke_arli
+method: arli
+seed: 0
+prefill_transitions: 20
+online_env_steps: 1000
+eval_interval: 500
+eval_episodes: 2
+video_episodes: 1
+video_every: 100000
+log_update_every: 100

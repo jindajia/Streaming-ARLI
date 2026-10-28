@@ -1,0 +1,9 @@
+__pycache__/
+*.egg-info/
+*.pyc
+# large assets live on /N/scratch/jindjia/arli (see MANIFEST.md)
+*.mp4
+*.npz
+*.pkl
+*.msgpack
+runs/

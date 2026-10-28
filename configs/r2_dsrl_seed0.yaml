@@ -1,0 +1,4 @@
+# R2: naive asynchronous DSRL (actor sees only the inference-start observation), same delays, seed 0.
+name: r2_dsrl_seed0
+method: dsrl
+seed: 0
