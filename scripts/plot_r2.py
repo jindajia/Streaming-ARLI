@@ -51,7 +51,7 @@ def main():
         p = f"{RUNS}/{name}/evals.jsonl"
         if not os.path.exists(p):
             continue
-        ev = read_jsonl(p)
+        ev = list({e["milestone"]: e for e in read_jsonl(p)}.values())  # dedupe re-logged evals after a resume
         shutil.copy(p, f"{args.out}/{name}_evals.jsonl")
         for e in ev:
             lo, hi = wilson(e["n_success"], e["n_episodes"])

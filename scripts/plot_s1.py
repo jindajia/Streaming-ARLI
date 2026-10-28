@@ -43,7 +43,7 @@ def main():
         p = f"{RUNS}/s1_{b}_seed0/evals.jsonl"
         if not os.path.exists(p):
             continue
-        ev = read_jsonl(p)
+        ev = list({e["milestone"]: e for e in read_jsonl(p)}.values())
         shutil.copy(p, f"{args.out}/s1_{b}_seed0_evals.jsonl")
         prm = f"{RUNS}/s1_{b}_seed0/params.json"
         if os.path.exists(prm):

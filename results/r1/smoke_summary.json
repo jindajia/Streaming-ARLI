@@ -1,0 +1,92 @@
+{
+ "smoke_arli": [
+  {
+   "step": 0,
+   "succ": "0/2"
+  },
+  {
+   "step": 800,
+   "succ": "0/2"
+  },
+  {
+   "step": 1200,
+   "succ": "0/2"
+  },
+  {
+   "step": 1600,
+   "succ": "0/2"
+  }
+ ],
+ "smoke_dsrl": [
+  {
+   "step": 0,
+   "succ": "0/2"
+  },
+  {
+   "step": 800,
+   "succ": "0/2"
+  }
+ ],
+ "smoke_s1_A": [
+  {
+   "step": 0,
+   "succ": "0/2"
+  },
+  {
+   "step": 800,
+   "succ": "0/2"
+  }
+ ],
+ "smoke_s1_A_params": {
+  "actor_w": 1116886,
+  "critic_w": 1869344
+ },
+ "smoke_s1_B": [
+  {
+   "step": 0,
+   "succ": "0/2"
+  },
+  {
+   "step": 800,
+   "succ": "0/2"
+  }
+ ],
+ "smoke_s1_B_params": {
+  "actor_u": 1174166,
+  "critic_u": 2037216,
+  "actor_w": 1116886,
+  "critic_w": 1869344
+ },
+ "smoke_s1_C": [
+  {
+   "step": 0,
+   "succ": "0/2"
+  },
+  {
+   "step": 800,
+   "succ": "0/2"
+  }
+ ],
+ "smoke_s1_C_params": {
+  "actor_u": 1174166,
+  "critic_u": 2037216,
+  "actor_w": 1116886,
+  "critic_w": 1869344
+ },
+ "smoke_s1_D": [
+  {
+   "step": 0,
+   "succ": "0/2"
+  },
+  {
+   "step": 800,
+   "succ": "0/2"
+  }
+ ],
+ "smoke_s1_D_params": {
+  "actor_u": 1174166,
+  "critic_u": 2037216,
+  "actor_w": 1116886,
+  "critic_w": 1869344
+ }
+}

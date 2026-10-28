@@ -78,6 +78,20 @@ class JsonlLog:
         self.f.write(json.dumps(kw, default=float) + "\n")
 
 
+def claim_run_dir(run_dir):
+    """Refuse to run if another live Slurm job owns this run directory (resume-chains must not overlap)."""
+    owner = f"{run_dir}/OWNER"
+    me = os.environ.get("SLURM_JOB_ID", f"pid{os.getpid()}")
+    if os.path.exists(owner):
+        other = open(owner).read().strip()
+        if other != me and other.isdigit():
+            alive = subprocess.run(["squeue", "-h", "-j", other], capture_output=True, text=True).stdout.strip()
+            if alive:
+                sys.exit(f"run dir {run_dir} is owned by running job {other}; refusing to start")
+    with open(owner, "w") as f:
+        f.write(me)
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--config", required=True)
@@ -103,6 +117,7 @@ def main():
     os.makedirs(f"{run_dir}/ckpt", exist_ok=True)
     os.makedirs(f"{run_dir}/videos", exist_ok=True)
     repo = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    claim_run_dir(run_dir)
     meta = dict(config=dataclasses.asdict(cfg), git=git_rev(repo), argv=sys.argv, host=os.uname().nodename,
                 slurm_job=os.environ.get("SLURM_JOB_ID"), start=time.strftime("%Y-%m-%d %H:%M:%S"))
     with open(f"{run_dir}/launch_{int(wall0)}.json", "w") as f:

@@ -75,12 +75,13 @@ def main():
     from arli.rollout import noise_transitions, run_episode
     from arli.schedule import Schedule
     from arli.steering import SteeringController, SteeringLearner, SteerSpec, steering_transitions, z_space
-    from arli.train import JsonlLog, git_rev
+    from arli.train import JsonlLog, claim_run_dir, git_rev
 
     wall0 = time.time()
     run_dir = os.path.join(cfg.run_root, cfg.name)
     os.makedirs(f"{run_dir}/ckpt", exist_ok=True)
     os.makedirs(f"{run_dir}/diag", exist_ok=True)
+    claim_run_dir(run_dir)
     repo = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
     meta = dict(config=dataclasses.asdict(cfg), git=git_rev(repo), argv=sys.argv, host=os.uname().nodename,
                 slurm_job=os.environ.get("SLURM_JOB_ID"), start=time.strftime("%Y-%m-%d %H:%M:%S"))
