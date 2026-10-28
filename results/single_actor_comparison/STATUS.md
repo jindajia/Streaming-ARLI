@@ -1,13 +1,13 @@
 # Single-actor comparison — status
 
-_Auto-generated 2026-10-28 15:09 EDT by `scripts/report_single.py` (sa_final_step_only_seed1 milestone 300000)._
+_Auto-generated 2026-10-28 15:14 EDT by `scripts/report_single.py` (sa_final_step_only_seed0 milestone 300000)._
 
 Methods train from RL step 0 with the frozen π0 backbone; ARLI curves are the R2 runs with the same protocol and prefill std 0.3. Real evaluations only.
 
 | run | latest eval step | successes / 50 | prefill env steps | grad steps | online actor calls | wall h |
 |---|---|---|---|---|---|---|
 | `sa_shared_every_step_seed0` | 250,096 | 2 | 24,909 | 250,175 | 106300 | 2.6 |
-| `sa_final_step_only_seed0` | 275,237 | 35 | 24,793 | 282,525 | 11678 | 2.7 |
+| `sa_final_step_only_seed0` | 300,142 | 39 | 24,793 | 308,100 | 12736 | 2.9 |
 | `sa_shared_every_step_seed1` | 250,345 | 2 | 24,847 | 250,650 | 106435 | 2.6 |
 | `sa_final_step_only_seed1` | 300,258 | 30 | 24,854 | 306,675 | 12734 | 2.8 |
 | `r2_arli_seed0` | 600,124 | 45 | 24,740 | 619,775 | — | — |
@@ -53,10 +53,10 @@ Methods train from RL step 0 with the frozen π0 backbone; ARLI curves are the R
 | 8758549 | sa_shared_every_step_s1_seg07 | PENDING | 0:00 | afterany:8758548(unfulfilled) |
 | 8758548 | sa_shared_every_step_s1_seg06 | PENDING | 0:00 | afterany:8758547(unfulfilled) |
 | 8758547 | sa_shared_every_step_s1_seg05 | PENDING | 0:00 | afterany:8758546(unfulfilled) |
-| 8758520 | sa_shared_every_step_s0_seg04 | RUNNING | 39:52 | (null) |
-| 8758533 | sa_final_step_only_s0_seg04 | RUNNING | 39:52 | (null) |
-| 8758546 | sa_shared_every_step_s1_seg04 | RUNNING | 39:52 | (null) |
-| 8758559 | sa_final_step_only_s1_seg04 | RUNNING | 39:52 | (null) |
+| 8758520 | sa_shared_every_step_s0_seg04 | RUNNING | 45:23 | (null) |
+| 8758533 | sa_final_step_only_s0_seg04 | RUNNING | 45:23 | (null) |
+| 8758546 | sa_shared_every_step_s1_seg04 | RUNNING | 45:23 | (null) |
+| 8758559 | sa_final_step_only_s1_seg04 | RUNNING | 45:23 | (null) |
 
 Figure: `success_vs_env_steps.png` (vector: `.svg`); data: `evals.csv`, `raw/*.jsonl`.
 Design, objective and limitations: `DECISIONS.md` (D19–D24).
