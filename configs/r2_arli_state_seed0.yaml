@@ -1,0 +1,4 @@
+# R2 ablation: ARLI (state only) — Figure 6 variant, same protocol, seed 0.  Lower priority than S1.
+name: r2_arli_state_seed0
+method: arli_state
+seed: 0
