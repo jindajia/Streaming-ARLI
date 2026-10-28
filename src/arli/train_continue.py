@@ -167,6 +167,30 @@ def main():
                 out[f"j{j}_u"] = np.stack([s["action"][0] for s in dj["steer"]])
                 out[f"j{j}_steer_k_tobs_tnow_fresh"] = np.asarray(
                     [[s["k"], s["t_obs"], s["t_now"], s["fresh_frame"]] for s in dj["steer"]])
+        # same-snapshot offline probe: re-run chunk j's sampler from the same w with the recorded corrections kept
+        # only on subsets of steps; distances of final actions to the all-corrections result
+        if steer:
+            from arli.pi0_policy import obs_to_pi0_input
+            probes = []
+            for j, dj in list(res["decisions"].items())[:6]:
+                if not dj["steer"] or dj["ctx"]["raw_old"] is None:
+                    continue
+                inp = obs_to_pi0_input(dj["ctx"]["raw_old"])
+                us = {s["k"]: s["action"] for s in dj["steer"]}
+                ks = sorted(us)
+                noise = np.repeat(np.reshape(dj["rec"]["action"], (1, 1, 32)), 50, axis=1)
+
+                def run(keep):
+                    return pi0.sample_stepwise(inp, noise, hook=lambda k, x: (
+                        x + float(pi0.taus[k]) * np.repeat(us[k][None], 50, axis=1) if k in keep else x))
+                full = run(set(ks))
+                subsets = {"none": set(), "first_half": set(ks[:len(ks) // 2]), "second_half": set(ks[len(ks) // 2:]),
+                           "last_only": {ks[-1]}, "all_but_last": set(ks[:-1])}
+                row = [j] + [float(np.abs(run(v) - full).max()) for v in subsets.values()]
+                probes.append(row)
+            if probes:
+                out["probe_cols"] = np.asarray(["j"] + list(subsets))
+                out["probe_maxabs_vs_full"] = np.asarray(probes)
         np.savez_compressed(f"{run_dir}/diag/{tag}_ep{e}.npz", **out)
 
     def evaluate(final=False):

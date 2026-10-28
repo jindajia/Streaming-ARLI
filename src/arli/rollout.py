@@ -58,7 +58,8 @@ def run_episode(env, pi0, sched: Schedule, seed: int, controller, *, record: boo
         nonlocal inflight
         old = starts[j]
         ctx = dict(j=j, t=latest["t"], img_old=old["img"], q_old=old["q"], committed=committed_for(j),
-                   img_mid=latest["img"], q_mid=latest["q"], t_old=old["t"], t_mid=latest["t"])
+                   img_mid=latest["img"], q_mid=latest["q"], t_old=old["t"], t_mid=latest["t"],
+                   raw_old=old["raw"] if record else None)
         t0 = time.perf_counter()
         noise, rec = controller.initial_noise(ctx)
         timing["actor_s"] += time.perf_counter() - t0
