@@ -70,7 +70,7 @@ def main():
     import jax
 
     from arli import aloha_env, rl
-    from arli.controllers import NoiseActor
+    from arli.controllers import NoiseActor, stepwise
     from arli.pi0_policy import FrozenPi0
     from arli.rollout import noise_transitions, run_episode
     from arli.schedule import Schedule
@@ -147,7 +147,7 @@ def main():
     def controller(key):
         if steer:
             return SteeringController(L, sched, key)
-        return NoiseActor("arli", agent, eval_key=key)
+        return stepwise(NoiseActor("arli", agent, eval_key=key))
 
     def save_diag(res, tag, e):
         """Bounded diagnostic subset: per-step X, V, corrections, observation times, queue alignment."""

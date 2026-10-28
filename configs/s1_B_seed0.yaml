@@ -1,0 +1,5 @@
+# S1 branch B, continuation from the common R2 ARLI checkpoint (set init_agent when R2 has finished).
+name: s1_B_seed0
+branch: B
+seed: 0
+init_agent: /N/scratch/jindjia/arli/runs/r2_arli_seed0/ckpt/agent_0600000.msgpack

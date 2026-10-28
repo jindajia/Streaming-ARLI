@@ -3,9 +3,8 @@
 * control timestep 0.02 s (50 Hz), episode length 400 steps, success = reward 4 (left gripper holds the cube
   off the table); gym_aloha terminates the episode on success.
 * Box pose is a deterministic function of ``reset(seed)``.
-* Speed-only patch: gym_aloha renders three 480x640 cameras per step (top/angle/front_close) but the policy and
-  RL observation use only ``top``.  ``render_only_top=True`` skips the two unused renders; the ``top`` image is
-  unchanged (verified in scripts/check_env.py).
+* Optional speed-only patch ``render_only_top`` (skip the two unused cameras) is OFF: in scripts/check_r1.py the
+  ``top`` image was not bit-identical with it (gain only 2.6 -> 2.1 ms/step), so the unmodified simulator is used.
 """
 
 from __future__ import annotations
@@ -33,7 +32,7 @@ def _patch_render_only_top():
     sim.BimanualViperXTask.get_observation = get_observation
 
 
-def make_env(render_only_top: bool = True):
+def make_env(render_only_top: bool = False):
     if render_only_top:
         _patch_render_only_top()
     from gym_aloha.env import AlohaEnv

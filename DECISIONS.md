@@ -61,8 +61,12 @@ Tags: **[paper]** stated in ARLI v2 · **[code]** taken from pinned dsrl_pi0/ope
   does not consume the training RNG. Step-0 evaluation uses the randomly initialised actor (the method's actual
   policy at that point); the frozen π0 baseline is measured separately with i.i.d. N(0, I) (50×32) noise under the
   identical async protocol. A synchronous zero-delay frozen evaluation is a separate diagnostic only.
-- D12b **[ours] Speed-only simulator patch.** gym_aloha renders three 480×640 cameras per step; only `top` is used,
-  so the two others are skipped. `scripts/check_r1.py` verifies the `top` image is bit-identical.
+- D12b Unmodified simulator. A speed-only patch skipping gym_aloha's two unused camera renders was tested and
+  rejected: the `top` image was not bit-identical in `scripts/check_r1.py` (2.6 → 2.1 ms/step only).
+- D12c Sampler numerics. Our step-wise sampler (separately jitted VLM prefix + 10 expert Euler steps) differs from
+  openpi's single `while_loop` sampler by max |Δa| = 0.003–0.005 rad for identical inputs/noise (bf16/XLA fusion;
+  actions ≈ ±1.2). R2 uses openpi's `infer` (DSRL path). S1 runs **all** branches, A included, through the step-wise
+  sampler; a zero residual through the steering hook is bit-identical to it.
 
 ## Steering extension (S0/S1) — our design, not ARLI
 

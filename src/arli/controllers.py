@@ -61,3 +61,18 @@ class NoiseActor:
             w = rl.sample_noise_action(self.agent, obs, k)
         w = np.reshape(w, (1, rl.NOISE_DIM)).astype(np.float32)
         return broadcast_noise(w), dict(obs=obs, action=w)
+
+
+class NullSteering:
+    """No corrections, but forces the step-wise sampler path (used by S1 branch A so that all branches share
+    exactly the same numerical sampler; see DECISIONS.md D12c)."""
+
+    steps = frozenset()
+
+    def correct(self, ctx, k, x, tau, latest):  # never called
+        raise AssertionError
+
+
+def stepwise(controller):
+    controller.steering = NullSteering()
+    return controller
