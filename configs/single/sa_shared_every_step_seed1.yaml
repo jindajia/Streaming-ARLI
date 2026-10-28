@@ -1,0 +1,6 @@
+# Single-actor comparison: method shared_every_step, training seed 1, from RL step 0 (fresh actor/critic/replay), frozen pi0.
+# Protocol = R2 (H50, exec 25, d 20, d_rl 10, 10 iterations, no RTC, 600k online steps, eval 50 eps every 25k,
+# prefill > 1000 chunks with std 0.3, 25 updates per executed chunk).  See DECISIONS.md D19-D24.
+name: sa_shared_every_step_seed1
+method: shared_every_step
+seed: 1

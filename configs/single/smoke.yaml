@@ -1,0 +1,10 @@
+name: sa_smoke
+method: shared_every_step
+seed: 0
+run_root: /N/scratch/jindjia/arli/smoke_single
+prefill_chunks: 20
+online_env_steps: 1200
+eval_interval: 600
+eval_episodes: 2
+report: false
+log_update_every: 100
