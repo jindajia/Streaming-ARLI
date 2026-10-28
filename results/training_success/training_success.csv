@@ -1,0 +1,205 @@
+panel,method,run,window_start,window_end,episodes,successes,success_rate
+seed 0 · prefill std 0.3,ARLI,r2_arli_seed0,0,25000,66,11,0.16666666666666666
+seed 0 · prefill std 0.3,ARLI,r2_arli_seed0,25000,50000,72,23,0.3194444444444444
+seed 0 · prefill std 0.3,ARLI,r2_arli_seed0,50000,75000,76,36,0.47368421052631576
+seed 0 · prefill std 0.3,ARLI,r2_arli_seed0,75000,100000,78,38,0.48717948717948717
+seed 0 · prefill std 0.3,ARLI,r2_arli_seed0,100000,125000,83,51,0.6144578313253012
+seed 0 · prefill std 0.3,ARLI,r2_arli_seed0,125000,150000,89,61,0.6853932584269663
+seed 0 · prefill std 0.3,ARLI,r2_arli_seed0,150000,175000,87,58,0.6666666666666666
+seed 0 · prefill std 0.3,ARLI,r2_arli_seed0,175000,200000,88,57,0.6477272727272727
+seed 0 · prefill std 0.3,ARLI,r2_arli_seed0,200000,225000,90,61,0.6777777777777778
+seed 0 · prefill std 0.3,ARLI,r2_arli_seed0,225000,250000,94,68,0.723404255319149
+seed 0 · prefill std 0.3,ARLI,r2_arli_seed0,250000,275000,93,67,0.7204301075268817
+seed 0 · prefill std 0.3,ARLI,r2_arli_seed0,275000,300000,98,75,0.7653061224489796
+seed 0 · prefill std 0.3,ARLI,r2_arli_seed0,300000,325000,95,71,0.7473684210526316
+seed 0 · prefill std 0.3,ARLI,r2_arli_seed0,325000,350000,98,77,0.7857142857142857
+seed 0 · prefill std 0.3,ARLI,r2_arli_seed0,350000,375000,109,95,0.8715596330275229
+seed 0 · prefill std 0.3,ARLI,r2_arli_seed0,375000,400000,103,84,0.8155339805825242
+seed 0 · prefill std 0.3,ARLI,r2_arli_seed0,400000,425000,97,72,0.7422680412371134
+seed 0 · prefill std 0.3,ARLI,r2_arli_seed0,425000,450000,100,81,0.81
+seed 0 · prefill std 0.3,ARLI,r2_arli_seed0,450000,475000,103,84,0.8155339805825242
+seed 0 · prefill std 0.3,ARLI,r2_arli_seed0,475000,500000,102,80,0.7843137254901961
+seed 0 · prefill std 0.3,ARLI,r2_arli_seed0,500000,525000,109,94,0.8623853211009175
+seed 0 · prefill std 0.3,ARLI,r2_arli_seed0,525000,550000,101,80,0.7920792079207921
+seed 0 · prefill std 0.3,ARLI,r2_arli_seed0,550000,575000,99,75,0.7575757575757576
+seed 0 · prefill std 0.3,ARLI,r2_arli_seed0,575000,600000,103,84,0.8155339805825242
+seed 0 · prefill std 0.3,ARLI,r2_arli_seed0,prefill,prefill,73,32,0.4383561643835616
+seed 0 · prefill std 0.3,shared_every_step,sa_shared_every_step_seed0,0,25000,62,0,0.0
+seed 0 · prefill std 0.3,shared_every_step,sa_shared_every_step_seed0,25000,50000,63,0,0.0
+seed 0 · prefill std 0.3,shared_every_step,sa_shared_every_step_seed0,50000,75000,62,0,0.0
+seed 0 · prefill std 0.3,shared_every_step,sa_shared_every_step_seed0,75000,100000,63,0,0.0
+seed 0 · prefill std 0.3,shared_every_step,sa_shared_every_step_seed0,100000,125000,62,0,0.0
+seed 0 · prefill std 0.3,shared_every_step,sa_shared_every_step_seed0,125000,150000,63,0,0.0
+seed 0 · prefill std 0.3,shared_every_step,sa_shared_every_step_seed0,150000,175000,62,0,0.0
+seed 0 · prefill std 0.3,shared_every_step,sa_shared_every_step_seed0,175000,200000,63,0,0.0
+seed 0 · prefill std 0.3,shared_every_step,sa_shared_every_step_seed0,200000,225000,62,1,0.016129032258064516
+seed 0 · prefill std 0.3,shared_every_step,sa_shared_every_step_seed0,225000,250000,64,3,0.046875
+seed 0 · prefill std 0.3,shared_every_step,sa_shared_every_step_seed0,250000,275000,63,1,0.015873015873015872
+seed 0 · prefill std 0.3,shared_every_step,sa_shared_every_step_seed0,275000,300000,13,0,0.0
+seed 0 · prefill std 0.3,shared_every_step,sa_shared_every_step_seed0,prefill,prefill,72,29,0.4027777777777778
+seed 0 · prefill std 0.3,final_step_only,sa_final_step_only_seed0,0,25000,72,32,0.4444444444444444
+seed 0 · prefill std 0.3,final_step_only,sa_final_step_only_seed0,25000,50000,75,35,0.4666666666666667
+seed 0 · prefill std 0.3,final_step_only,sa_final_step_only_seed0,50000,75000,79,41,0.5189873417721519
+seed 0 · prefill std 0.3,final_step_only,sa_final_step_only_seed0,75000,100000,82,48,0.5853658536585366
+seed 0 · prefill std 0.3,final_step_only,sa_final_step_only_seed0,100000,125000,86,56,0.6511627906976745
+seed 0 · prefill std 0.3,final_step_only,sa_final_step_only_seed0,125000,150000,85,54,0.6352941176470588
+seed 0 · prefill std 0.3,final_step_only,sa_final_step_only_seed0,150000,175000,91,62,0.6813186813186813
+seed 0 · prefill std 0.3,final_step_only,sa_final_step_only_seed0,175000,200000,87,57,0.6551724137931034
+seed 0 · prefill std 0.3,final_step_only,sa_final_step_only_seed0,200000,225000,89,58,0.651685393258427
+seed 0 · prefill std 0.3,final_step_only,sa_final_step_only_seed0,225000,250000,92,65,0.7065217391304348
+seed 0 · prefill std 0.3,final_step_only,sa_final_step_only_seed0,250000,275000,91,63,0.6923076923076923
+seed 0 · prefill std 0.3,final_step_only,sa_final_step_only_seed0,275000,300000,86,51,0.5930232558139535
+seed 0 · prefill std 0.3,final_step_only,sa_final_step_only_seed0,300000,325000,44,34,0.7727272727272727
+seed 0 · prefill std 0.3,final_step_only,sa_final_step_only_seed0,prefill,prefill,73,33,0.4520547945205479
+seed 0 · prefill std 0.3,naive async DSRL,r2_dsrl_seed0,0,25000,62,0,0.0
+seed 0 · prefill std 0.3,naive async DSRL,r2_dsrl_seed0,25000,50000,63,0,0.0
+seed 0 · prefill std 0.3,naive async DSRL,r2_dsrl_seed0,50000,75000,62,0,0.0
+seed 0 · prefill std 0.3,naive async DSRL,r2_dsrl_seed0,75000,100000,63,0,0.0
+seed 0 · prefill std 0.3,naive async DSRL,r2_dsrl_seed0,100000,125000,62,0,0.0
+seed 0 · prefill std 0.3,naive async DSRL,r2_dsrl_seed0,125000,150000,63,0,0.0
+seed 0 · prefill std 0.3,naive async DSRL,r2_dsrl_seed0,150000,175000,62,0,0.0
+seed 0 · prefill std 0.3,naive async DSRL,r2_dsrl_seed0,175000,200000,63,0,0.0
+seed 0 · prefill std 0.3,naive async DSRL,r2_dsrl_seed0,200000,225000,62,0,0.0
+seed 0 · prefill std 0.3,naive async DSRL,r2_dsrl_seed0,225000,250000,63,0,0.0
+seed 0 · prefill std 0.3,naive async DSRL,r2_dsrl_seed0,250000,275000,62,0,0.0
+seed 0 · prefill std 0.3,naive async DSRL,r2_dsrl_seed0,275000,300000,63,0,0.0
+seed 0 · prefill std 0.3,naive async DSRL,r2_dsrl_seed0,300000,325000,62,0,0.0
+seed 0 · prefill std 0.3,naive async DSRL,r2_dsrl_seed0,325000,350000,63,0,0.0
+seed 0 · prefill std 0.3,naive async DSRL,r2_dsrl_seed0,350000,375000,62,0,0.0
+seed 0 · prefill std 0.3,naive async DSRL,r2_dsrl_seed0,375000,400000,63,0,0.0
+seed 0 · prefill std 0.3,naive async DSRL,r2_dsrl_seed0,400000,425000,62,0,0.0
+seed 0 · prefill std 0.3,naive async DSRL,r2_dsrl_seed0,425000,450000,63,0,0.0
+seed 0 · prefill std 0.3,naive async DSRL,r2_dsrl_seed0,450000,475000,62,0,0.0
+seed 0 · prefill std 0.3,naive async DSRL,r2_dsrl_seed0,475000,500000,63,0,0.0
+seed 0 · prefill std 0.3,naive async DSRL,r2_dsrl_seed0,500000,525000,62,0,0.0
+seed 0 · prefill std 0.3,naive async DSRL,r2_dsrl_seed0,525000,550000,63,0,0.0
+seed 0 · prefill std 0.3,naive async DSRL,r2_dsrl_seed0,550000,575000,62,0,0.0
+seed 0 · prefill std 0.3,naive async DSRL,r2_dsrl_seed0,575000,600000,63,0,0.0
+seed 0 · prefill std 0.3,naive async DSRL,r2_dsrl_seed0,prefill,prefill,72,29,0.4027777777777778
+seed 1 · prefill std 0.3,ARLI,r2_arli_seed1_std030,0,25000,66,9,0.13636363636363635
+seed 1 · prefill std 0.3,ARLI,r2_arli_seed1_std030,25000,50000,73,28,0.3835616438356164
+seed 1 · prefill std 0.3,ARLI,r2_arli_seed1_std030,50000,75000,83,47,0.5662650602409639
+seed 1 · prefill std 0.3,ARLI,r2_arli_seed1_std030,75000,100000,79,41,0.5189873417721519
+seed 1 · prefill std 0.3,ARLI,r2_arli_seed1_std030,100000,125000,83,51,0.6144578313253012
+seed 1 · prefill std 0.3,ARLI,r2_arli_seed1_std030,125000,150000,83,48,0.5783132530120482
+seed 1 · prefill std 0.3,ARLI,r2_arli_seed1_std030,150000,175000,83,49,0.5903614457831325
+seed 1 · prefill std 0.3,ARLI,r2_arli_seed1_std030,175000,200000,85,56,0.6588235294117647
+seed 1 · prefill std 0.3,ARLI,r2_arli_seed1_std030,200000,225000,84,51,0.6071428571428571
+seed 1 · prefill std 0.3,ARLI,r2_arli_seed1_std030,225000,250000,92,67,0.7282608695652174
+seed 1 · prefill std 0.3,ARLI,r2_arli_seed1_std030,250000,275000,85,58,0.6823529411764706
+seed 1 · prefill std 0.3,ARLI,r2_arli_seed1_std030,275000,300000,93,72,0.7741935483870968
+seed 1 · prefill std 0.3,ARLI,r2_arli_seed1_std030,300000,325000,99,84,0.8484848484848485
+seed 1 · prefill std 0.3,ARLI,r2_arli_seed1_std030,325000,350000,102,90,0.8823529411764706
+seed 1 · prefill std 0.3,ARLI,r2_arli_seed1_std030,350000,375000,102,91,0.8921568627450981
+seed 1 · prefill std 0.3,ARLI,r2_arli_seed1_std030,375000,400000,95,78,0.8210526315789474
+seed 1 · prefill std 0.3,ARLI,r2_arli_seed1_std030,400000,425000,99,80,0.8080808080808081
+seed 1 · prefill std 0.3,ARLI,r2_arli_seed1_std030,425000,450000,98,78,0.7959183673469388
+seed 1 · prefill std 0.3,ARLI,r2_arli_seed1_std030,450000,475000,100,82,0.82
+seed 1 · prefill std 0.3,ARLI,r2_arli_seed1_std030,475000,500000,100,82,0.82
+seed 1 · prefill std 0.3,ARLI,r2_arli_seed1_std030,500000,525000,102,87,0.8529411764705882
+seed 1 · prefill std 0.3,ARLI,r2_arli_seed1_std030,525000,550000,103,88,0.8543689320388349
+seed 1 · prefill std 0.3,ARLI,r2_arli_seed1_std030,550000,575000,100,82,0.82
+seed 1 · prefill std 0.3,ARLI,r2_arli_seed1_std030,575000,600000,102,86,0.8431372549019608
+seed 1 · prefill std 0.3,ARLI,r2_arli_seed1_std030,prefill,prefill,72,31,0.4305555555555556
+seed 1 · prefill std 0.3,shared_every_step,sa_shared_every_step_seed1,0,25000,62,0,0.0
+seed 1 · prefill std 0.3,shared_every_step,sa_shared_every_step_seed1,25000,50000,63,0,0.0
+seed 1 · prefill std 0.3,shared_every_step,sa_shared_every_step_seed1,50000,75000,63,3,0.047619047619047616
+seed 1 · prefill std 0.3,shared_every_step,sa_shared_every_step_seed1,75000,100000,64,2,0.03125
+seed 1 · prefill std 0.3,shared_every_step,sa_shared_every_step_seed1,100000,125000,63,2,0.031746031746031744
+seed 1 · prefill std 0.3,shared_every_step,sa_shared_every_step_seed1,125000,150000,63,1,0.015873015873015872
+seed 1 · prefill std 0.3,shared_every_step,sa_shared_every_step_seed1,150000,175000,64,3,0.046875
+seed 1 · prefill std 0.3,shared_every_step,sa_shared_every_step_seed1,175000,200000,63,1,0.015873015873015872
+seed 1 · prefill std 0.3,shared_every_step,sa_shared_every_step_seed1,200000,225000,63,2,0.031746031746031744
+seed 1 · prefill std 0.3,shared_every_step,sa_shared_every_step_seed1,225000,250000,64,3,0.046875
+seed 1 · prefill std 0.3,shared_every_step,sa_shared_every_step_seed1,250000,275000,63,1,0.015873015873015872
+seed 1 · prefill std 0.3,shared_every_step,sa_shared_every_step_seed1,275000,300000,25,0,0.0
+seed 1 · prefill std 0.3,shared_every_step,sa_shared_every_step_seed1,prefill,prefill,72,31,0.4305555555555556
+seed 1 · prefill std 0.3,final_step_only,sa_final_step_only_seed1,0,25000,71,24,0.3380281690140845
+seed 1 · prefill std 0.3,final_step_only,sa_final_step_only_seed1,25000,50000,72,23,0.3194444444444444
+seed 1 · prefill std 0.3,final_step_only,sa_final_step_only_seed1,50000,75000,76,33,0.4342105263157895
+seed 1 · prefill std 0.3,final_step_only,sa_final_step_only_seed1,75000,100000,80,43,0.5375
+seed 1 · prefill std 0.3,final_step_only,sa_final_step_only_seed1,100000,125000,82,47,0.573170731707317
+seed 1 · prefill std 0.3,final_step_only,sa_final_step_only_seed1,125000,150000,80,42,0.525
+seed 1 · prefill std 0.3,final_step_only,sa_final_step_only_seed1,150000,175000,90,64,0.7111111111111111
+seed 1 · prefill std 0.3,final_step_only,sa_final_step_only_seed1,175000,200000,84,51,0.6071428571428571
+seed 1 · prefill std 0.3,final_step_only,sa_final_step_only_seed1,200000,225000,81,44,0.5432098765432098
+seed 1 · prefill std 0.3,final_step_only,sa_final_step_only_seed1,225000,250000,83,48,0.5783132530120482
+seed 1 · prefill std 0.3,final_step_only,sa_final_step_only_seed1,250000,275000,84,48,0.5714285714285714
+seed 1 · prefill std 0.3,final_step_only,sa_final_step_only_seed1,275000,300000,89,59,0.6629213483146067
+seed 1 · prefill std 0.3,final_step_only,sa_final_step_only_seed1,300000,325000,88,61,0.6931818181818182
+seed 1 · prefill std 0.3,final_step_only,sa_final_step_only_seed1,prefill,prefill,74,40,0.5405405405405406
+seed 1 · prefill std 0.3,naive async DSRL,r2_dsrl_seed1_std030,0,25000,62,0,0.0
+seed 1 · prefill std 0.3,naive async DSRL,r2_dsrl_seed1_std030,25000,50000,63,0,0.0
+seed 1 · prefill std 0.3,naive async DSRL,r2_dsrl_seed1_std030,50000,75000,65,8,0.12307692307692308
+seed 1 · prefill std 0.3,naive async DSRL,r2_dsrl_seed1_std030,75000,100000,69,17,0.2463768115942029
+seed 1 · prefill std 0.3,naive async DSRL,r2_dsrl_seed1_std030,100000,125000,72,21,0.2916666666666667
+seed 1 · prefill std 0.3,naive async DSRL,r2_dsrl_seed1_std030,125000,150000,77,35,0.45454545454545453
+seed 1 · prefill std 0.3,naive async DSRL,r2_dsrl_seed1_std030,150000,175000,67,16,0.23880597014925373
+seed 1 · prefill std 0.3,naive async DSRL,r2_dsrl_seed1_std030,175000,200000,77,32,0.4155844155844156
+seed 1 · prefill std 0.3,naive async DSRL,r2_dsrl_seed1_std030,200000,225000,77,38,0.4935064935064935
+seed 1 · prefill std 0.3,naive async DSRL,r2_dsrl_seed1_std030,225000,250000,76,32,0.42105263157894735
+seed 1 · prefill std 0.3,naive async DSRL,r2_dsrl_seed1_std030,250000,275000,76,32,0.42105263157894735
+seed 1 · prefill std 0.3,naive async DSRL,r2_dsrl_seed1_std030,275000,300000,80,43,0.5375
+seed 1 · prefill std 0.3,naive async DSRL,r2_dsrl_seed1_std030,300000,325000,78,38,0.48717948717948717
+seed 1 · prefill std 0.3,naive async DSRL,r2_dsrl_seed1_std030,325000,350000,84,48,0.5714285714285714
+seed 1 · prefill std 0.3,naive async DSRL,r2_dsrl_seed1_std030,350000,375000,78,40,0.5128205128205128
+seed 1 · prefill std 0.3,naive async DSRL,r2_dsrl_seed1_std030,375000,400000,85,52,0.611764705882353
+seed 1 · prefill std 0.3,naive async DSRL,r2_dsrl_seed1_std030,400000,425000,85,56,0.6588235294117647
+seed 1 · prefill std 0.3,naive async DSRL,r2_dsrl_seed1_std030,425000,450000,81,46,0.5679012345679012
+seed 1 · prefill std 0.3,naive async DSRL,r2_dsrl_seed1_std030,450000,475000,87,56,0.6436781609195402
+seed 1 · prefill std 0.3,naive async DSRL,r2_dsrl_seed1_std030,475000,500000,83,52,0.6265060240963856
+seed 1 · prefill std 0.3,naive async DSRL,r2_dsrl_seed1_std030,500000,525000,80,43,0.5375
+seed 1 · prefill std 0.3,naive async DSRL,r2_dsrl_seed1_std030,525000,550000,84,52,0.6190476190476191
+seed 1 · prefill std 0.3,naive async DSRL,r2_dsrl_seed1_std030,550000,575000,84,54,0.6428571428571429
+seed 1 · prefill std 0.3,naive async DSRL,r2_dsrl_seed1_std030,575000,600000,87,58,0.6666666666666666
+seed 1 · prefill std 0.3,naive async DSRL,r2_dsrl_seed1_std030,prefill,prefill,71,30,0.4225352112676056
+seed 0 · prefill variance 0.3 (control),ARLI,r2_arli_seed0_var030,0,25000,69,15,0.21739130434782608
+seed 0 · prefill variance 0.3 (control),ARLI,r2_arli_seed0_var030,25000,50000,71,24,0.3380281690140845
+seed 0 · prefill variance 0.3 (control),ARLI,r2_arli_seed0_var030,50000,75000,74,26,0.35135135135135137
+seed 0 · prefill variance 0.3 (control),ARLI,r2_arli_seed0_var030,75000,100000,78,40,0.5128205128205128
+seed 0 · prefill variance 0.3 (control),ARLI,r2_arli_seed0_var030,100000,125000,77,39,0.5064935064935064
+seed 0 · prefill variance 0.3 (control),ARLI,r2_arli_seed0_var030,125000,150000,84,51,0.6071428571428571
+seed 0 · prefill variance 0.3 (control),ARLI,r2_arli_seed0_var030,150000,175000,83,47,0.5662650602409639
+seed 0 · prefill variance 0.3 (control),ARLI,r2_arli_seed0_var030,175000,200000,87,57,0.6551724137931034
+seed 0 · prefill variance 0.3 (control),ARLI,r2_arli_seed0_var030,200000,225000,92,64,0.6956521739130435
+seed 0 · prefill variance 0.3 (control),ARLI,r2_arli_seed0_var030,225000,250000,93,64,0.6881720430107527
+seed 0 · prefill variance 0.3 (control),ARLI,r2_arli_seed0_var030,250000,275000,90,60,0.6666666666666666
+seed 0 · prefill variance 0.3 (control),ARLI,r2_arli_seed0_var030,275000,300000,94,67,0.7127659574468085
+seed 0 · prefill variance 0.3 (control),ARLI,r2_arli_seed0_var030,300000,325000,93,65,0.6989247311827957
+seed 0 · prefill variance 0.3 (control),ARLI,r2_arli_seed0_var030,325000,350000,94,65,0.6914893617021277
+seed 0 · prefill variance 0.3 (control),ARLI,r2_arli_seed0_var030,350000,375000,98,74,0.7551020408163265
+seed 0 · prefill variance 0.3 (control),ARLI,r2_arli_seed0_var030,375000,400000,101,80,0.7920792079207921
+seed 0 · prefill variance 0.3 (control),ARLI,r2_arli_seed0_var030,400000,425000,101,78,0.7722772277227723
+seed 0 · prefill variance 0.3 (control),ARLI,r2_arli_seed0_var030,425000,450000,109,95,0.8715596330275229
+seed 0 · prefill variance 0.3 (control),ARLI,r2_arli_seed0_var030,450000,475000,101,80,0.7920792079207921
+seed 0 · prefill variance 0.3 (control),ARLI,r2_arli_seed0_var030,475000,500000,102,79,0.7745098039215687
+seed 0 · prefill variance 0.3 (control),ARLI,r2_arli_seed0_var030,500000,525000,105,87,0.8285714285714286
+seed 0 · prefill variance 0.3 (control),ARLI,r2_arli_seed0_var030,525000,550000,107,85,0.794392523364486
+seed 0 · prefill variance 0.3 (control),ARLI,r2_arli_seed0_var030,550000,575000,116,105,0.9051724137931034
+seed 0 · prefill variance 0.3 (control),ARLI,r2_arli_seed0_var030,575000,600000,113,96,0.8495575221238938
+seed 0 · prefill variance 0.3 (control),ARLI,r2_arli_seed0_var030,prefill,prefill,71,26,0.36619718309859156
+seed 0 · prefill variance 0.3 (control),naive async DSRL,r2_dsrl_seed0_var030,0,25000,63,3,0.047619047619047616
+seed 0 · prefill variance 0.3 (control),naive async DSRL,r2_dsrl_seed0_var030,25000,50000,66,9,0.13636363636363635
+seed 0 · prefill variance 0.3 (control),naive async DSRL,r2_dsrl_seed0_var030,50000,75000,67,16,0.23880597014925373
+seed 0 · prefill variance 0.3 (control),naive async DSRL,r2_dsrl_seed0_var030,75000,100000,68,16,0.23529411764705882
+seed 0 · prefill variance 0.3 (control),naive async DSRL,r2_dsrl_seed0_var030,100000,125000,68,14,0.20588235294117646
+seed 0 · prefill variance 0.3 (control),naive async DSRL,r2_dsrl_seed0_var030,125000,150000,71,23,0.323943661971831
+seed 0 · prefill variance 0.3 (control),naive async DSRL,r2_dsrl_seed0_var030,150000,175000,72,27,0.375
+seed 0 · prefill variance 0.3 (control),naive async DSRL,r2_dsrl_seed0_var030,175000,200000,71,21,0.29577464788732394
+seed 0 · prefill variance 0.3 (control),naive async DSRL,r2_dsrl_seed0_var030,200000,225000,75,33,0.44
+seed 0 · prefill variance 0.3 (control),naive async DSRL,r2_dsrl_seed0_var030,225000,250000,76,38,0.5
+seed 0 · prefill variance 0.3 (control),naive async DSRL,r2_dsrl_seed0_var030,250000,275000,86,53,0.6162790697674418
+seed 0 · prefill variance 0.3 (control),naive async DSRL,r2_dsrl_seed0_var030,275000,300000,79,38,0.4810126582278481
+seed 0 · prefill variance 0.3 (control),naive async DSRL,r2_dsrl_seed0_var030,300000,325000,80,42,0.525
+seed 0 · prefill variance 0.3 (control),naive async DSRL,r2_dsrl_seed0_var030,325000,350000,83,48,0.5783132530120482
+seed 0 · prefill variance 0.3 (control),naive async DSRL,r2_dsrl_seed0_var030,350000,375000,77,36,0.4675324675324675
+seed 0 · prefill variance 0.3 (control),naive async DSRL,r2_dsrl_seed0_var030,375000,400000,80,40,0.5
+seed 0 · prefill variance 0.3 (control),naive async DSRL,r2_dsrl_seed0_var030,400000,425000,80,39,0.4875
+seed 0 · prefill variance 0.3 (control),naive async DSRL,r2_dsrl_seed0_var030,425000,450000,83,51,0.6144578313253012
+seed 0 · prefill variance 0.3 (control),naive async DSRL,r2_dsrl_seed0_var030,450000,475000,83,50,0.6024096385542169
+seed 0 · prefill variance 0.3 (control),naive async DSRL,r2_dsrl_seed0_var030,475000,500000,83,50,0.6024096385542169
+seed 0 · prefill variance 0.3 (control),naive async DSRL,r2_dsrl_seed0_var030,500000,525000,86,56,0.6511627906976745
+seed 0 · prefill variance 0.3 (control),naive async DSRL,r2_dsrl_seed0_var030,525000,550000,84,46,0.5476190476190477
+seed 0 · prefill variance 0.3 (control),naive async DSRL,r2_dsrl_seed0_var030,550000,575000,79,40,0.5063291139240507
+seed 0 · prefill variance 0.3 (control),naive async DSRL,r2_dsrl_seed0_var030,575000,600000,81,46,0.5679012345679012
+seed 0 · prefill variance 0.3 (control),naive async DSRL,r2_dsrl_seed0_var030,prefill,prefill,71,28,0.39436619718309857
