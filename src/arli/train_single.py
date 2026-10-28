@@ -54,6 +54,11 @@ def main():
         d[k] = yaml.safe_load(v)
     cfg = SConfig(**d)
 
+    done_flag = os.path.join(cfg.run_root, cfg.name, "DONE")
+    if os.path.exists(done_flag):  # surplus chained segment: exit before loading pi0
+        print(f"{cfg.name} already complete ({open(done_flag).read().strip()}); nothing to do", flush=True)
+        return
+
     from arli.pi0_policy import configure_caches
     configure_caches()
     os.environ["XLA_FLAGS"] = os.environ.get("XLA_FLAGS", "") + " --xla_gpu_triton_gemm_any=True"
@@ -238,6 +243,8 @@ def main():
         C["wall_update"] += time.time() - t0
         log_ep(phase="online", seed=res["seed"], success=res["success"], t_end=res["t_end"], chunks=n,
                actor_calls=len(ctrl.calls), timing=res["timing"], **C)
+    with open(done_flag, "w") as f:
+        f.write(f"online_env_steps={C['online_env_steps']} job={os.environ.get('SLURM_JOB_ID')} {time.strftime('%F %T')}\n")
     print(f"DONE {C}", flush=True)
 
 

@@ -9,7 +9,7 @@
 #SBATCH --mem=100g
 #SBATCH --time=01:00:00
 #SBATCH --output=/N/scratch/jindjia/arli/logs/%x_%j.out
-set -eo pipefail
+set -o pipefail
 export ARLI_SCRATCH=/N/scratch/jindjia/arli
 export OPENPI_DATA_HOME=$ARLI_SCRATCH/openpi_cache
 export XLA_PYTHON_CLIENT_PREALLOCATE=false
@@ -27,5 +27,10 @@ echo "job=$SLURM_JOB_ID name=$SLURM_JOB_NAME node=$(hostname) start=$(date) git=
 nvidia-smi --query-gpu=index,name,memory.total,driver_version --format=csv,noheader
 echo "CUDA_VISIBLE_DEVICES=$CUDA_VISIBLE_DEVICES MUJOCO_EGL_DEVICE_ID=$MUJOCO_EGL_DEVICE_ID"
 echo "CMD: $CMD"
-eval "$CMD"
-echo "end=$(date) exit=$?"
+eval "$CMD"; rc=$?
+echo "end=$(date) exit=$rc"
+# exit 0 = done / nothing to do, 3 = checkpointed wall-budget exit; anything else is a failure -> report it
+if [ $rc -ne 0 ] && [ $rc -ne 3 ]; then
+  python scripts/report_single.py --reason "FAILURE: job $SLURM_JOB_ID ($SLURM_JOB_NAME) exited $rc on $(hostname)" || true
+fi
+exit $rc
