@@ -1,6 +1,6 @@
 # Single-actor comparison — status
 
-_Auto-generated 2026-10-28 12:56 EDT by `scripts/report_single.py` (sa_final_step_only_seed0 milestone 200000)._
+_Auto-generated 2026-10-28 12:56 EDT by `scripts/report_single.py` (sa_final_step_only_seed1 milestone 200000)._
 
 Methods train from RL step 0 with the frozen π0 backbone; ARLI curves are the R2 runs with the same protocol and prefill std 0.3. Real evaluations only.
 
@@ -9,7 +9,7 @@ Methods train from RL step 0 with the frozen π0 backbone; ARLI curves are the R
 | `sa_shared_every_step_seed0` | 175,200 | 1 | 24,909 | 175,200 | 74460 | 1.9 |
 | `sa_final_step_only_seed0` | 200,124 | 31 | 24,793 | 205,000 | 8490 | 2.0 |
 | `sa_shared_every_step_seed1` | 175,188 | 2 | 24,847 | 175,400 | 74486 | 1.9 |
-| `sa_final_step_only_seed1` | 175,186 | 31 | 24,854 | 178,525 | 7428 | 1.7 |
+| `sa_final_step_only_seed1` | 200,175 | 26 | 24,854 | 204,125 | 8487 | 1.9 |
 | `r2_arli_seed0` | 600,124 | 45 | 24,740 | 619,775 | — | — |
 | `r2_arli_seed1_std030` | 575,066 | 39 | 24,975 | 593,525 | — | — |
 
@@ -57,10 +57,10 @@ Methods train from RL step 0 with the frozen π0 backbone; ARLI curves are the R
 | 8758548 | sa_shared_every_step_s1_seg06 | PENDING | 0:00 | afterany:8758547(unfulfilled) |
 | 8758547 | sa_shared_every_step_s1_seg05 | PENDING | 0:00 | afterany:8758546(unfulfilled) |
 | 8758546 | sa_shared_every_step_s1_seg04 | PENDING | 0:00 | afterany:8758545(unfulfilled) |
-| 8758558 | sa_final_step_only_s1_seg03 | RUNNING | 27:08 | (null) |
-| 8758532 | sa_final_step_only_s0_seg03 | RUNNING | 32:09 | (null) |
-| 8758545 | sa_shared_every_step_s1_seg03 | RUNNING | 32:09 | (null) |
-| 8758519 | sa_shared_every_step_s0_seg03 | RUNNING | 37:10 | (null) |
+| 8758558 | sa_final_step_only_s1_seg03 | RUNNING | 27:52 | (null) |
+| 8758532 | sa_final_step_only_s0_seg03 | RUNNING | 32:53 | (null) |
+| 8758545 | sa_shared_every_step_s1_seg03 | RUNNING | 32:53 | (null) |
+| 8758519 | sa_shared_every_step_s0_seg03 | RUNNING | 37:54 | (null) |
 
 Figure: `success_vs_env_steps.png` (vector: `.svg`); data: `evals.csv`, `raw/*.jsonl`.
 Design, objective and limitations: `DECISIONS.md` (D19–D24).
