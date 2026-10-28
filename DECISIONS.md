@@ -90,3 +90,15 @@ Tags: **[paper]** stated in ARLI v2 · **[code]** taken from pinned dsrl_pi0/ope
   identical treatment); updates start after 100 executed chunks inside the 100k budget; 25 gradient iterations
   per executed chunk; in B–D each iteration updates both modules on separate 256-batches (disclosed as a compute
   difference).
+
+## Observed divergences from the paper (reported, not tuned away)
+
+- V1 Frozen π0 under the async d=20 no-RTC protocol: 24/50 = 0.48 (95% Wilson 0.35–0.61) vs the paper's dashed
+  line ≈ 0.37 (read off the figure). Within the interval; startup convention (D9) and eval seeds (D12) may differ.
+- V2 ARLI seed 0 reaches 26/50 at 50k online env steps (75k total incl. prefill); the paper's mean ARLI curve is
+  ≈ 0.05 there and ≈ 0.5 only near 400k–600k. Candidate causes, none tested yet: prefill-noise convention (D7),
+  budget axis (D11), startup/termination conventions (D9/D10), one seed vs a 3-seed mean. Information leakage was
+  checked: the actor reads only o_{s_j}, o_{m_j} (m_j = T_j − 10) and chunk j−1's committed actions; eval box-pose
+  seeds are disjoint from training seeds.
+- V3 Early instability: ARLI exploration successes appeared at 7k–20k online steps, then policy entropy collapsed
+  (temperature 0.86 → 0.004) and the 25k evaluation was 0/50 (no cube contact) before recovering at 50k.
