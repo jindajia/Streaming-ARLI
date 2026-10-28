@@ -209,3 +209,15 @@ runs `/N/scratch/jindjia/arli/runs_warmstart/ws_<branch>_seed<s>/`; figure `scri
   bit-reproducible: two runs of the same policy, keys and seed diverge from t = 0. Consequences: evaluation numbers
   carry this extra randomness; equivalence checks must hold observations fixed. Check 2 (zero-correction B = A)
   therefore replays A's recorded frames to B whenever the physical state matches exactly.
+- D32 **Residual temperature initialisation.** With SAC's default initial temperature 1.0 the entropy bonus erased the
+  small-noise init within ~200 updates (smoke job 8762934: entropy 11.6 → 21.8, near-uniform over the bound, while the
+  temperature was still 0.96), i.e. random ±0.2 corrections — the large immediate perturbation the design must avoid.
+  The residual actor's own (fresh) temperature therefore starts at 0.01 (order of ARLI's trained temperature,
+  ~0.004–0.008; not copied from the checkpoint) and is auto-tuned toward the same target entropy −16. Observed (smoke job
+  8762943): entropy still rises to ~16 over the first ~200 updates (Adam moves the fresh log-std head regardless of the
+  temperature's scale; sampled corrections ≈ ±0.08/dim, vs the ARLI initial-noise scale 2), then declines toward the
+  target (−1.6 by 1,500 updates). Fixed implementation choice, not tuned.
+- D33 **Validation record.** CPU (`tests/test_warmstart.py`): checks 1–6 pass. GPU: check 2 on the real stack with
+  observations held fixed — 3 episodes bit-identical (job 8762931, `scripts/check_warmstart_gpu.py`); training +
+  deterministic mid-run stop + resume for both branches with identical saved/restored state hashes; branch B policy
+  snapshots contain both actors; frozen-actor hash verified at every eval (job 8762943, `scripts/smoke_ws.sh`).
