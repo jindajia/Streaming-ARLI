@@ -1,6 +1,6 @@
 # STATUS
 
-_Last updated 2026-10-27 22:00 EDT._ All numbers below are measured; nothing is digitised from the paper.
+_Last updated 2026-10-27 23:30 EDT._ All numbers below are measured; nothing is digitised from the paper.
 
 ## Stage summary
 
@@ -30,15 +30,21 @@ prefill 73 episodes / 24,740 env steps / 1,007 latent transitions (32 successful
 
 ## Jobs
 
-| Job | Partition | What | State |
+| Job | Cluster / partition | What | State |
 |---|---|---|---|
-| 8755240 | gpu-debug | R1 check (attribute bug) | FAILED, fixed |
-| 8755266 | gpu-debug | R1 check | COMPLETED |
-| 8755293 | gpu-debug | smoke + frozen baselines | COMPLETED |
-| 8755398/8755399 | gpu | first R2 submissions | cancelled before start (resubmitted with matching wall budget) |
-| 8755407 | gpu-debug | R2 ARLI seed 0, segment 1 (≤0.85 h, then checkpoint) | running |
-| 8755408 | gpu-debug | R2 DSRL seed 0, segment 1 | running |
-| 8755409 | gpu | R2 ARLI seed 0, resume (12 h) | pending (after 8755407) |
-| 8755410 | gpu | R2 DSRL seed 0, resume (12 h) | pending (after 8755408) |
+| 8755240 | BR200 gpu-debug | R1 check (attribute bug) | FAILED, fixed |
+| 8755266 | BR200 gpu-debug | R1 check | COMPLETED |
+| 8755293 | BR200 gpu-debug | smoke + frozen baselines | COMPLETED |
+| 8755398/8755399, 8755409/8755410 | BR200 gpu | 12 h R2 jobs | cancelled unstarted (queue est. start 2026-10-29 23:45) |
+| 8755407 | BR200 gpu-debug (A100) | R2 ARLI seg 1: 0 → 80k | done (clean wall-budget exit; sacct shows FAILED = exit 3) |
+| 8755408 | BR200 gpu-debug (A100) | R2 DSRL seg 1: 0 → 87k | done (same) |
+| 8755751 | BR200 gpu-debug (A100) | R2 ARLI seg 2 | running |
+| 8756469/70/71 | BR200 gpu-debug (A100) | R2 ARLI seg 3–5 (afterany chain) | pending |
+| 12499954 | Quartz h100-debug (H100) | R2 DSRL seg 2 from 87.2k | running |
+| 12499956/57 | Quartz h100-debug | R2 DSRL seg 3–4 (chain) | pending |
 
-Resume command (any time): `export CMD="python -m arli.train --config configs/r2_arli_seed0.yaml --max_wall_hours 11.5"; sbatch -J r2_arli_s0 --time=12:00:00 cluster/run.sbatch`.
+Hardware note: DSRL seed 0 runs its first segment on A100 and later segments on H100 (each segment's host is in
+`launch_*.json`).  Every segment resumes the exact replay/agent/RNG state; numerics differ only at bf16 level.
+
+Resume / extend (any time): BR200 `export CMD="python -m arli.train --config configs/r2_arli_seed0.yaml --max_wall_hours 0.85"; sbatch -J r2_arli_s0_dbgN -p gpu-debug --time=00:59:00 cluster/run.sbatch`;
+Quartz: `ssh quartz.uits.iu.edu 'cd /N/slate/jindjia/SD/VLA/streaming_arli && export CMD="python -m arli.train --config configs/r2_dsrl_seed0.yaml --max_wall_hours 0.85" && sbatch -J r2_dsrl_s0_qN --time=00:59:00 cluster/run_quartz.sbatch'`.
