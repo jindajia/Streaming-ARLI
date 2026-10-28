@@ -1,0 +1,7 @@
+# S1 branch C, seed 0, v2: chunk-level credit assignment (DECISIONS D18).  Replaces s1_C_seed0 (v1 "chain"
+# credit, critics diverged to Q > 0 with rewards <= 0 -> invalid).  Same common R2 checkpoint as branch A.
+name: s1_C_seed0_v2
+branch: C
+seed: 0
+credit: chunk
+init_agent: /N/scratch/jindjia/arli/runs/r2_arli_seed0/ckpt/agent_0600124.msgpack

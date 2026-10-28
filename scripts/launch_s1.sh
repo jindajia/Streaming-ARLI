@@ -13,8 +13,8 @@ PY
 )
 test -f "$CK"
 CMDS=""
-for B in $1; do CMDS+="python -m arli.train_continue --config configs/s1_${B}_seed0.yaml --set init_agent=$CK --max_wall_hours 0.75;"; done
+for B in $1; do CMDS+="python -m arli.train_continue --config configs/s1_${B}_seed0${SUFFIX:-}.yaml --set init_agent=$CK --max_wall_hours 0.75;"; done
 export CMDS="${CMDS%;}"
 N=$(echo $1 | wc -w)
 DEP=${2:+--dependency=afterany:$2}
-sbatch --parsable -J s1_$(echo $1 | tr -d ' ')_seg -p gpu-debug --gpus-per-node=$N --cpus-per-task=$((12*N)) --mem=$((90*N))g --time=00:59:00 $DEP cluster/multi.sbatch
+sbatch --parsable -J s1_$(echo $1 | tr -d " ")${SUFFIX:-}_seg -p gpu-debug --gpus-per-node=$N --cpus-per-task=$((12*N)) --mem=$((90*N))g --time=00:59:00 $DEP cluster/multi.sbatch

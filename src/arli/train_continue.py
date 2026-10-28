@@ -48,6 +48,7 @@ class CConfig:
     capacity_w: int = 8_000
     capacity_u: int = 72_000
     steer_bound: float = 1.0
+    credit: str = "chunk"  # "chunk" (v2, DECISIONS D18) | "chain" (v1, diverged; runs s1_{B,C,D}_seed0)
     log_update_every: int = 1000
 
 
@@ -108,7 +109,7 @@ def main():
         rl.load_agent_state(agent, f.read())
     steer = cfg.branch in ("B", "C", "D")
     if steer:
-        L = SteeringLearner(agent, SteerSpec(cfg.branch, bound=cfg.steer_bound), cfg.seed)
+        L = SteeringLearner(agent, SteerSpec(cfg.branch, bound=cfg.steer_bound), cfg.seed, credit=cfg.credit)
         n_params = L.n_params
         RW = rl.Replay(rl.observation_space("arli"), (1, rl.NOISE_DIM), cfg.capacity_w, cfg.seed, next_space=z_space())
         RU = rl.Replay(z_space(), (1, rl.NOISE_DIM), cfg.capacity_u, cfg.seed + 1, extra=("next_is_w",))
@@ -249,7 +250,7 @@ def main():
         res = run_episode(env, pi0, sched, int(rng_env.integers(cfg.eval_seed_base)), controller(k))
         n_chunks = len(res["executed_decisions"])
         if steer:
-            W, U = steering_transitions(res, sched, cfg.gamma)
+            W, U = steering_transitions(res, sched, cfg.gamma, credit=cfg.credit)
             for tr in W:
                 RW.insert(tr["obs"], tr["action"], tr["reward"], tr["mask"], tr["discount"], tr["next_obs"])
             for tr in U:

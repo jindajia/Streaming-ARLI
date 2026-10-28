@@ -9,7 +9,7 @@ Per chunk j the decision sequence is (augmented-state MDP):
 units: X_tau = tau * eps + (1 - tau) * a), then ``X_{k+1} = X~_k + dt * V(X~_k, tau_k | c_old)``, dt = -0.1.
 The frozen VLM context c_old is never recomputed; fresh information enters only through the actor.
 
-Transitions (DECISIONS.md D13): physical reward -1 per executed chunk (0 + mask 0 for the chunk executing at
+Transitions, v1 "chain" (DECISIONS.md D13; DIVERGED, superseded by D18 "chunk" -- see steering_transitions): physical reward -1 per executed chunk (0 + mask 0 for the chunk executing at
 success) is attached to the last steering transition of the chunk (u_{kL} -> s_{j+1}); every internal transition
 has reward 0 and mask 1; discounts are gamma ** (elapsed env steps) inside the chunk and the remainder on the last
 transition, so each chunk still discounts by gamma ** 25 in total, as in the baseline.
@@ -193,8 +193,9 @@ def _wsub(obs):
     return frozen_dict.FrozenDict({k: obs[k] for k in W_KEYS})
 
 
-@functools.partial(jax.jit, static_argnames=("has_w",))
-def update_step(rng, Aw, Cw, Cw_t, Tw, Au, Cu, Cu_t, Tu, bw, bu, tau_polyak, target_entropy, has_w=True):
+@functools.partial(jax.jit, static_argnames=("has_w", "credit"))
+def update_step(rng, Aw, Cw, Cw_t, Tw, Au, Cu, Cu_t, Tu, bw, bu, tau_polyak, target_entropy, has_w=True,
+                credit="chunk"):
     info = {}
     # ---- augmentation ---------------------------------------------------------------------------
     rng, p = _augment(rng, bu["observations"]["pixels"])
@@ -233,7 +234,11 @@ def update_step(rng, Aw, Cw, Cw_t, Tw, Au, Cu, Cu_t, Tu, bw, bu, tau_polyak, tar
     # ---- noise critic Q_w (next state is always a steering state) --------------------------------
     if has_w:
         rng, k1 = jax.random.split(rng)
-        target_w = bw["rewards"] + bw["discount"] * bw["masks"] * q_next_u(k1, bw["next_observations"])
+        if credit == "chunk":  # next state is s_{j+1}: identical to the ARLI chunk-level target
+            nq_w = q_next_w(k1, _wsub(bw["next_observations"]))
+        else:  # "chain" (v1): next state is the first steering state z_{j,k1}
+            nq_w = q_next_u(k1, bw["next_observations"])
+        target_w = bw["rewards"] + bw["discount"] * bw["masks"] * nq_w
 
         def loss_w(params):
             qs = Cw.apply_fn({"params": params}, bw["observations"], bw["actions"])
@@ -262,8 +267,10 @@ def update_step(rng, Aw, Cw, Cw_t, Tw, Au, Cu, Cu_t, Tu, bw, bu, tau_polyak, tar
 class SteeringLearner:
     """Holds (pi_w, Q_w) warm-started from an ARLI PixelSACLearner and the new shared (pi_u, Q_u)."""
 
-    def __init__(self, arli_agent, spec: SteerSpec, seed: int, log_std_init: float = float(np.log(0.3))):
-        self.spec = spec
+    def __init__(self, arli_agent, spec: SteerSpec, seed: int, log_std_init: float = float(np.log(0.3)),
+                 credit: str = "chunk"):
+        assert credit in ("chunk", "chain")
+        self.spec, self.credit = spec, credit
         k = rl.AGENT_KWARGS
         self.Aw, self.Cw, self.Cw_t, self.Tw = (arli_agent._actor, arli_agent._critic,
                                                 arli_agent._target_critic_params, arli_agent._temp)
@@ -296,7 +303,7 @@ class SteeringLearner:
     def update(self, bw, bu):
         (self.rng, self.Aw, self.Cw, self.Cw_t, self.Tw, self.Au, self.Cu, self.Cu_t, self.Tu, info) = update_step(
             self.rng, self.Aw, self.Cw, self.Cw_t, self.Tw, self.Au, self.Cu, self.Cu_t, self.Tu, bw, bu,
-            self.tau, self.target_entropy, has_w=bw is not None)
+            self.tau, self.target_entropy, has_w=bw is not None, credit=self.credit)
         return info
 
     def sample_u(self, z: dict, key):
@@ -350,8 +357,18 @@ class SteeringController:
                              u_norm=float(np.linalg.norm(u)), dx_norm=float(np.linalg.norm(x_tilde - x)))
 
 
-def steering_transitions(res, sched, gamma):
-    """Returns (w_transitions, u_transitions) with the credit assignment described in the module docstring."""
+def steering_transitions(res, sched, gamma, credit="chunk"):
+    """Returns (w_transitions, u_transitions).
+
+    credit="chunk" (default, v2): every decision of chunk j -- the initial noise w_j and each correction u_{j,k} --
+    gets the chunk-level target r_j + gamma^dt * mask_j * Q_w(s_{j+1}, pi_w(s_{j+1})), dt = physical env steps from
+    that decision to the next initial-noise decision (gamma^25 for w_j, as in ARLI).  One bootstrap hop per chunk,
+    reward counted once per chunk, no Q_u -> Q_u self-bootstrapping.
+    credit="chain" (v1): sequential augmented-state chain s -> z_1 -> ... -> z_L -> s'.  Diverged in S1 seed 0
+    (Q_w, Q_u rose to +28 with rewards <= 0); kept only to reproduce those invalid runs.
+    """
+    if credit == "chunk":
+        return _chunk_transitions(res, sched, gamma)
     js = res["executed_decisions"]
     dec = res["decisions"]
     W, U = [], []
@@ -375,4 +392,26 @@ def steering_transitions(res, sched, gamma):
                 nz = dict(nxt, x_noisy=np.zeros((50, 32), np.float32), td=np.zeros(2, np.float32))
                 U.append(dict(obs=s["obs"], action=s["action"], reward=r, mask=mask,
                               discount=gamma ** (sched.n_exec - used), next_obs=nz, next_is_w=1.0))
+    return W, U
+
+
+def _pad_z(obs):
+    return dict(obs, x_noisy=np.zeros((50, 32), np.float32), td=np.zeros(2, np.float32))
+
+
+def _chunk_transitions(res, sched, gamma):
+    js = res["executed_decisions"]
+    dec = res["decisions"]
+    W, U = [], []
+    for i, j in enumerate(js):
+        last = i == len(js) - 1
+        r, mask = (0.0, 0.0) if (last and res["success"]) else (-1.0, 1.0)
+        w_obs = dec[j]["rec"]["obs"]
+        nxt = _pad_z(dec[j + 1]["rec"]["obs"] if (j + 1) in dec else w_obs)
+        W.append(dict(obs=w_obs, action=dec[j]["rec"]["action"], reward=r, mask=mask,
+                      discount=gamma ** sched.n_exec, next_obs=nxt))
+        for s_ in dec[j]["steer"]:
+            elapsed = (s_["t_now"] - sched.m(j)) if j > 0 else 0
+            U.append(dict(obs=s_["obs"], action=s_["action"], reward=r, mask=mask,
+                          discount=gamma ** (sched.n_exec - elapsed), next_obs=nxt, next_is_w=1.0))
     return W, U

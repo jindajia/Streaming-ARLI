@@ -102,3 +102,20 @@ Tags: **[paper]** stated in ARLI v2 · **[code]** taken from pinned dsrl_pi0/ope
   seeds are disjoint from training seeds.
 - V3 Early instability: ARLI exploration successes appeared at 7k–20k online steps, then policy entropy collapsed
   (temperature 0.86 → 0.004) and the 25k evaluation was 0/50 (no cube contact) before recovering at 50k.
+
+## S1 credit-assignment correction (2026-10-28)
+
+- D18 **v1 "chain" credit was invalid.** In S1 seed 0, branches B and C (9 steering calls per chunk) trained a
+  sequential chain s → z_1 → … → z_9 → s' with γ≈1 per hop and actor maximisation at every hop. Both critics
+  diverged upward (Q_w, Q_u ≈ +28 by 90k although every reward is −1 or 0, so Q ≤ 0 must hold), and success
+  collapsed to ~0/50. D (2 hops) stayed bounded (Q ≈ −4.5); A and R2 (1 hop) never exceeded Q = −2.8. The B/C
+  collapse is therefore an implementation failure, **not** a negative result about steering. Runs
+  `s1_{B,C,D}_seed0` (v1) are kept on scratch for provenance and excluded from comparisons.
+- v2 **"chunk" credit** (default, `credit: chunk`): every decision of chunk j — the initial noise w_j and each
+  correction u_{j,k} — is trained toward the chunk-level target r_j + γ^{dt}·mask_j·Q_w(s_{j+1}, π_w(s_{j+1})),
+  with dt = physical env steps from that decision to the next initial-noise decision (γ^25 for w_j, γ^{25−k} for
+  u_{j,k} when j ≥ 1). One bootstrap hop per chunk as in ARLI; the physical reward is still counted once per chunk
+  and shared (not duplicated) by that chunk's decisions; Q_u never bootstraps from itself. The W-transitions are
+  exactly ARLI's. The intra-chunk steering actions inside the target come from the behaviour policy (n-step-style
+  off-policy bias; accepted, as in standard n-step SAC/DQN). Tested in `tests/test_credit.py`. B, C, D are rerun
+  as `s1_{B,C,D}_seed0_v2` from the same checkpoint; A is unchanged (no steering, unaffected); seed-1 S1 uses v2.
