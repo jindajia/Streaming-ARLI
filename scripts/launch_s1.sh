@@ -13,7 +13,7 @@ PY
 )
 test -f "$CK"
 CMDS=""
-for B in $1; do CMDS+="python -m arli.train_continue --config configs/s1_${B}_seed0.yaml --set init_agent=$CK --max_wall_hours 0.85;"; done
+for B in $1; do CMDS+="python -m arli.train_continue --config configs/s1_${B}_seed0.yaml --set init_agent=$CK --max_wall_hours 0.75;"; done
 export CMDS="${CMDS%;}"
 N=$(echo $1 | wc -w)
 DEP=${2:+--dependency=afterany:$2}
