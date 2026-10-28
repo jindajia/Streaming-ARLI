@@ -1,0 +1,10 @@
+name: ws_smoke
+branch: A
+seed: 0
+source_run: r2_arli_seed0
+run_root: /N/scratch/jindjia/arli/smoke_ws
+warmup_chunks: 8
+additional_env_steps: 1600
+eval_interval: 800
+eval_episodes: 2
+log_update_every: 100

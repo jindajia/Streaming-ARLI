@@ -1,0 +1,7 @@
+# Warm-start continuation, branch B (frozen ARLI actor + new final-step (k=9) residual actor), seed 0.
+# Source: ARLI checkpoint at the 600k evaluation milestone of r2_arli_seed0 (resolved + hashed at runtime).
+# +300k online env steps, fresh replay, 256-chunk warmup inside the budget, 25 updates/executed chunk, eval every 25k.
+name: ws_B_seed0
+branch: B
+seed: 0
+source_run: r2_arli_seed0
