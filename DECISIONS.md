@@ -202,3 +202,10 @@ runs `/N/scratch/jindjia/arli/runs_warmstart/ws_<branch>_seed<s>/`; figure `scri
   computes the interval to the next chunk's k = 0 point, correct only for shared_every_step). 943 of 1,016 stored
   transitions in an early replay part use γ^16. Effective per-chunk discount 0.984 instead of 0.975. Those runs were
   left untouched (still running); the warm-start code uses γ^25 and tests the interval against physical call times.
+- D31 **Renderer non-determinism (affects every experiment's reproducibility).** `scripts/diag_determinism.py`
+  (job 8762925): MuJoCo physics is deterministic (identical qpos for identical actions, within and across env
+  instances) and π0 / the ARLI actor are deterministic for identical inputs, but the EGL-rendered `top` image differs
+  by ±1 intensity between renders of the same state (even in one instance). Closed-loop episodes are therefore not
+  bit-reproducible: two runs of the same policy, keys and seed diverge from t = 0. Consequences: evaluation numbers
+  carry this extra randomness; equivalence checks must hold observations fixed. Check 2 (zero-correction B = A)
+  therefore replays A's recorded frames to B whenever the physical state matches exactly.
