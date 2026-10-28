@@ -1,6 +1,6 @@
 # STATUS
 
-_Last updated 2026-10-27 23:30 EDT._ All numbers below are measured; nothing is digitised from the paper.
+_Last updated 2026-10-28 03:25 EDT._ All numbers below are measured; nothing is digitised from the paper.
 
 ## Stage summary
 
@@ -8,9 +8,11 @@ _Last updated 2026-10-27 23:30 EDT._ All numbers below are measured; nothing is 
 |---|---|---|
 | R0 source/timing audit | done | DECISIONS.md; no author ARLI code (paper-based reconstruction); `tests/test_schedule.py` passes; trace in `results/r1/trace_seed10000000.json` |
 | R1 frozen baseline + smoke | done | `results/r1/` (see below) |
-| R2 Figure 6 pilot (seed 0) | **running** | job table below; `python scripts/progress.py` |
+| R2 Figure 6 pilot (seed 0) | ARLI **complete** (45/50 at 600k); DSRL running (524k, 0/50 so far) | job table below; `python scripts/progress.py` |
 | S0 steering implementation | implemented, smoke-tested | `src/arli/steering.py`; CPU test `tests/test_rl_cpu.py`; GPU smoke in `results/r1/smoke_summary.json` |
-| S1 continuation (A–D) | waiting for the R2 ARLI checkpoint | configs `configs/s1_{A,B,C,D}_seed0.yaml` |
+| S1 continuation (A–D), seed 0 | **running** from `r2_arli_seed0/ckpt/agent_0600124.msgpack`; +0 evals A 47/50, C 25/50 | configs `configs/s1_{A,B,C,D}_seed0.yaml` |
+| Group 1: seed-1 replication (R2 ARLI/DSRL + S1 A–D) | queued (BR200 gpu, nice 500) | `configs/r2_{arli,dsrl}_seed1_std030.yaml`, `configs/s1_*_seed1.yaml` |
+| Group 2: prefill variance-0.3 control (R2 ARLI/DSRL, seed 0) | queued (BR200 gpu, nice 500) | `configs/r2_{arli,dsrl}_seed0_var030.yaml` |
 
 ## R1 results (job 8755240/8755266 checks, 8755293 smoke + baselines)
 
@@ -28,20 +30,33 @@ _Last updated 2026-10-27 23:30 EDT._ All numbers below are measured; nothing is 
 prefill 73 episodes / 24,740 env steps / 1,007 latent transitions (32 successful episodes); online ≈ 4.7 s rollout
 + 4.2 s updates (10.6 ms per gradient step) per 400 env steps; 50-episode eval ≈ 230 s → ≈ 5.5 GPU-h per run.
 
-## Jobs
+## Incident: Quartz node g37 renderer abort (2026-10-28 02:51)
 
-| Job | Cluster / partition | What | State |
-|---|---|---|---|
-| 8755240 | BR200 gpu-debug | R1 check (attribute bug) | FAILED, fixed |
-| 8755266 | BR200 gpu-debug | R1 check | COMPLETED |
-| 8755293 | BR200 gpu-debug | smoke + frozen baselines | COMPLETED |
-| 8755398/8755399, 8755409/8755410 | BR200 gpu | 12 h R2 jobs | cancelled unstarted (queue est. start 2026-10-29 23:45) |
-| 8755407 | BR200 gpu-debug (A100) | R2 ARLI seg 1: 0 → 80k | done (clean wall-budget exit; sacct shows FAILED = exit 3) |
-| 8755408 | BR200 gpu-debug (A100) | R2 DSRL seg 1: 0 → 87k | done (same) |
-| 8755751 | BR200 gpu-debug (A100) | R2 ARLI seg 2 | running |
-| 8756469/70/71 | BR200 gpu-debug (A100) | R2 ARLI seg 3–5 (afterany chain) | pending |
-| 12499954 | Quartz h100-debug (H100) | R2 DSRL seg 2 from 87.2k | running |
-| 12499956/57 | Quartz h100-debug | R2 DSRL seg 3–4 (chain) | pending |
+DSRL seed 0 segments 12501064 / 12501065 / 12501875 and debug job 12501915 aborted (SIGABRT, core dump) inside
+MuJoCo EGL `physics.render` 1–2 episodes after resuming at 524,000 online steps — all on Quartz g37, which had run
+segment 12500083 cleanly. The identical state copied to `/N/scratch/jindjia/arli/debug_runs/` ran cleanly on a BR200
+A100 (job 8757635: passed the crash point and the 525k eval). Not the run state, not the RL code; a first guess
+(EGL device id) was tested and rejected. The real run state was never modified by the failed segments (state is only
+written at evaluations / clean exits). DSRL seed 0 continues on BR200 (job 8757652).
+
+## Jobs (current)
+
+| Job | Cluster / partition | Run(s) | Dependency | State |
+|---|---|---|---|---|
+| 8757650 | BR200 gpu-debug, 2×A100 | S1 seed 0 branches A + C, segment 1 | — | running |
+| 8757651 | BR200 gpu-debug, 2×A100 | S1 seed 0 branches B + D, segment 1 | — | running |
+| 8757670 | BR200 gpu-debug, 2×A100 | S1 seed 0 A + C, segment 2 | afterany:8757650 | queued |
+| 8757652 | BR200 gpu-debug, A100 | R2 DSRL seed 0, resume from 524k | — | queued (Resources) |
+| 8757628 | BR200 gpu, 12 h, nice 500 | r2_arli_seed1_std030 | — | queued (Priority) |
+| 8757630 | BR200 gpu, 12 h, nice 500 | r2_dsrl_seed1_std030 | — | queued (Priority) |
+| 8757631 | BR200 gpu, 12 h, nice 500 | r2_arli_seed0_var030 | — | queued (Priority) |
+| 8757632 | BR200 gpu, 12 h, nice 500 | r2_dsrl_seed0_var030 | — | queued (Priority) |
+| 8757633 | BR200 gpu, 2×A100, 6 h, nice 500 | s1_A_seed1 + s1_C_seed1 | afterok:8757628 | queued (Dependency) |
+| 8757634 | BR200 gpu, 2×A100, 6 h, nice 500 | s1_B_seed1 + s1_D_seed1 | afterok:8757628 | queued (Dependency) |
+
+Completed R2 seed-0 ARLI segments: 8755407, 8755751, 8756469, 8756470, 8756471, 8756523 (BR200 gpu-debug; each
+exits 3 = checkpointed wall budget, shown as FAILED by sacct), 8756898 (found the run complete).
+DSRL seed 0 segments: 8755408 (BR200), 12499954/56/57, 12500083 (Quartz H100, clean), 12501064/65, 12501875 (g37 abort).
 
 Hardware note: DSRL seed 0 runs its first segment on A100 and later segments on H100 (each segment's host is in
 `launch_*.json`).  Every segment resumes the exact replay/agent/RNG state; numerics differ only at bf16 level.

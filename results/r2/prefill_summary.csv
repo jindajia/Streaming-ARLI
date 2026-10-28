@@ -1,3 +1,3 @@
 run,method,seed,prefill_std,prefill_episodes,prefill_successes,prefill_success_rate,prefill_transitions,prefill_env_steps,online_episodes,online_env_steps
-r2_arli_seed0,arli,0,0.3,73,32,0.4383561643835616,1007,24740,2215,595024
+r2_arli_seed0,arli,0,0.3,73,32,0.4383561643835616,1007,24740,2234,600124
 r2_dsrl_seed0,dsrl,0,0.3,72,29,0.4027777777777778,1012,24881,1312,524800
