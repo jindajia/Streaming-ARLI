@@ -1,0 +1,5 @@
+# Group 2 (prefill-noise convention control): R2 naive async DSRL, seed 0, prefill variance 0.3 (std sqrt(0.3)).
+name: r2_dsrl_seed0_var030
+method: dsrl
+seed: 0
+prefill_std: 0.5477225575

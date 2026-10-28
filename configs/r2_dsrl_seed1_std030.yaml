@@ -1,0 +1,5 @@
+# Group 1 (independent seed replication): R2 naive async DSRL, seed 1, prefill std 0.3, fresh run.
+name: r2_dsrl_seed1_std030
+method: dsrl
+seed: 1
+prefill_std: 0.3

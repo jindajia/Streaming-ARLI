@@ -207,6 +207,12 @@ def main():
     if C["online_env_steps"] == 0 and C["prefill_episodes"] and not os.path.exists(f"{run_dir}/ckpt/prefill_done"):
         save_state()
         open(f"{run_dir}/ckpt/prefill_done", "w").close()
+        pre = [json.loads(l) for l in open(f"{run_dir}/episodes.jsonl") if '"phase": "prefill"' in l]
+        n_s = sum(e["success"] for e in pre)
+        with open(f"{run_dir}/prefill_summary.json", "w") as f:
+            json.dump(dict(prefill_std=cfg.prefill_std, episodes=len(pre), successes=n_s,
+                           success_rate=n_s / max(1, len(pre)), transitions=C["prefill_transitions"],
+                           env_steps=C["prefill_env_steps"]), f, indent=1)
         print(f"[prefill] done: {C['prefill_episodes']} episodes, {C['prefill_env_steps']} env steps, "
               f"{C['prefill_transitions']} transitions", flush=True)
 

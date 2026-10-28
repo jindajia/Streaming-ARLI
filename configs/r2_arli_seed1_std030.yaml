@@ -1,0 +1,5 @@
+# Group 1 (independent seed replication): R2 full ARLI, seed 1, prefill std 0.3 (= original protocol), fresh run.
+name: r2_arli_seed1_std030
+method: arli
+seed: 1
+prefill_std: 0.3

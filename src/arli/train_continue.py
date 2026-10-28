@@ -94,6 +94,16 @@ def main():
     env = aloha_env.make_env()
     pi0 = FrozenPi0(sched.num_denoise)
     agent = rl.make_agent("arli", cfg.seed)
+    if cfg.init_agent.startswith("auto:"):  # auto:<R2 run name>@<milestone> -> that run's agent checkpoint
+        src_run, ms = cfg.init_agent[5:].split("@")
+        ev = [json.loads(l) for l in open(f"{cfg.run_root}/{src_run}/evals.jsonl")]
+        hit = [e for e in ev if e["milestone"] == int(ms)]
+        if not hit:
+            sys.exit(f"{src_run} has no evaluation at milestone {ms}; refusing to start")
+        cfg.init_agent = f"{cfg.run_root}/{src_run}/ckpt/agent_{hit[-1]['online_env_steps']:07d}.msgpack"
+        print("resolved init_agent", cfg.init_agent, flush=True)
+        with open(f"{run_dir}/init_agent_resolved.txt", "w") as f:
+            f.write(cfg.init_agent + "\n")
     with open(cfg.init_agent, "rb") as f:
         rl.load_agent_state(agent, f.read())
     steer = cfg.branch in ("B", "C", "D")

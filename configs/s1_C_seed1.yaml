@@ -1,0 +1,6 @@
+# Group 1: S1 branch C for the independent seed-1 replication, from seed 1's OWN R2 ARLI checkpoint (600k eval point),
+# resolved at runtime; never from seed 0.
+name: s1_C_seed1
+branch: C
+seed: 1
+init_agent: auto:r2_arli_seed1_std030@600000

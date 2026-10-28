@@ -1,0 +1,6 @@
+# Group 2 (prefill-noise convention control): R2 full ARLI, seed 0, prefill VARIANCE 0.3 -> std sqrt(0.3).
+# Only the initial (prefill) collection noise differs from r2_arli_seed0; fresh data and fresh training.
+name: r2_arli_seed0_var030
+method: arli
+seed: 0
+prefill_std: 0.5477225575
