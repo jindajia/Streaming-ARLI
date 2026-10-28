@@ -18,10 +18,12 @@ cd /N/slate/jindjia/SD/VLA/streaming_arli
 echo "job=$SLURM_JOB_ID name=$SLURM_JOB_NAME node=$(hostname) start=$(date) git=$(git rev-parse HEAD)"
 nvidia-smi --query-gpu=index,name,memory.total --format=csv,noheader
 IFS=';' read -ra C <<< "$CMDS"
-NG=$(nvidia-smi -L | wc -l); NC=$(( SLURM_CPUS_PER_TASK / ${#C[@]} ))
+IFS=',' read -ra GPUS <<< "$CUDA_VISIBLE_DEVICES"   # physical ids Slurm allocated to this job
+NG=${#GPUS[@]}; NC=$(( SLURM_CPUS_PER_TASK / ${#C[@]} ))
+echo "allocated GPUs: $CUDA_VISIBLE_DEVICES"
 i=0; pids=()
 for cmd in "${C[@]}"; do
-  g=$(( i % NG ))
+  g=${GPUS[$(( i % NG ))]}
   echo "[$i] GPU $g: $cmd"
   ( export CUDA_VISIBLE_DEVICES=$g MUJOCO_EGL_DEVICE_ID=$g OMP_NUM_THREADS=$NC MKL_NUM_THREADS=$NC ARLI_OWNER="${SLURM_JOB_ID}_$i"
     eval "$cmd" ) > /N/scratch/jindjia/arli/logs/${SLURM_JOB_NAME}_${SLURM_JOB_ID}_p$i.out 2>&1 &
