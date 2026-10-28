@@ -2,7 +2,7 @@
 # GPU smoke: real zero-correction equivalence; short training + checkpoint + resume for both branches.
 set -e
 rm -rf /N/scratch/jindjia/arli/smoke_ws
-python scripts/check_warmstart_gpu.py
+[ -n "$SKIP_CHECK2" ] || python scripts/check_warmstart_gpu.py
 for B in A B; do
   A="--config configs/warmstart/smoke.yaml --set name=smoke_$B branch=$B"
   python -m arli.train_warmstart $A --max_wall_hours 0.03 || echo "first run exit $?"

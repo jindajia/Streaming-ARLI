@@ -235,7 +235,7 @@ def main():
                     upd = {}
         C["wall_update"] += time.time() - t0
         log_ep(phase="warmup" if not updating else "online", seed=res["seed"], success=res["success"],
-               t_end=res["t_end"], chunks=n, max_reward=res["max_reward"], **C)
+               t_end=res["t_end"], episode_chunks=n, max_reward=res["max_reward"], **C)
     with open(f"{run_dir}/DONE", "w") as f:
         f.write(f"additional_env_steps={C['online_env_steps']} job={os.environ.get('SLURM_JOB_ID')} {time.strftime('%F %T')}\n")
     print(f"DONE {C}", flush=True)
