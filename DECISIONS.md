@@ -119,3 +119,53 @@ Tags: **[paper]** stated in ARLI v2 · **[code]** taken from pinned dsrl_pi0/ope
   exactly ARLI's. The intra-chunk steering actions inside the target come from the behaviour policy (n-step-style
   off-policy bias; accepted, as in standard n-step SAC/DQN). Tested in `tests/test_credit.py`. B, C, D are rerun
   as `s1_{B,C,D}_seed0_v2` from the same checkpoint; A is unchanged (no steering, unaffected); seed-1 S1 uses v2.
+
+## Single-actor comparison (2026-10-28) — replaces the superseded two-actor warm-start S1
+
+Two peer methods; neither is the "main" method. Code: `src/arli/single_actor.py`, `src/arli/train_single.py`;
+configs `configs/single/`; runs `/N/scratch/jindjia/arli/runs_single/sa_<method>_seed<s>/`; results
+`results/single_actor_comparison/`.
+
+- D19 **Methods.** `shared_every_step`: one actor (one parameter set, one tanh-Gaussian output head) called before
+  every denoising iteration k = 0…9 (10 calls/chunk); there is no separate initial-noise actor or head.
+  `final_step_only`: one actor called only before iteration k = 9 (1 call/chunk); initial noise is π0's fixed
+  convention X_0 ~ N(0, I), shape (50, 32) i.i.d.; iterations 0…8 unsteered. Same architecture for both. 10 iterations
+  for both methods and the ARLI reference.
+- D20 **Action semantics (fixed implementation choices, not validated).** Actor output a ∈ [−1, 1]^32.
+  k = 0 (shared_every_step only): initial noise X_0 = broadcast_50(2·a) (2 = DSRL/ARLI b_w). k ≥ 1 (both methods):
+  X~_k = X_k + 0.2·broadcast_50(a), constant scale 0.2 at every k (identical between methods at corresponding k).
+  Rationale for 0.2 rather than the superseded α(τ)=τ with bound 1: in the superseded v2 runs, τ-scaled ±1 residuals
+  at every step drove success from 19–22/50 to 0/50 within 10k steps while their critics stayed bounded (Q ≈ −7).
+  Whether 0.2 is a good value is untested.
+- D21 **Actor input** (both methods, at the moment of the call): cam_high 64×64 of the inference-start observation
+  o_{s_j} ++ newest frame o_t (6 channels), joint states q(o_{s_j}) ++ q(o_t) (28), committed actions of [s_j, T_j)
+  (20×14), current trajectory X_k (50×32, first 14 dims encoded by a 700→64 linear+LN+tanh), and
+  td = (τ_k, δ = (T_j − t)/20, f) with sinusoidal features. k = 0 call: X placeholder = zeros, τ = 1, f = 1
+  (first-call indicator); k ≥ 1: f = 0. Call time t = m_j + k (one expert iteration per env step inside the
+  10-step remaining delay), so the call sees o_{m_j+k}; the startup chunk j = 0 is computed with the clock frozen
+  (all calls see o_0). The VLM context is the inference-start observation and is never recomputed.
+  Parameters: actor 1,176,214; critic ensemble (10 Q) 2,057,696 (ARLI R2: actor 1,116,886, critics 1,869,344; the
+  difference is the X encoder and time features). Actor overhead is idealised into the per-iteration slot
+  (information-timing experiment, not a latency claim).
+- D22 **Objective.** SAC over actor calls with a chunk-level bootstrap: for call d = (j, k) of executed chunk j,
+  target = r_j + γ^{dt}·mask_j·mean_i Q̄_i(z', a'), a' ~ π(z'), z' = input of the first call of chunk j+1
+  (k = 0 for shared_every_step, k = 9 for final_step_only), dt = env steps from the call to z' (chunk total γ^25 as in
+  ARLI). r_j = −1 per executed chunk, 0 and mask 0 for the chunk executing at success; each reward counted once per
+  chunk and shared by its calls. final_step_only: exactly ARLI's chunk-level target. shared_every_step:
+  n-step-style — the later corrections of the same chunk that sit between d and z' are the behaviour policy's (off-
+  policy bias), and each call is improved against Q given those later corrections (no explicit intra-chunk
+  sequential credit). No Q→Q hop inside a chunk (the sequential "chain" target diverged earlier, D18). Entropy target
+  −16, no entropy term in the backup, 10-critic mean (no clipped Q), as in R2. **Limitations:** the intra-chunk
+  off-policy bias is uncorrected; all calls share one critic with call-position inputs (τ, f); no validation yet
+  that this objective optimises the 10-call composite policy well — only that it is mechanically correct
+  (`tests/test_single_actor.py`).
+- D23 **Training budget.** Fresh actor/critic/temperature/optimizers/replay (no R2/S1 weights). Prefill: episodes
+  until > 1000 executed chunks; every actor output is drawn from N(0, (0.3/2)²) so the k = 0 initial noise is
+  N(0, 0.3²) exactly like ARLI's prefill; final_step_only keeps its fixed N(0, I) initial noise in prefill and
+  online (only its k = 9 correction is randomised in prefill). Online: 600k env steps, **25 gradient updates per
+  executed chunk for both methods** (= ARLI; not ×10 for shared_every_step's 10 calls); batches of 256 actor-call
+  transitions sampled uniformly. Logged: prefill/online/total env steps, actor calls (prefill/online/eval), gradient
+  steps, wall time per phase (GPU-job time).
+- D24 **Reporting.** Training jobs call `scripts/report_single.py` at each 100k milestone and at completion: dedicated
+  clone `/N/scratch/jindjia/arli/report_repo`, atomic lock dir `/N/scratch/jindjia/arli/report_single.lock`,
+  commits only `results/single_actor_comparison/` to main (rebase/retry). Reporting failures never stop training.
