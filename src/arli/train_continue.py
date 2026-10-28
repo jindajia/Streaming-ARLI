@@ -55,6 +55,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--config", required=True)
     ap.add_argument("--set", nargs="*", default=[])
+    ap.add_argument("--max_wall_hours", type=float, default=1e9, help="checkpoint and exit before this")
     args = ap.parse_args()
     with open(args.config) as f:
         d = yaml.safe_load(f)
@@ -229,6 +230,10 @@ def main():
             save_state(tag=f"{C['online_env_steps']:07d}")
         if C["online_env_steps"] >= cfg.online_env_steps:
             break
+        if (time.time() - wall0) / 3600 > args.max_wall_hours:
+            save_state()
+            print("wall-clock budget reached; checkpointed; exiting for resume", flush=True)
+            sys.exit(3)
         t0 = time.time()
         train_key, k = jax.random.split(train_key)
         res = run_episode(env, pi0, sched, int(rng_env.integers(cfg.eval_seed_base)), controller(k))

@@ -81,11 +81,12 @@ class JsonlLog:
 def claim_run_dir(run_dir):
     """Refuse to run if another live Slurm job owns this run directory (resume-chains must not overlap)."""
     owner = f"{run_dir}/OWNER"
-    me = os.environ.get("SLURM_JOB_ID", f"pid{os.getpid()}")
+    me = os.environ.get("ARLI_OWNER") or os.environ.get("SLURM_JOB_ID", f"pid{os.getpid()}")
     if os.path.exists(owner):
         other = open(owner).read().strip()
-        if other != me and other.isdigit():
-            alive = subprocess.run(["squeue", "-h", "-j", other], capture_output=True, text=True).stdout.strip()
+        other_job = other.split("_")[0]
+        if other != me and other_job.isdigit() and other_job != os.environ.get("SLURM_JOB_ID"):
+            alive = subprocess.run(["squeue", "-h", "-j", other_job], capture_output=True, text=True).stdout.strip()
             if alive:
                 sys.exit(f"run dir {run_dir} is owned by running job {other}; refusing to start")
     with open(owner, "w") as f:
