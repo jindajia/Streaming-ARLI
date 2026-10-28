@@ -21,7 +21,9 @@ import jax.numpy as jnp
 import numpy as np
 from openpi.models import model as _model
 from openpi.models.pi0 import make_attn_mask
-from openpi.policies import policy_config
+from openpi import transforms
+from openpi.policies import policy as _policy
+from openpi.training import checkpoints as _checkpoints
 from openpi.shared import download
 from openpi.training import config as openpi_config
 from openpi_client import image_tools
@@ -53,8 +55,21 @@ class FrozenPi0:
         self.num_steps = num_steps
         self.config = openpi_config.get_config(CONFIG_NAME)
         self.checkpoint_dir = download.maybe_download(CHECKPOINT)
-        self.policy = policy_config.create_trained_policy(self.config, self.checkpoint_dir)
-        self.model = self.policy._model
+        # == policy_config.create_trained_policy (openpi a6d2400), but keeping a handle on the model
+        self.model = self.config.model.load(
+            _model.restore_params(self.checkpoint_dir / "params", dtype=jnp.bfloat16))
+        data_config = self.config.data.create(self.config.assets_dirs, self.config.model)
+        norm_stats = _checkpoints.load_norm_stats(self.checkpoint_dir / "assets", data_config.asset_id)
+        self.policy = _policy.Policy(
+            self.model,
+            transforms=[transforms.InjectDefaultPrompt(None), *data_config.data_transforms.inputs,
+                        transforms.Normalize(norm_stats, use_quantiles=data_config.use_quantile_norm),
+                        *data_config.model_transforms.inputs],
+            output_transforms=[*data_config.model_transforms.outputs,
+                               transforms.Unnormalize(norm_stats, use_quantiles=data_config.use_quantile_norm),
+                               *data_config.data_transforms.outputs],
+            metadata=self.config.policy_metadata,
+        )
         self.action_horizon = self.model.action_horizon
         self.action_dim = self.model.action_dim
         assert (self.action_horizon, self.action_dim) == (50, 32)
