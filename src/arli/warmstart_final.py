@@ -38,6 +38,7 @@ from arli.controllers import broadcast_noise, rl_obs_from_ctx
 from arli.single_actor import C_SCALE, SingleActorLearner, make_z
 
 RES_INIT_STD = 0.1
+RES_INIT_TEMPERATURE = 0.01  # SAC temperature of the NEW residual actor at start (D32); auto-tuned afterwards
 FINAL_K = 9
 
 
@@ -65,8 +66,13 @@ def tree_hash(tree):
 class ResidualLearner(SingleActorLearner):
     """Fresh residual actor + 10-critic ensemble + temperature; zero-mean, small-noise actor initialisation."""
 
-    def __init__(self, seed: int, init_std: float = RES_INIT_STD):
+    def __init__(self, seed: int, init_std: float = RES_INIT_STD, init_temperature: float = RES_INIT_TEMPERATURE):
         super().__init__(seed + 1_000_003)  # independent of the ARLI agent's init stream
+        from jaxrl2.agents.pixel_sac.temperature import Temperature
+        from jaxrl2.agents.pixel_sac.pixel_sac_learner import TrainState
+        tdef = Temperature(init_temperature)
+        self.T = TrainState.create(apply_fn=tdef.apply, params=tdef.init(jax.random.PRNGKey(0))["params"],
+                                   tx=self.T.tx, batch_stats=None)
         p = frozen_dict.unfreeze(self.A.params)
         net = p["network"]
         net["Dense_0"]["kernel"] = jnp.zeros_like(net["Dense_0"]["kernel"])  # mean head

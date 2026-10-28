@@ -5,7 +5,7 @@ rm -rf /N/scratch/jindjia/arli/smoke_ws
 [ -n "$SKIP_CHECK2" ] || python scripts/check_warmstart_gpu.py
 for B in A B; do
   A="--config configs/warmstart/smoke.yaml --set name=smoke_$B branch=$B"
-  python -m arli.train_warmstart $A --max_wall_hours 0.03 || echo "first run exit $?"
+  python -m arli.train_warmstart $A --stop_after_episodes 4 || echo "first run exit $?"
   python -m arli.train_warmstart $A
 done
 python - <<'PY'

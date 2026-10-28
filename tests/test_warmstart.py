@@ -79,9 +79,12 @@ mean = np.asarray(dist.distribution._loc)
 std = np.asarray(dist.distribution._scale_diag)
 acts = np.concatenate([res["decisions"][j]["steer"][0]["action"] for j in res["executed_decisions"]])
 assert np.all(mean == 0.0) and np.allclose(std, RES_INIT_STD)
+from arli.warmstart_final import RES_INIT_TEMPERATURE  # noqa: E402
+assert np.isclose(float(R.T.apply_fn({"params": R.T.params})), RES_INIT_TEMPERATURE)
 assert np.all(acts != 0.0) and np.abs(acts).std() < 2 * RES_INIT_STD
 print(f"[1] residual init: mean exactly 0, std {RES_INIT_STD}; sampled |a| mean {np.abs(acts).mean():.3f} (non-zero); "
-      f"correction scale {C_SCALE} -> |dX| ~ {C_SCALE * np.abs(acts).mean():.3f}/dim")
+      f"correction scale {C_SCALE} -> |dX| ~ {C_SCALE * np.abs(acts).mean():.3f}/dim; residual temperature init "
+      f"{float(R.T.apply_fn({'params': R.T.params})):.3g}")
 
 # 2. zero-correction B == A with matched initial-noise randomness and env seed
 for success_at in (None, 150):

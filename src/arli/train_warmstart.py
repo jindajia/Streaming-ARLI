@@ -48,6 +48,7 @@ def main():
     ap.add_argument("--config", required=True)
     ap.add_argument("--set", nargs="*", default=[])
     ap.add_argument("--max_wall_hours", type=float, default=1e9)
+    ap.add_argument("--stop_after_episodes", type=int, default=0, help="testing: checkpoint+exit(3) after N episodes")
     args = ap.parse_args()
     d = yaml.safe_load(open(args.config))
     for o in args.set:
@@ -109,6 +110,17 @@ def main():
     with open(f"{run_dir}/params.json", "w") as f:
         json.dump(params, f, indent=1)
 
+    def state_hashes():
+        h = dict(arli_actor=tree_hash(agent._actor.params))
+        if cfg.branch == "A":
+            h.update(arli_critic=tree_hash(agent._critic.params), arli_opt=tree_hash(agent._actor.opt_state),
+                     replay_size=len(Rp))
+        else:
+            h.update(res_actor=tree_hash(res_learner.A.params), res_critic=tree_hash(res_learner.C.params),
+                     res_opt=tree_hash(res_learner.A.opt_state), res_temp=tree_hash(res_learner.T.params),
+                     replay_size=Rp.size)
+        return h
+
     C = dict(online_env_steps=0, chunks=0, episodes=0, successes=0, transitions=0, grad_steps=0, next_eval=0,
              n_evals=0, wall_online=0.0, wall_update=0.0, wall_eval=0.0, wall_total=0.0, segments=0,
              residual_calls=0)
@@ -130,8 +142,10 @@ def main():
             Rp.load(f"{run_dir}/replay", S["replay"])
             assert tree_hash(agent._actor.params) == S["arli_actor_hash"], "frozen ARLI actor differs on resume"
         print(f"RESUMED {C}", flush=True)
+        print("RESUMED_HASHES", state_hashes(), flush=True)
     C["segments"] += 1
     seg0, total0 = time.time(), C["wall_total"]
+    seg_episodes = 0
 
     log_ep = JsonlLog(f"{run_dir}/episodes.jsonl")
     log_eval = JsonlLog(f"{run_dir}/evals.jsonl")
@@ -192,8 +206,10 @@ def main():
             save_state(tag=f"{C['online_env_steps']:07d}")
         if C["online_env_steps"] >= cfg.additional_env_steps:
             break
-        if (time.time() - wall0) / 3600 > args.max_wall_hours:
+        if (time.time() - wall0) / 3600 > args.max_wall_hours or (
+                args.stop_after_episodes and seg_episodes >= args.stop_after_episodes):
             save_state()
+            print("SAVED_HASHES", state_hashes(), flush=True)
             print("wall-clock budget reached; checkpointed; exiting for resume", flush=True)
             sys.exit(3)
         t0 = time.time()
@@ -214,6 +230,7 @@ def main():
         C["online_env_steps"] += res["t_end"]
         C["chunks"] += n
         C["episodes"] += 1
+        seg_episodes += 1
         C["successes"] += int(res["success"])
         C["wall_online"] += time.time() - t0
         t0 = time.time()
