@@ -1,12 +1,12 @@
 # Single-actor comparison — status
 
-_Auto-generated 2026-10-28 11:42 EDT by `scripts/report_single.py` (sa_shared_every_step_seed1 milestone 100000)._
+_Auto-generated 2026-10-28 11:42 EDT by `scripts/report_single.py` (sa_shared_every_step_seed0 milestone 100000)._
 
 Methods train from RL step 0 with the frozen π0 backbone; ARLI curves are the R2 runs with the same protocol and prefill std 0.3. Real evaluations only.
 
 | run | latest eval step | successes / 50 | prefill env steps | grad steps | online actor calls | wall h |
 |---|---|---|---|---|---|---|
-| `sa_shared_every_step_seed0` | 75,200 | 0 | 24,909 | 75,200 | 31960 | 0.9 |
+| `sa_shared_every_step_seed0` | 100,000 | 0 | 24,909 | 100,000 | 42500 | 1.1 |
 | `sa_final_step_only_seed0` | 100,241 | 34 | 24,793 | 102,325 | 4254 | 1.0 |
 | `sa_shared_every_step_seed1` | 100,244 | 0 | 24,847 | 100,325 | 42616 | 1.1 |
 | `sa_final_step_only_seed1` | 100,174 | 31 | 24,854 | 101,675 | 4248 | 1.0 |
@@ -61,10 +61,10 @@ Methods train from RL step 0 with the frozen π0 backbone; ARLI curves are the R
 | 8758547 | sa_shared_every_step_s1_seg05 | PENDING | 0:00 | afterany:8758546(unfulfilled) |
 | 8758546 | sa_shared_every_step_s1_seg04 | PENDING | 0:00 | afterany:8758545(unfulfilled) |
 | 8758545 | sa_shared_every_step_s1_seg03 | PENDING | 0:00 | afterany:8758544(unfulfilled) |
-| 8758518 | sa_shared_every_step_s0_seg02 | RUNNING | 28:35 | (null) |
-| 8758531 | sa_final_step_only_s0_seg02 | RUNNING | 28:35 | (null) |
-| 8758557 | sa_final_step_only_s1_seg02 | RUNNING | 23:34 | (null) |
-| 8758544 | sa_shared_every_step_s1_seg02 | RUNNING | 28:35 | (null) |
+| 8758518 | sa_shared_every_step_s0_seg02 | RUNNING | 28:41 | (null) |
+| 8758531 | sa_final_step_only_s0_seg02 | RUNNING | 28:41 | (null) |
+| 8758557 | sa_final_step_only_s1_seg02 | RUNNING | 23:40 | (null) |
+| 8758544 | sa_shared_every_step_s1_seg02 | RUNNING | 28:41 | (null) |
 
 Figure: `success_vs_env_steps.png` (vector: `.svg`); data: `evals.csv`, `raw/*.jsonl`.
 Design, objective and limitations: `DECISIONS.md` (D19–D24).
