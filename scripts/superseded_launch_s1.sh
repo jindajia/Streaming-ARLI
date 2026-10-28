@@ -1,4 +1,5 @@
 #!/bin/bash
+echo "SUPERSEDED (2026-10-28): the two-actor ARLI-checkpoint warm-start S1 design is retired; see results/superseded_warmstart_s1/README.md" >&2; exit 1
 # Launch one 1-h segment of the S1 branches from the common R2 ARLI checkpoint (the 600k evaluation point).
 # Usage: bash scripts/launch_s1.sh "A C" [dependency_jobid]   -> one 2-GPU gpu-debug job running both branches
 set -e
