@@ -4,7 +4,7 @@
 set -e
 cd /N/slate/jindjia/SD/VLA/streaming_arli
 R=/N/scratch/jindjia/arli/runs/r2_arli_seed0
-CK=$(python - <<'PY'
+CK=$(/N/scratch/jindjia/envs/arli/bin/python - <<'PY'
 import json
 ev = [json.loads(l) for l in open("/N/scratch/jindjia/arli/runs/r2_arli_seed0/evals.jsonl")]
 e = [x for x in ev if x["milestone"] == 600000][-1]
