@@ -1,6 +1,6 @@
 # STATUS
 
-_Last updated 2026-10-28 03:25 EDT._ All numbers below are measured; nothing is digitised from the paper.
+_Last updated 2026-10-28 09:10 EDT._ Overview figure: `results/overview.png` (`scripts/plot_overview.py`). All numbers below are measured; nothing is digitised from the paper.
 
 ## Stage summary
 
@@ -8,11 +8,11 @@ _Last updated 2026-10-28 03:25 EDT._ All numbers below are measured; nothing is 
 |---|---|---|
 | R0 source/timing audit | done | DECISIONS.md; no author ARLI code (paper-based reconstruction); `tests/test_schedule.py` passes; trace in `results/r1/trace_seed10000000.json` |
 | R1 frozen baseline + smoke | done | `results/r1/` (see below) |
-| R2 Figure 6 pilot (seed 0) | ARLI **complete** (45/50 at 600k); DSRL running (524k, 0/50 so far) | job table below; `python scripts/progress.py` |
+| R2 Figure 6 pilot (seed 0) | **complete**: ARLI 45/50 at 600k; DSRL 0/50 at all 25 evals | job table below; `python scripts/progress.py` |
 | S0 steering implementation | implemented, smoke-tested | `src/arli/steering.py`; CPU test `tests/test_rl_cpu.py`; GPU smoke in `results/r1/smoke_summary.json` |
-| S1 continuation (A–D), seed 0 | **running** from `r2_arli_seed0/ckpt/agent_0600124.msgpack`; +0 evals A 47/50, C 25/50 | configs `configs/s1_{A,B,C,D}_seed0.yaml` |
-| Group 1: seed-1 replication (R2 ARLI/DSRL + S1 A–D) | queued (BR200 gpu, nice 500) | `configs/r2_{arli,dsrl}_seed1_std030.yaml`, `configs/s1_*_seed1.yaml` |
-| Group 2: prefill variance-0.3 control (R2 ARLI/DSRL, seed 0) | queued (BR200 gpu, nice 500) | `configs/r2_{arli,dsrl}_seed0_var030.yaml` |
+| S1 continuation (A–D), seed 0 | A **complete** (+100k: 38/50). v1 B/C/D **invalid** (critic divergence, DECISIONS D18); v2 B/C/D running (jobs 8758244/45, chained 8758246/47) | configs `configs/s1_{A,B,C,D}_seed0.yaml` |
+| Group 1: seed-1 replication (R2 ARLI/DSRL + S1 A–D) | R2 running (jobs 8757628/30, ~100k); S1 seed 1 waits on 8757628 (uses v2 credit) | `configs/r2_{arli,dsrl}_seed1_std030.yaml`, `configs/s1_*_seed1.yaml` |
+| Group 2: prefill variance-0.3 control (R2 ARLI/DSRL, seed 0) | running (jobs 8757631/32, ~100k) | `configs/r2_{arli,dsrl}_seed0_var030.yaml` |
 
 ## R1 results (job 8755240/8755266 checks, 8755293 smoke + baselines)
 
