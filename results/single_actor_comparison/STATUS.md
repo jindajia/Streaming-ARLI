@@ -1,15 +1,15 @@
 # Single-actor comparison — status
 
-_Auto-generated 2026-10-28 13:04 EDT by `scripts/report_single.py` (sa_shared_every_step_seed1 milestone 200000)._
+_Auto-generated 2026-10-28 15:09 EDT by `scripts/report_single.py` (sa_final_step_only_seed1 milestone 300000)._
 
 Methods train from RL step 0 with the frozen π0 backbone; ARLI curves are the R2 runs with the same protocol and prefill std 0.3. Real evaluations only.
 
 | run | latest eval step | successes / 50 | prefill env steps | grad steps | online actor calls | wall h |
 |---|---|---|---|---|---|---|
-| `sa_shared_every_step_seed0` | 200,000 | 0 | 24,909 | 200,000 | 85000 | 2.1 |
-| `sa_final_step_only_seed0` | 200,124 | 31 | 24,793 | 205,000 | 8490 | 2.0 |
-| `sa_shared_every_step_seed1` | 200,230 | 3 | 24,847 | 200,450 | 85128 | 2.1 |
-| `sa_final_step_only_seed1` | 200,175 | 26 | 24,854 | 204,125 | 8487 | 1.9 |
+| `sa_shared_every_step_seed0` | 250,096 | 2 | 24,909 | 250,175 | 106300 | 2.6 |
+| `sa_final_step_only_seed0` | 275,237 | 35 | 24,793 | 282,525 | 11678 | 2.7 |
+| `sa_shared_every_step_seed1` | 250,345 | 2 | 24,847 | 250,650 | 106435 | 2.6 |
+| `sa_final_step_only_seed1` | 300,258 | 30 | 24,854 | 306,675 | 12734 | 2.8 |
 | `r2_arli_seed0` | 600,124 | 45 | 24,740 | 619,775 | — | — |
 | `r2_arli_seed1_std030` | 600,139 | 42 | 24,975 | 619,675 | — | — |
 
@@ -26,7 +26,6 @@ Methods train from RL step 0 with the frozen π0 backbone; ARLI curves are the R
 | 8758536 | sa_final_step_only_s0_seg07 | PENDING | 0:00 | afterany:8758535(unfulfilled) |
 | 8758535 | sa_final_step_only_s0_seg06 | PENDING | 0:00 | afterany:8758534(unfulfilled) |
 | 8758534 | sa_final_step_only_s0_seg05 | PENDING | 0:00 | afterany:8758533(unfulfilled) |
-| 8758533 | sa_final_step_only_s0_seg04 | PENDING | 0:00 | afterany:8758532(unfulfilled) |
 | 8758529 | sa_shared_every_step_s0_seg13 | PENDING | 0:00 | afterany:8758528(unfulfilled) |
 | 8758528 | sa_shared_every_step_s0_seg12 | PENDING | 0:00 | afterany:8758527(unfulfilled) |
 | 8758527 | sa_shared_every_step_s0_seg11 | PENDING | 0:00 | afterany:8758526(unfulfilled) |
@@ -36,7 +35,6 @@ Methods train from RL step 0 with the frozen π0 backbone; ARLI curves are the R
 | 8758523 | sa_shared_every_step_s0_seg07 | PENDING | 0:00 | afterany:8758522(unfulfilled) |
 | 8758522 | sa_shared_every_step_s0_seg06 | PENDING | 0:00 | afterany:8758521(unfulfilled) |
 | 8758521 | sa_shared_every_step_s0_seg05 | PENDING | 0:00 | afterany:8758520(unfulfilled) |
-| 8758520 | sa_shared_every_step_s0_seg04 | PENDING | 0:00 | afterany:8758519(unfulfilled) |
 | 8758568 | sa_final_step_only_s1_seg13 | PENDING | 0:00 | afterany:8758567(unfulfilled) |
 | 8758567 | sa_final_step_only_s1_seg12 | PENDING | 0:00 | afterany:8758566(unfulfilled) |
 | 8758566 | sa_final_step_only_s1_seg11 | PENDING | 0:00 | afterany:8758565(unfulfilled) |
@@ -46,7 +44,6 @@ Methods train from RL step 0 with the frozen π0 backbone; ARLI curves are the R
 | 8758562 | sa_final_step_only_s1_seg07 | PENDING | 0:00 | afterany:8758561(unfulfilled) |
 | 8758561 | sa_final_step_only_s1_seg06 | PENDING | 0:00 | afterany:8758560(unfulfilled) |
 | 8758560 | sa_final_step_only_s1_seg05 | PENDING | 0:00 | afterany:8758559(unfulfilled) |
-| 8758559 | sa_final_step_only_s1_seg04 | PENDING | 0:00 | afterany:8758558(unfulfilled) |
 | 8758555 | sa_shared_every_step_s1_seg13 | PENDING | 0:00 | afterany:8758554(unfulfilled) |
 | 8758554 | sa_shared_every_step_s1_seg12 | PENDING | 0:00 | afterany:8758553(unfulfilled) |
 | 8758553 | sa_shared_every_step_s1_seg11 | PENDING | 0:00 | afterany:8758552(unfulfilled) |
@@ -56,11 +53,10 @@ Methods train from RL step 0 with the frozen π0 backbone; ARLI curves are the R
 | 8758549 | sa_shared_every_step_s1_seg07 | PENDING | 0:00 | afterany:8758548(unfulfilled) |
 | 8758548 | sa_shared_every_step_s1_seg06 | PENDING | 0:00 | afterany:8758547(unfulfilled) |
 | 8758547 | sa_shared_every_step_s1_seg05 | PENDING | 0:00 | afterany:8758546(unfulfilled) |
-| 8758546 | sa_shared_every_step_s1_seg04 | PENDING | 0:00 | afterany:8758545(unfulfilled) |
-| 8758558 | sa_final_step_only_s1_seg03 | RUNNING | 35:26 | (null) |
-| 8758532 | sa_final_step_only_s0_seg03 | RUNNING | 40:27 | (null) |
-| 8758545 | sa_shared_every_step_s1_seg03 | RUNNING | 40:27 | (null) |
-| 8758519 | sa_shared_every_step_s0_seg03 | RUNNING | 45:28 | (null) |
+| 8758520 | sa_shared_every_step_s0_seg04 | RUNNING | 39:52 | (null) |
+| 8758533 | sa_final_step_only_s0_seg04 | RUNNING | 39:52 | (null) |
+| 8758546 | sa_shared_every_step_s1_seg04 | RUNNING | 39:52 | (null) |
+| 8758559 | sa_final_step_only_s1_seg04 | RUNNING | 39:52 | (null) |
 
 Figure: `success_vs_env_steps.png` (vector: `.svg`); data: `evals.csv`, `raw/*.jsonl`.
 Design, objective and limitations: `DECISIONS.md` (D19–D24).
