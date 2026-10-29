@@ -1,0 +1,11 @@
+{
+ "main_matrix_rollouts": 264,
+ "snapshots": 22,
+ "missing": [
+  "s004_transfer_p5",
+  "s004_transfer_p10"
+ ],
+ "cells": 88,
+ "anomalies": [],
+ "terminated_before_handoff": []
+}

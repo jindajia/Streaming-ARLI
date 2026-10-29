@@ -1,0 +1,2979 @@
+[
+ {
+  "question": "A_forced_vs_forced",
+  "snapshot_id": "s014_ordinary_motion_p5",
+  "phase": "ordinary_motion",
+  "source_seed": 10000014,
+  "p": 5,
+  "a": "R10",
+  "b": "R15",
+  "both": 3,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   0.0019807479173915565,
+   0.0019708639654861804,
+   0.005912599787807338
+  ],
+  "dtime": [
+   -2,
+   -2,
+   -6
+  ],
+  "n": 3
+ },
+ {
+  "question": "A_forced_vs_forced",
+  "snapshot_id": "s014_ordinary_motion_p5",
+  "phase": "ordinary_motion",
+  "source_seed": 10000014,
+  "p": 5,
+  "a": "R10",
+  "b": "R20",
+  "both": 3,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   0.0019807479173915565,
+   0.0029548180467363627,
+   0.0
+  ],
+  "dtime": [
+   -2,
+   -3,
+   0
+  ],
+  "n": 3
+ },
+ {
+  "question": "A_forced_vs_forced",
+  "snapshot_id": "s014_ordinary_motion_p5",
+  "phase": "ordinary_motion",
+  "source_seed": 10000014,
+  "p": 5,
+  "a": "R15",
+  "b": "R20",
+  "both": 3,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   0.0,
+   0.0009839540812501824,
+   -0.005912599787807338
+  ],
+  "dtime": [
+   0,
+   -1,
+   6
+  ],
+  "n": 3
+ },
+ {
+  "question": "B_forced_vs_baseline",
+  "snapshot_id": "s014_ordinary_motion_p5",
+  "phase": "ordinary_motion",
+  "source_seed": 10000014,
+  "p": 5,
+  "a": "R10",
+  "b": "baseline",
+  "both": 3,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   0.0019807479173915565,
+   0.003937788173905221,
+   0.005912599787807338
+  ],
+  "dtime": [
+   -2,
+   -4,
+   -6
+  ],
+  "n": 3
+ },
+ {
+  "question": "B_forced_vs_baseline",
+  "snapshot_id": "s014_ordinary_motion_p5",
+  "phase": "ordinary_motion",
+  "source_seed": 10000014,
+  "p": 5,
+  "a": "R15",
+  "b": "baseline",
+  "both": 3,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   0.0,
+   0.001966924208419041,
+   0.0
+  ],
+  "dtime": [
+   0,
+   -2,
+   0
+  ],
+  "n": 3
+ },
+ {
+  "question": "B_forced_vs_baseline",
+  "snapshot_id": "s014_ordinary_motion_p5",
+  "phase": "ordinary_motion",
+  "source_seed": 10000014,
+  "p": 5,
+  "a": "R20",
+  "b": "baseline",
+  "both": 3,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   0.0,
+   0.0009829701271688585,
+   0.005912599787807338
+  ],
+  "dtime": [
+   0,
+   -1,
+   -6
+  ],
+  "n": 3
+ },
+ {
+  "question": "A_forced_vs_forced",
+  "snapshot_id": "s014_ordinary_motion_p10",
+  "phase": "ordinary_motion",
+  "source_seed": 10000014,
+  "p": 10,
+  "a": "R10",
+  "b": "R12",
+  "both": 3,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   0.0009928541087558251,
+   0.0,
+   0.00198670206546836
+  ],
+  "dtime": [
+   -1,
+   0,
+   -2
+  ],
+  "n": 3
+ },
+ {
+  "question": "A_forced_vs_forced",
+  "snapshot_id": "s014_ordinary_motion_p10",
+  "phase": "ordinary_motion",
+  "source_seed": 10000014,
+  "p": 10,
+  "a": "R10",
+  "b": "R15",
+  "both": 3,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   -0.0009938479567125347,
+   -0.0009918612546470085,
+   -0.000994842799512008
+  ],
+  "dtime": [
+   1,
+   1,
+   1
+  ],
+  "n": 3
+ },
+ {
+  "question": "A_forced_vs_forced",
+  "snapshot_id": "s014_ordinary_motion_p10",
+  "phase": "ordinary_motion",
+  "source_seed": 10000014,
+  "p": 10,
+  "a": "R12",
+  "b": "R15",
+  "both": 3,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   -0.00198670206546836,
+   -0.0009918612546470085,
+   -0.0029815448649803677
+  ],
+  "dtime": [
+   2,
+   1,
+   3
+  ],
+  "n": 3
+ },
+ {
+  "question": "B_forced_vs_baseline",
+  "snapshot_id": "s014_ordinary_motion_p10",
+  "phase": "ordinary_motion",
+  "source_seed": 10000014,
+  "p": 10,
+  "a": "R10",
+  "b": "baseline",
+  "both": 3,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   0.0019847153634028336,
+   -0.0019847153634028336,
+   0.00198670206546836
+  ],
+  "dtime": [
+   -2,
+   2,
+   -2
+  ],
+  "n": 3
+ },
+ {
+  "question": "B_forced_vs_baseline",
+  "snapshot_id": "s014_ordinary_motion_p10",
+  "phase": "ordinary_motion",
+  "source_seed": 10000014,
+  "p": 10,
+  "a": "R12",
+  "b": "baseline",
+  "both": 3,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   0.0009918612546470085,
+   -0.0019847153634028336,
+   0.0
+  ],
+  "dtime": [
+   -1,
+   2,
+   0
+  ],
+  "n": 3
+ },
+ {
+  "question": "B_forced_vs_baseline",
+  "snapshot_id": "s014_ordinary_motion_p10",
+  "phase": "ordinary_motion",
+  "source_seed": 10000014,
+  "p": 10,
+  "a": "R15",
+  "b": "baseline",
+  "both": 3,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   0.0029785633201153683,
+   -0.0009928541087558251,
+   0.0029815448649803677
+  ],
+  "dtime": [
+   -3,
+   1,
+   -3
+  ],
+  "n": 3
+ },
+ {
+  "question": "A_forced_vs_forced",
+  "snapshot_id": "s014_approach_p5",
+  "phase": "approach",
+  "source_seed": 10000014,
+  "p": 5,
+  "a": "R10",
+  "b": "R15",
+  "both": 3,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   0.008591831274649464,
+   0.0,
+   0.004270195947438604
+  ],
+  "dtime": [
+   -8,
+   0,
+   -4
+  ],
+  "n": 3
+ },
+ {
+  "question": "A_forced_vs_forced",
+  "snapshot_id": "s014_approach_p5",
+  "phase": "approach",
+  "source_seed": 10000014,
+  "p": 5,
+  "a": "R10",
+  "b": "R20",
+  "both": 3,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   0.01072906541389096,
+   0.002124442750205513,
+   -0.002141515027781926
+  ],
+  "dtime": [
+   -10,
+   -2,
+   2
+  ],
+  "n": 3
+ },
+ {
+  "question": "A_forced_vs_forced",
+  "snapshot_id": "s014_approach_p5",
+  "phase": "approach",
+  "source_seed": 10000014,
+  "p": 5,
+  "a": "R15",
+  "b": "R20",
+  "both": 3,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   0.002137234139241495,
+   0.002124442750205513,
+   -0.00641171097522053
+  ],
+  "dtime": [
+   -2,
+   -2,
+   6
+  ],
+  "n": 3
+ },
+ {
+  "question": "B_forced_vs_baseline",
+  "snapshot_id": "s014_approach_p5",
+  "phase": "approach",
+  "source_seed": 10000014,
+  "p": 5,
+  "a": "R10",
+  "b": "baseline",
+  "both": 3,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   0.012862027222088068,
+   -0.007469115832291706,
+   -0.00751408779793139
+  ],
+  "dtime": [
+   -12,
+   7,
+   7
+  ],
+  "n": 3
+ },
+ {
+  "question": "B_forced_vs_baseline",
+  "snapshot_id": "s014_approach_p5",
+  "phase": "approach",
+  "source_seed": 10000014,
+  "p": 5,
+  "a": "R15",
+  "b": "baseline",
+  "both": 3,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   0.004270195947438604,
+   -0.007469115832291706,
+   -0.011784283745369994
+  ],
+  "dtime": [
+   -4,
+   7,
+   11
+  ],
+  "n": 3
+ },
+ {
+  "question": "B_forced_vs_baseline",
+  "snapshot_id": "s014_approach_p5",
+  "phase": "approach",
+  "source_seed": 10000014,
+  "p": 5,
+  "a": "R20",
+  "b": "baseline",
+  "both": 3,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   0.002132961808197109,
+   -0.00959355858249722,
+   -0.005372572770149464
+  ],
+  "dtime": [
+   -2,
+   9,
+   5
+  ],
+  "n": 3
+ },
+ {
+  "question": "A_forced_vs_forced",
+  "snapshot_id": "s014_approach_p10",
+  "phase": "approach",
+  "source_seed": 10000014,
+  "p": 10,
+  "a": "R10",
+  "b": "R12",
+  "both": 3,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   -0.002132961808197109,
+   0.0010680824937979727,
+   0.0032042485505457963
+  ],
+  "dtime": [
+   2,
+   -1,
+   -3
+  ],
+  "n": 3
+ },
+ {
+  "question": "A_forced_vs_forced",
+  "snapshot_id": "s014_approach_p10",
+  "phase": "approach",
+  "source_seed": 10000014,
+  "p": 10,
+  "a": "R10",
+  "b": "R15",
+  "both": 3,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   -0.005340417814749254,
+   0.0,
+   0.006398893964981056
+  ],
+  "dtime": [
+   5,
+   0,
+   -6
+  ],
+  "n": 3
+ },
+ {
+  "question": "A_forced_vs_forced",
+  "snapshot_id": "s014_approach_p10",
+  "phase": "approach",
+  "source_seed": 10000014,
+  "p": 10,
+  "a": "R12",
+  "b": "R15",
+  "both": 3,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   -0.003207456006552145,
+   -0.0010680824937979727,
+   0.00319464541443526
+  ],
+  "dtime": [
+   3,
+   1,
+   -3
+  ],
+  "n": 3
+ },
+ {
+  "question": "B_forced_vs_baseline",
+  "snapshot_id": "s014_approach_p10",
+  "phase": "approach",
+  "source_seed": 10000014,
+  "p": 10,
+  "a": "R10",
+  "b": "baseline",
+  "both": 3,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   -0.001065947396892808,
+   0.0010680824937979727,
+   -0.00107022186731065
+  ],
+  "dtime": [
+   1,
+   -1,
+   1
+  ],
+  "n": 3
+ },
+ {
+  "question": "B_forced_vs_baseline",
+  "snapshot_id": "s014_approach_p10",
+  "phase": "approach",
+  "source_seed": 10000014,
+  "p": 10,
+  "a": "R12",
+  "b": "baseline",
+  "both": 3,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   0.0010670144113043012,
+   0.0,
+   -0.004274470417856446
+  ],
+  "dtime": [
+   -1,
+   0,
+   4
+  ],
+  "n": 3
+ },
+ {
+  "question": "B_forced_vs_baseline",
+  "snapshot_id": "s014_approach_p10",
+  "phase": "approach",
+  "source_seed": 10000014,
+  "p": 10,
+  "a": "R15",
+  "b": "baseline",
+  "both": 3,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   0.004274470417856446,
+   0.0010680824937979727,
+   -0.007469115832291706
+  ],
+  "dtime": [
+   -4,
+   -1,
+   7
+  ],
+  "n": 3
+ },
+ {
+  "question": "A_forced_vs_forced",
+  "snapshot_id": "s014_grasp_lift_p5",
+  "phase": "grasp_lift",
+  "source_seed": 10000014,
+  "p": 5,
+  "a": "R10",
+  "b": "R15",
+  "both": 3,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   0.013121988714210553,
+   0.014179990489451955,
+   0.008721745632358835
+  ],
+  "dtime": [
+   -12,
+   -13,
+   -8
+  ],
+  "n": 3
+ },
+ {
+  "question": "A_forced_vs_forced",
+  "snapshot_id": "s014_grasp_lift_p5",
+  "phase": "grasp_lift",
+  "source_seed": 10000014,
+  "p": 5,
+  "a": "R10",
+  "b": "R20",
+  "both": 3,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   0.016377943646504134,
+   0.010924035557158374,
+   0.010891296211669621
+  ],
+  "dtime": [
+   -15,
+   -10,
+   -10
+  ],
+  "n": 3
+ },
+ {
+  "question": "A_forced_vs_forced",
+  "snapshot_id": "s014_grasp_lift_p5",
+  "phase": "grasp_lift",
+  "source_seed": 10000014,
+  "p": 5,
+  "a": "R15",
+  "b": "R20",
+  "both": 3,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   0.003255954932293581,
+   -0.003255954932293581,
+   0.002169550579310786
+  ],
+  "dtime": [
+   -3,
+   3,
+   -2
+  ],
+  "n": 3
+ },
+ {
+  "question": "B_forced_vs_baseline",
+  "snapshot_id": "s014_grasp_lift_p5",
+  "phase": "grasp_lift",
+  "source_seed": 10000014,
+  "p": 5,
+  "a": "R10",
+  "b": "baseline",
+  "both": 3,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   0.017461092044554594,
+   0.012010439910141169,
+   0.01197444460972008
+  ],
+  "dtime": [
+   -16,
+   -11,
+   -11
+  ],
+  "n": 3
+ },
+ {
+  "question": "B_forced_vs_baseline",
+  "snapshot_id": "s014_grasp_lift_p5",
+  "phase": "grasp_lift",
+  "source_seed": 10000014,
+  "p": 5,
+  "a": "R15",
+  "b": "baseline",
+  "both": 3,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   0.004339103330344041,
+   -0.002169550579310786,
+   0.003252698977361246
+  ],
+  "dtime": [
+   -4,
+   2,
+   -3
+  ],
+  "n": 3
+ },
+ {
+  "question": "B_forced_vs_baseline",
+  "snapshot_id": "s014_grasp_lift_p5",
+  "phase": "grasp_lift",
+  "source_seed": 10000014,
+  "p": 5,
+  "a": "R20",
+  "b": "baseline",
+  "both": 3,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   0.0010831483980504597,
+   0.001086404352982795,
+   0.0010831483980504597
+  ],
+  "dtime": [
+   -1,
+   -1,
+   -1
+  ],
+  "n": 3
+ },
+ {
+  "question": "A_forced_vs_forced",
+  "snapshot_id": "s014_grasp_lift_p10",
+  "phase": "grasp_lift",
+  "source_seed": 10000014,
+  "p": 10,
+  "a": "R10",
+  "b": "R12",
+  "both": 3,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   0.001090760856204409,
+   0.002186985348829884,
+   0.0
+  ],
+  "dtime": [
+   -1,
+   -2,
+   0
+  ],
+  "n": 3
+ },
+ {
+  "question": "A_forced_vs_forced",
+  "snapshot_id": "s014_grasp_lift_p10",
+  "phase": "grasp_lift",
+  "source_seed": 10000014,
+  "p": 10,
+  "a": "R10",
+  "b": "R15",
+  "both": 3,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   0.0021804309515524034,
+   0.0010940396942620279,
+   0.016476556164432443
+  ],
+  "dtime": [
+   -2,
+   -1,
+   -15
+  ],
+  "n": 3
+ },
+ {
+  "question": "A_forced_vs_forced",
+  "snapshot_id": "s014_grasp_lift_p10",
+  "phase": "grasp_lift",
+  "source_seed": 10000014,
+  "p": 10,
+  "a": "R12",
+  "b": "R15",
+  "both": 3,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   0.0010896700953479943,
+   -0.0010929456545678562,
+   0.016476556164432443
+  ],
+  "dtime": [
+   -1,
+   1,
+   -15
+  ],
+  "n": 3
+ },
+ {
+  "question": "B_forced_vs_baseline",
+  "snapshot_id": "s014_grasp_lift_p10",
+  "phase": "grasp_lift",
+  "source_seed": 10000014,
+  "p": 10,
+  "a": "R10",
+  "b": "baseline",
+  "both": 3,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   0.003269011376805353,
+   0.0010940396942620279,
+   0.014293942599314713
+  ],
+  "dtime": [
+   -3,
+   -1,
+   -13
+  ],
+  "n": 3
+ },
+ {
+  "question": "B_forced_vs_baseline",
+  "snapshot_id": "s014_grasp_lift_p10",
+  "phase": "grasp_lift",
+  "source_seed": 10000014,
+  "p": 10,
+  "a": "R12",
+  "b": "baseline",
+  "both": 3,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   0.002178250520600944,
+   -0.0010929456545678562,
+   0.014293942599314713
+  ],
+  "dtime": [
+   -2,
+   1,
+   -13
+  ],
+  "n": 3
+ },
+ {
+  "question": "B_forced_vs_baseline",
+  "snapshot_id": "s014_grasp_lift_p10",
+  "phase": "grasp_lift",
+  "source_seed": 10000014,
+  "p": 10,
+  "a": "R15",
+  "b": "baseline",
+  "both": 3,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   0.0010885804252529496,
+   0.0,
+   -0.0021826135651177303
+  ],
+  "dtime": [
+   -1,
+   0,
+   2
+  ],
+  "n": 3
+ },
+ {
+  "question": "A_forced_vs_forced",
+  "snapshot_id": "s014_transfer_p5",
+  "phase": "transfer",
+  "source_seed": 10000014,
+  "p": 5,
+  "a": "R10",
+  "b": "R15",
+  "both": 3,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   0.0,
+   0.0023978441747442014,
+   0.00359137321068681
+  ],
+  "dtime": [
+   0,
+   -2,
+   -3
+  ],
+  "n": 3
+ },
+ {
+  "question": "A_forced_vs_forced",
+  "snapshot_id": "s014_transfer_p5",
+  "phase": "transfer",
+  "source_seed": 10000014,
+  "p": 5,
+  "a": "R10",
+  "b": "R20",
+  "both": 3,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   -0.0011959268801173817,
+   0.0011995218482961922,
+   0.0011983223264480092
+  ],
+  "dtime": [
+   1,
+   -1,
+   -1
+  ],
+  "n": 3
+ },
+ {
+  "question": "A_forced_vs_forced",
+  "snapshot_id": "s014_transfer_p5",
+  "phase": "transfer",
+  "source_seed": 10000014,
+  "p": 5,
+  "a": "R15",
+  "b": "R20",
+  "both": 3,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   -0.0011959268801173817,
+   -0.0011983223264480092,
+   -0.002393050884238801
+  ],
+  "dtime": [
+   1,
+   1,
+   2
+  ],
+  "n": 3
+ },
+ {
+  "question": "B_forced_vs_baseline",
+  "snapshot_id": "s014_transfer_p5",
+  "phase": "transfer",
+  "source_seed": 10000014,
+  "p": 5,
+  "a": "R10",
+  "b": "baseline",
+  "both": 3,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   -0.0011959268801173817,
+   0.0011995218482961922,
+   0.0011983223264480092
+  ],
+  "dtime": [
+   1,
+   -1,
+   -1
+  ],
+  "n": 3
+ },
+ {
+  "question": "B_forced_vs_baseline",
+  "snapshot_id": "s014_transfer_p5",
+  "phase": "transfer",
+  "source_seed": 10000014,
+  "p": 5,
+  "a": "R15",
+  "b": "baseline",
+  "both": 3,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   -0.0011959268801173817,
+   -0.0011983223264480092,
+   -0.002393050884238801
+  ],
+  "dtime": [
+   1,
+   1,
+   2
+  ],
+  "n": 3
+ },
+ {
+  "question": "B_forced_vs_baseline",
+  "snapshot_id": "s014_transfer_p5",
+  "phase": "transfer",
+  "source_seed": 10000014,
+  "p": 5,
+  "a": "R20",
+  "b": "baseline",
+  "both": 3,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dtime": [
+   0,
+   0,
+   0
+  ],
+  "n": 3
+ },
+ {
+  "question": "A_forced_vs_forced",
+  "snapshot_id": "s014_transfer_p10",
+  "phase": "transfer",
+  "source_seed": 10000014,
+  "p": 10,
+  "a": "R10",
+  "b": "R12",
+  "both": 3,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   0.0012019244953624941,
+   -0.01336754560902964,
+   0.0012067442366694436
+  ],
+  "dtime": [
+   -1,
+   11,
+   -1
+  ],
+  "n": 3
+ },
+ {
+  "question": "A_forced_vs_forced",
+  "snapshot_id": "s014_transfer_p10",
+  "phase": "transfer",
+  "source_seed": 10000014,
+  "p": 10,
+  "a": "R10",
+  "b": "R15",
+  "both": 3,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   -0.001203127622985467,
+   -0.004843912478711743,
+   0.0036166136840425356
+  ],
+  "dtime": [
+   1,
+   4,
+   -3
+  ],
+  "n": 3
+ },
+ {
+  "question": "A_forced_vs_forced",
+  "snapshot_id": "s014_transfer_p10",
+  "phase": "transfer",
+  "source_seed": 10000014,
+  "p": 10,
+  "a": "R12",
+  "b": "R15",
+  "both": 3,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   -0.002405052118347961,
+   0.008523633130317898,
+   0.002409869447373092
+  ],
+  "dtime": [
+   2,
+   -7,
+   -2
+  ],
+  "n": 3
+ },
+ {
+  "question": "B_forced_vs_baseline",
+  "snapshot_id": "s014_transfer_p10",
+  "phase": "transfer",
+  "source_seed": 10000014,
+  "p": 10,
+  "a": "R10",
+  "b": "baseline",
+  "both": 3,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   0.0,
+   -0.001209161350208543,
+   0.0036166136840425356
+  ],
+  "dtime": [
+   0,
+   1,
+   -3
+  ],
+  "n": 3
+ },
+ {
+  "question": "B_forced_vs_baseline",
+  "snapshot_id": "s014_transfer_p10",
+  "phase": "transfer",
+  "source_seed": 10000014,
+  "p": 10,
+  "a": "R12",
+  "b": "baseline",
+  "both": 3,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   -0.0012019244953624941,
+   0.012158384258821098,
+   0.002409869447373092
+  ],
+  "dtime": [
+   1,
+   -10,
+   -2
+  ],
+  "n": 3
+ },
+ {
+  "question": "B_forced_vs_baseline",
+  "snapshot_id": "s014_transfer_p10",
+  "phase": "transfer",
+  "source_seed": 10000014,
+  "p": 10,
+  "a": "R15",
+  "b": "baseline",
+  "both": 3,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   0.001203127622985467,
+   0.0036347511285031997,
+   0.0
+  ],
+  "dtime": [
+   -1,
+   -3,
+   0
+  ],
+  "n": 3
+ },
+ {
+  "question": "A_forced_vs_forced",
+  "snapshot_id": "s016_ordinary_motion_p5",
+  "phase": "ordinary_motion",
+  "source_seed": 10000016,
+  "p": 5,
+  "a": "R10",
+  "b": "R15",
+  "both": 2,
+  "only_a": 0,
+  "only_b": 1,
+  "neither": 0,
+  "dret": [
+   0.0020411013088110774,
+   0.0010119083068950152,
+   -0.8211963388708059
+  ],
+  "dtime": [
+   -2,
+   -1
+  ],
+  "n": 3
+ },
+ {
+  "question": "A_forced_vs_forced",
+  "snapshot_id": "s016_ordinary_motion_p5",
+  "phase": "ordinary_motion",
+  "source_seed": 10000016,
+  "p": 5,
+  "a": "R10",
+  "b": "R20",
+  "both": 2,
+  "only_a": 0,
+  "only_b": 1,
+  "neither": 0,
+  "dret": [
+   0.017219867721592452,
+   0.02499644982235827,
+   -0.8162370276332989
+  ],
+  "dtime": [
+   -17,
+   -25
+  ],
+  "n": 3
+ },
+ {
+  "question": "A_forced_vs_forced",
+  "snapshot_id": "s016_ordinary_motion_p5",
+  "phase": "ordinary_motion",
+  "source_seed": 10000016,
+  "p": 5,
+  "a": "R15",
+  "b": "R20",
+  "both": 3,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   0.015178766412781375,
+   0.023984541515463254,
+   0.004959311237506925
+  ],
+  "dtime": [
+   -15,
+   -24,
+   -5
+  ],
+  "n": 3
+ },
+ {
+  "question": "B_forced_vs_baseline",
+  "snapshot_id": "s016_ordinary_motion_p5",
+  "phase": "ordinary_motion",
+  "source_seed": 10000016,
+  "p": 5,
+  "a": "R10",
+  "b": "baseline",
+  "both": 2,
+  "only_a": 0,
+  "only_b": 1,
+  "neither": 0,
+  "dret": [
+   0.03612216472758334,
+   0.02301966142005374,
+   -0.7140665503739114
+  ],
+  "dtime": [
+   -36,
+   -23
+  ],
+  "n": 3
+ },
+ {
+  "question": "B_forced_vs_baseline",
+  "snapshot_id": "s016_ordinary_motion_p5",
+  "phase": "ordinary_motion",
+  "source_seed": 10000016,
+  "p": 5,
+  "a": "R15",
+  "b": "baseline",
+  "both": 3,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   0.03408106341877226,
+   0.022007753113158723,
+   0.10712978849689447
+  ],
+  "dtime": [
+   -34,
+   -22,
+   -114
+  ],
+  "n": 3
+ },
+ {
+  "question": "B_forced_vs_baseline",
+  "snapshot_id": "s016_ordinary_motion_p5",
+  "phase": "ordinary_motion",
+  "source_seed": 10000016,
+  "p": 5,
+  "a": "R20",
+  "b": "baseline",
+  "both": 3,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   0.018902297005990887,
+   -0.00197678840230453,
+   0.10217047725938755
+  ],
+  "dtime": [
+   -19,
+   2,
+   -109
+  ],
+  "n": 3
+ },
+ {
+  "question": "A_forced_vs_forced",
+  "snapshot_id": "s016_ordinary_motion_p10",
+  "phase": "ordinary_motion",
+  "source_seed": 10000016,
+  "p": 10,
+  "a": "R10",
+  "b": "R12",
+  "both": 3,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   0.05913633027907206,
+   -0.001790372995906564,
+   -0.004001331552438647
+  ],
+  "dtime": [
+   -61,
+   2,
+   4
+  ],
+  "n": 3
+ },
+ {
+  "question": "A_forced_vs_forced",
+  "snapshot_id": "s016_ordinary_motion_p10",
+  "phase": "ordinary_motion",
+  "source_seed": 10000016,
+  "p": 10,
+  "a": "R10",
+  "b": "R15",
+  "both": 2,
+  "only_a": 1,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   0.08874513432734987,
+   0.002678851188362308,
+   0.8243158351706323
+  ],
+  "dtime": [
+   -93,
+   -3
+  ],
+  "n": 3
+ },
+ {
+  "question": "A_forced_vs_forced",
+  "snapshot_id": "s016_ordinary_motion_p10",
+  "phase": "ordinary_motion",
+  "source_seed": 10000016,
+  "p": 10,
+  "a": "R12",
+  "b": "R15",
+  "both": 2,
+  "only_a": 1,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   0.029608804048277815,
+   0.004469224184268872,
+   0.828317166723071
+  ],
+  "dtime": [
+   -32,
+   -5
+  ],
+  "n": 3
+ },
+ {
+  "question": "B_forced_vs_baseline",
+  "snapshot_id": "s016_ordinary_motion_p10",
+  "phase": "ordinary_motion",
+  "source_seed": 10000016,
+  "p": 10,
+  "a": "R10",
+  "b": "baseline",
+  "both": 2,
+  "only_a": 1,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   0.09328647757733532,
+   0.014194740730493649,
+   0.8243158351706323
+  ],
+  "dtime": [
+   -98,
+   -16
+  ],
+  "n": 3
+ },
+ {
+  "question": "B_forced_vs_baseline",
+  "snapshot_id": "s016_ordinary_motion_p10",
+  "phase": "ordinary_motion",
+  "source_seed": 10000016,
+  "p": 10,
+  "a": "R12",
+  "b": "baseline",
+  "both": 2,
+  "only_a": 1,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   0.03415014729826327,
+   0.015985113726400213,
+   0.828317166723071
+  ],
+  "dtime": [
+   -37,
+   -18
+  ],
+  "n": 3
+ },
+ {
+  "question": "B_forced_vs_baseline",
+  "snapshot_id": "s016_ordinary_motion_p10",
+  "phase": "ordinary_motion",
+  "source_seed": 10000016,
+  "p": 10,
+  "a": "R15",
+  "b": "baseline",
+  "both": 2,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 1,
+  "dret": [
+   0.004541343249985452,
+   0.011515889542131341,
+   0.0
+  ],
+  "dtime": [
+   -5,
+   -13
+  ],
+  "n": 3
+ },
+ {
+  "question": "A_forced_vs_forced",
+  "snapshot_id": "s016_approach_p5",
+  "phase": "approach",
+  "source_seed": 10000016,
+  "p": 5,
+  "a": "R10",
+  "b": "R15",
+  "both": 1,
+  "only_a": 1,
+  "only_b": 1,
+  "neither": 0,
+  "dret": [
+   0.0031313558623083937,
+   -0.7204037456058155,
+   0.8501845230760281
+  ],
+  "dtime": [
+   -3
+  ],
+  "n": 3
+ },
+ {
+  "question": "A_forced_vs_forced",
+  "snapshot_id": "s016_approach_p5",
+  "phase": "approach",
+  "source_seed": 10000016,
+  "p": 5,
+  "a": "R10",
+  "b": "R20",
+  "both": 1,
+  "only_a": 1,
+  "only_b": 1,
+  "neither": 0,
+  "dret": [
+   0.018647926278910987,
+   -0.7276155872057926,
+   0.8501845230760281
+  ],
+  "dtime": [
+   -18
+  ],
+  "n": 3
+ },
+ {
+  "question": "A_forced_vs_forced",
+  "snapshot_id": "s016_approach_p5",
+  "phase": "approach",
+  "source_seed": 10000016,
+  "p": 5,
+  "a": "R15",
+  "b": "R20",
+  "both": 2,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 1,
+  "dret": [
+   0.015516570416602593,
+   -0.007211841599977009,
+   0.0
+  ],
+  "dtime": [
+   -15,
+   8
+  ],
+  "n": 3
+ },
+ {
+  "question": "B_forced_vs_baseline",
+  "snapshot_id": "s016_approach_p5",
+  "phase": "approach",
+  "source_seed": 10000016,
+  "p": 5,
+  "a": "R10",
+  "b": "baseline",
+  "both": 2,
+  "only_a": 0,
+  "only_b": 1,
+  "neither": 0,
+  "dret": [
+   0.028863689449068364,
+   -0.7141405623013588,
+   0.11347257983609615
+  ],
+  "dtime": [
+   -28,
+   -117
+  ],
+  "n": 3
+ },
+ {
+  "question": "B_forced_vs_baseline",
+  "snapshot_id": "s016_approach_p5",
+  "phase": "approach",
+  "source_seed": 10000016,
+  "p": 5,
+  "a": "R15",
+  "b": "baseline",
+  "both": 2,
+  "only_a": 0,
+  "only_b": 1,
+  "neither": 0,
+  "dret": [
+   0.02573233358675997,
+   0.006263183304456743,
+   -0.7367119432399319
+  ],
+  "dtime": [
+   -25,
+   -7
+  ],
+  "n": 3
+ },
+ {
+  "question": "B_forced_vs_baseline",
+  "snapshot_id": "s016_approach_p5",
+  "phase": "approach",
+  "source_seed": 10000016,
+  "p": 5,
+  "a": "R20",
+  "b": "baseline",
+  "both": 2,
+  "only_a": 0,
+  "only_b": 1,
+  "neither": 0,
+  "dret": [
+   0.010215763170157377,
+   0.013475024904433752,
+   -0.7367119432399319
+  ],
+  "dtime": [
+   -10,
+   -15
+  ],
+  "n": 3
+ },
+ {
+  "question": "A_forced_vs_forced",
+  "snapshot_id": "s016_approach_p10",
+  "phase": "approach",
+  "source_seed": 10000016,
+  "p": 10,
+  "a": "R10",
+  "b": "R12",
+  "both": 3,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   0.0020533908943507484,
+   -0.05768011443573384,
+   0.003143912662052939
+  ],
+  "dtime": [
+   -2,
+   58,
+   -3
+  ],
+  "n": 3
+ },
+ {
+  "question": "A_forced_vs_forced",
+  "snapshot_id": "s016_approach_p10",
+  "phase": "approach",
+  "source_seed": 10000016,
+  "p": 10,
+  "a": "R10",
+  "b": "R15",
+  "both": 2,
+  "only_a": 1,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   -0.006184883353687609,
+   0.7875139473606627,
+   0.029999473545857636
+  ],
+  "dtime": [
+   6,
+   -29
+  ],
+  "n": 3
+ },
+ {
+  "question": "A_forced_vs_forced",
+  "snapshot_id": "s016_approach_p10",
+  "phase": "approach",
+  "source_seed": 10000016,
+  "p": 10,
+  "a": "R12",
+  "b": "R15",
+  "both": 2,
+  "only_a": 1,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   -0.008238274248038358,
+   0.8451940617963966,
+   0.026855560883804697
+  ],
+  "dtime": [
+   8,
+   -26
+  ],
+  "n": 3
+ },
+ {
+  "question": "B_forced_vs_baseline",
+  "snapshot_id": "s016_approach_p10",
+  "phase": "approach",
+  "source_seed": 10000016,
+  "p": 10,
+  "a": "R10",
+  "b": "baseline",
+  "both": 2,
+  "only_a": 1,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   0.008188968012021958,
+   0.7875139473606627,
+   0.09511490593581695
+  ],
+  "dtime": [
+   -8,
+   -95
+  ],
+  "n": 3
+ },
+ {
+  "question": "B_forced_vs_baseline",
+  "snapshot_id": "s016_approach_p10",
+  "phase": "approach",
+  "source_seed": 10000016,
+  "p": 10,
+  "a": "R12",
+  "b": "baseline",
+  "both": 2,
+  "only_a": 1,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   0.006135577117671209,
+   0.8451940617963966,
+   0.09197099327376401
+  ],
+  "dtime": [
+   -6,
+   -92
+  ],
+  "n": 3
+ },
+ {
+  "question": "B_forced_vs_baseline",
+  "snapshot_id": "s016_approach_p10",
+  "phase": "approach",
+  "source_seed": 10000016,
+  "p": 10,
+  "a": "R15",
+  "b": "baseline",
+  "both": 2,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 1,
+  "dret": [
+   0.014373851365709567,
+   0.0,
+   0.06511543238995932
+  ],
+  "dtime": [
+   -14,
+   -66
+  ],
+  "n": 3
+ },
+ {
+  "question": "A_forced_vs_forced",
+  "snapshot_id": "s016_grasp_lift_p5",
+  "phase": "grasp_lift",
+  "source_seed": 10000016,
+  "p": 5,
+  "a": "R10",
+  "b": "R15",
+  "both": 0,
+  "only_a": 0,
+  "only_b": 1,
+  "neither": 2,
+  "dret": [
+   -0.7897309496485595,
+   0.0,
+   0.0
+  ],
+  "dtime": [],
+  "n": 3
+ },
+ {
+  "question": "A_forced_vs_forced",
+  "snapshot_id": "s016_grasp_lift_p5",
+  "phase": "grasp_lift",
+  "source_seed": 10000016,
+  "p": 5,
+  "a": "R10",
+  "b": "R20",
+  "both": 0,
+  "only_a": 0,
+  "only_b": 3,
+  "neither": 0,
+  "dret": [
+   -0.7657391211294485,
+   -0.7276687214826433,
+   -0.7610123475479619
+  ],
+  "dtime": [],
+  "n": 3
+ },
+ {
+  "question": "A_forced_vs_forced",
+  "snapshot_id": "s016_grasp_lift_p5",
+  "phase": "grasp_lift",
+  "source_seed": 10000016,
+  "p": 5,
+  "a": "R15",
+  "b": "R20",
+  "both": 1,
+  "only_a": 0,
+  "only_b": 2,
+  "neither": 0,
+  "dret": [
+   0.02399182851911097,
+   -0.7276687214826433,
+   -0.7610123475479619
+  ],
+  "dtime": [
+   -25
+  ],
+  "n": 3
+ },
+ {
+  "question": "B_forced_vs_baseline",
+  "snapshot_id": "s016_grasp_lift_p5",
+  "phase": "grasp_lift",
+  "source_seed": 10000016,
+  "p": 5,
+  "a": "R10",
+  "b": "baseline",
+  "both": 0,
+  "only_a": 0,
+  "only_b": 1,
+  "neither": 2,
+  "dret": [
+   -0.770489599646215,
+   0.0,
+   0.0
+  ],
+  "dtime": [],
+  "n": 3
+ },
+ {
+  "question": "B_forced_vs_baseline",
+  "snapshot_id": "s016_grasp_lift_p5",
+  "phase": "grasp_lift",
+  "source_seed": 10000016,
+  "p": 5,
+  "a": "R15",
+  "b": "baseline",
+  "both": 1,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 2,
+  "dret": [
+   0.019241350002344504,
+   0.0,
+   0.0
+  ],
+  "dtime": [
+   -20
+  ],
+  "n": 3
+ },
+ {
+  "question": "B_forced_vs_baseline",
+  "snapshot_id": "s016_grasp_lift_p5",
+  "phase": "grasp_lift",
+  "source_seed": 10000016,
+  "p": 5,
+  "a": "R20",
+  "b": "baseline",
+  "both": 1,
+  "only_a": 2,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   -0.004750478516766465,
+   0.7276687214826433,
+   0.7610123475479619
+  ],
+  "dtime": [
+   5
+  ],
+  "n": 3
+ },
+ {
+  "question": "A_forced_vs_forced",
+  "snapshot_id": "s016_grasp_lift_p10",
+  "phase": "grasp_lift",
+  "source_seed": 10000016,
+  "p": 10,
+  "a": "R10",
+  "b": "R12",
+  "both": 0,
+  "only_a": 2,
+  "only_b": 0,
+  "neither": 1,
+  "dret": [
+   0.7610455415860381,
+   0.0,
+   0.7313180056403126
+  ],
+  "dtime": [],
+  "n": 3
+ },
+ {
+  "question": "A_forced_vs_forced",
+  "snapshot_id": "s016_grasp_lift_p10",
+  "phase": "grasp_lift",
+  "source_seed": 10000016,
+  "p": 10,
+  "a": "R10",
+  "b": "R15",
+  "both": 1,
+  "only_a": 1,
+  "only_b": 1,
+  "neither": 0,
+  "dret": [
+   0.7610455415860381,
+   -0.7423544485988283,
+   -0.020335238730177285
+  ],
+  "dtime": [
+   22
+  ],
+  "n": 3
+ },
+ {
+  "question": "A_forced_vs_forced",
+  "snapshot_id": "s016_grasp_lift_p10",
+  "phase": "grasp_lift",
+  "source_seed": 10000016,
+  "p": 10,
+  "a": "R12",
+  "b": "R15",
+  "both": 0,
+  "only_a": 0,
+  "only_b": 2,
+  "neither": 1,
+  "dret": [
+   0.0,
+   -0.7423544485988283,
+   -0.7516532443704899
+  ],
+  "dtime": [],
+  "n": 3
+ },
+ {
+  "question": "B_forced_vs_baseline",
+  "snapshot_id": "s016_grasp_lift_p10",
+  "phase": "grasp_lift",
+  "source_seed": 10000016,
+  "p": 10,
+  "a": "R10",
+  "b": "baseline",
+  "both": 0,
+  "only_a": 2,
+  "only_b": 1,
+  "neither": 0,
+  "dret": [
+   0.7610455415860381,
+   -0.7386609018788557,
+   0.7313180056403126
+  ],
+  "dtime": [],
+  "n": 3
+ },
+ {
+  "question": "B_forced_vs_baseline",
+  "snapshot_id": "s016_grasp_lift_p10",
+  "phase": "grasp_lift",
+  "source_seed": 10000016,
+  "p": 10,
+  "a": "R12",
+  "b": "baseline",
+  "both": 0,
+  "only_a": 0,
+  "only_b": 1,
+  "neither": 2,
+  "dret": [
+   0.0,
+   -0.7386609018788557,
+   0.0
+  ],
+  "dtime": [],
+  "n": 3
+ },
+ {
+  "question": "B_forced_vs_baseline",
+  "snapshot_id": "s016_grasp_lift_p10",
+  "phase": "grasp_lift",
+  "source_seed": 10000016,
+  "p": 10,
+  "a": "R15",
+  "b": "baseline",
+  "both": 1,
+  "only_a": 1,
+  "only_b": 0,
+  "neither": 1,
+  "dret": [
+   0.0,
+   0.0036935467199725736,
+   0.7516532443704899
+  ],
+  "dtime": [
+   -4
+  ],
+  "n": 3
+ },
+ {
+  "question": "A_forced_vs_forced",
+  "snapshot_id": "s016_transfer_p5",
+  "phase": "transfer",
+  "source_seed": 10000016,
+  "p": 5,
+  "a": "R10",
+  "b": "R15",
+  "both": 3,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   0.0023906578333546813,
+   0.011977279609780789,
+   -0.002405052118347961
+  ],
+  "dtime": [
+   -2,
+   -10,
+   2
+  ],
+  "n": 3
+ },
+ {
+  "question": "A_forced_vs_forced",
+  "snapshot_id": "s016_transfer_p5",
+  "phase": "transfer",
+  "source_seed": 10000016,
+  "p": 5,
+  "a": "R10",
+  "b": "R20",
+  "both": 3,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   -0.0023954463305694285,
+   0.011977279609780789,
+   0.004795690749732628
+  ],
+  "dtime": [
+   2,
+   -10,
+   -4
+  ],
+  "n": 3
+ },
+ {
+  "question": "A_forced_vs_forced",
+  "snapshot_id": "s016_transfer_p5",
+  "phase": "transfer",
+  "source_seed": 10000016,
+  "p": 5,
+  "a": "R15",
+  "b": "R20",
+  "both": 3,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   -0.00478610416392411,
+   0.0,
+   0.00720074286808059
+  ],
+  "dtime": [
+   4,
+   0,
+   -6
+  ],
+  "n": 3
+ },
+ {
+  "question": "B_forced_vs_baseline",
+  "snapshot_id": "s016_transfer_p5",
+  "phase": "transfer",
+  "source_seed": 10000016,
+  "p": 5,
+  "a": "R10",
+  "b": "baseline",
+  "both": 3,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   -0.009610612315453682,
+   0.001203127622985467,
+   -0.006021665802390497
+  ],
+  "dtime": [
+   8,
+   -1,
+   5
+  ],
+  "n": 3
+ },
+ {
+  "question": "B_forced_vs_baseline",
+  "snapshot_id": "s016_transfer_p5",
+  "phase": "transfer",
+  "source_seed": 10000016,
+  "p": 5,
+  "a": "R15",
+  "b": "baseline",
+  "both": 3,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   -0.012001270148808363,
+   -0.010774151986795322,
+   -0.0036166136840425356
+  ],
+  "dtime": [
+   10,
+   9,
+   3
+  ],
+  "n": 3
+ },
+ {
+  "question": "B_forced_vs_baseline",
+  "snapshot_id": "s016_transfer_p5",
+  "phase": "transfer",
+  "source_seed": 10000016,
+  "p": 5,
+  "a": "R20",
+  "b": "baseline",
+  "both": 3,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   -0.007215165984884253,
+   -0.010774151986795322,
+   -0.010817356552123125
+  ],
+  "dtime": [
+   6,
+   9,
+   9
+  ],
+  "n": 3
+ },
+ {
+  "question": "A_forced_vs_forced",
+  "snapshot_id": "s016_transfer_p10",
+  "phase": "transfer",
+  "source_seed": 10000016,
+  "p": 10,
+  "a": "R10",
+  "b": "R12",
+  "both": 3,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   -0.004795690749732628,
+   -0.003623857775736372,
+   -0.010817356552123125
+  ],
+  "dtime": [
+   4,
+   3,
+   9
+  ],
+  "n": 3
+ },
+ {
+  "question": "A_forced_vs_forced",
+  "snapshot_id": "s016_transfer_p10",
+  "phase": "transfer",
+  "source_seed": 10000016,
+  "p": 10,
+  "a": "R10",
+  "b": "R15",
+  "both": 3,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   0.0,
+   0.009610612315453682,
+   -0.00720074286808059
+  ],
+  "dtime": [
+   0,
+   -8,
+   6
+  ],
+  "n": 3
+ },
+ {
+  "question": "A_forced_vs_forced",
+  "snapshot_id": "s016_transfer_p10",
+  "phase": "transfer",
+  "source_seed": 10000016,
+  "p": 10,
+  "a": "R12",
+  "b": "R15",
+  "both": 3,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   0.004795690749732628,
+   0.013234470091190054,
+   0.0036166136840425356
+  ],
+  "dtime": [
+   -4,
+   -11,
+   -3
+  ],
+  "n": 3
+ },
+ {
+  "question": "B_forced_vs_baseline",
+  "snapshot_id": "s016_transfer_p10",
+  "phase": "transfer",
+  "source_seed": 10000016,
+  "p": 10,
+  "a": "R10",
+  "b": "baseline",
+  "both": 3,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   -0.009610612315453682,
+   -0.003623857775736372,
+   -0.008405074823020886
+  ],
+  "dtime": [
+   8,
+   3,
+   7
+  ],
+  "n": 3
+ },
+ {
+  "question": "B_forced_vs_baseline",
+  "snapshot_id": "s016_transfer_p10",
+  "phase": "transfer",
+  "source_seed": 10000016,
+  "p": 10,
+  "a": "R12",
+  "b": "baseline",
+  "both": 3,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   -0.004814921565721053,
+   0.0,
+   0.002412281729102239
+  ],
+  "dtime": [
+   4,
+   0,
+   -2
+  ],
+  "n": 3
+ },
+ {
+  "question": "B_forced_vs_baseline",
+  "snapshot_id": "s016_transfer_p10",
+  "phase": "transfer",
+  "source_seed": 10000016,
+  "p": 10,
+  "a": "R15",
+  "b": "baseline",
+  "both": 3,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 0,
+  "dret": [
+   -0.009610612315453682,
+   -0.013234470091190054,
+   -0.0012043319549402964
+  ],
+  "dtime": [
+   8,
+   11,
+   1
+  ],
+  "n": 3
+ },
+ {
+  "question": "A_forced_vs_forced",
+  "snapshot_id": "s004_ordinary_motion_p5",
+  "phase": "ordinary_motion",
+  "source_seed": 10000004,
+  "p": 5,
+  "a": "R10",
+  "b": "R15",
+  "both": 0,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 3,
+  "dret": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dtime": [],
+  "n": 3
+ },
+ {
+  "question": "A_forced_vs_forced",
+  "snapshot_id": "s004_ordinary_motion_p5",
+  "phase": "ordinary_motion",
+  "source_seed": 10000004,
+  "p": 5,
+  "a": "R10",
+  "b": "R20",
+  "both": 0,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 3,
+  "dret": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dtime": [],
+  "n": 3
+ },
+ {
+  "question": "A_forced_vs_forced",
+  "snapshot_id": "s004_ordinary_motion_p5",
+  "phase": "ordinary_motion",
+  "source_seed": 10000004,
+  "p": 5,
+  "a": "R15",
+  "b": "R20",
+  "both": 0,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 3,
+  "dret": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dtime": [],
+  "n": 3
+ },
+ {
+  "question": "B_forced_vs_baseline",
+  "snapshot_id": "s004_ordinary_motion_p5",
+  "phase": "ordinary_motion",
+  "source_seed": 10000004,
+  "p": 5,
+  "a": "R10",
+  "b": "baseline",
+  "both": 0,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 3,
+  "dret": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dtime": [],
+  "n": 3
+ },
+ {
+  "question": "B_forced_vs_baseline",
+  "snapshot_id": "s004_ordinary_motion_p5",
+  "phase": "ordinary_motion",
+  "source_seed": 10000004,
+  "p": 5,
+  "a": "R15",
+  "b": "baseline",
+  "both": 0,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 3,
+  "dret": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dtime": [],
+  "n": 3
+ },
+ {
+  "question": "B_forced_vs_baseline",
+  "snapshot_id": "s004_ordinary_motion_p5",
+  "phase": "ordinary_motion",
+  "source_seed": 10000004,
+  "p": 5,
+  "a": "R20",
+  "b": "baseline",
+  "both": 0,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 3,
+  "dret": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dtime": [],
+  "n": 3
+ },
+ {
+  "question": "A_forced_vs_forced",
+  "snapshot_id": "s004_ordinary_motion_p10",
+  "phase": "ordinary_motion",
+  "source_seed": 10000004,
+  "p": 10,
+  "a": "R10",
+  "b": "R12",
+  "both": 0,
+  "only_a": 0,
+  "only_b": 1,
+  "neither": 2,
+  "dret": [
+   0.0,
+   -0.7466408169754531,
+   0.0
+  ],
+  "dtime": [],
+  "n": 3
+ },
+ {
+  "question": "A_forced_vs_forced",
+  "snapshot_id": "s004_ordinary_motion_p10",
+  "phase": "ordinary_motion",
+  "source_seed": 10000004,
+  "p": 10,
+  "a": "R10",
+  "b": "R15",
+  "both": 0,
+  "only_a": 0,
+  "only_b": 1,
+  "neither": 2,
+  "dret": [
+   0.0,
+   -0.7484838977130299,
+   0.0
+  ],
+  "dtime": [],
+  "n": 3
+ },
+ {
+  "question": "A_forced_vs_forced",
+  "snapshot_id": "s004_ordinary_motion_p10",
+  "phase": "ordinary_motion",
+  "source_seed": 10000004,
+  "p": 10,
+  "a": "R12",
+  "b": "R15",
+  "both": 1,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 2,
+  "dret": [
+   0.0,
+   -0.0018430807375767744,
+   0.0
+  ],
+  "dtime": [
+   2
+  ],
+  "n": 3
+ },
+ {
+  "question": "B_forced_vs_baseline",
+  "snapshot_id": "s004_ordinary_motion_p10",
+  "phase": "ordinary_motion",
+  "source_seed": 10000004,
+  "p": 10,
+  "a": "R10",
+  "b": "baseline",
+  "both": 0,
+  "only_a": 0,
+  "only_b": 1,
+  "neither": 2,
+  "dret": [
+   0.0,
+   -0.7540353197071095,
+   0.0
+  ],
+  "dtime": [],
+  "n": 3
+ },
+ {
+  "question": "B_forced_vs_baseline",
+  "snapshot_id": "s004_ordinary_motion_p10",
+  "phase": "ordinary_motion",
+  "source_seed": 10000004,
+  "p": 10,
+  "a": "R12",
+  "b": "baseline",
+  "both": 1,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 2,
+  "dret": [
+   0.0,
+   -0.007394502731656316,
+   0.0
+  ],
+  "dtime": [
+   8
+  ],
+  "n": 3
+ },
+ {
+  "question": "B_forced_vs_baseline",
+  "snapshot_id": "s004_ordinary_motion_p10",
+  "phase": "ordinary_motion",
+  "source_seed": 10000004,
+  "p": 10,
+  "a": "R15",
+  "b": "baseline",
+  "both": 1,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 2,
+  "dret": [
+   0.0,
+   -0.005551421994079542,
+   0.0
+  ],
+  "dtime": [
+   6
+  ],
+  "n": 3
+ },
+ {
+  "question": "A_forced_vs_forced",
+  "snapshot_id": "s004_approach_p5",
+  "phase": "approach",
+  "source_seed": 10000004,
+  "p": 5,
+  "a": "R10",
+  "b": "R15",
+  "both": 0,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 3,
+  "dret": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dtime": [],
+  "n": 3
+ },
+ {
+  "question": "A_forced_vs_forced",
+  "snapshot_id": "s004_approach_p5",
+  "phase": "approach",
+  "source_seed": 10000004,
+  "p": 5,
+  "a": "R10",
+  "b": "R20",
+  "both": 0,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 3,
+  "dret": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dtime": [],
+  "n": 3
+ },
+ {
+  "question": "A_forced_vs_forced",
+  "snapshot_id": "s004_approach_p5",
+  "phase": "approach",
+  "source_seed": 10000004,
+  "p": 5,
+  "a": "R15",
+  "b": "R20",
+  "both": 0,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 3,
+  "dret": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dtime": [],
+  "n": 3
+ },
+ {
+  "question": "B_forced_vs_baseline",
+  "snapshot_id": "s004_approach_p5",
+  "phase": "approach",
+  "source_seed": 10000004,
+  "p": 5,
+  "a": "R10",
+  "b": "baseline",
+  "both": 0,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 3,
+  "dret": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dtime": [],
+  "n": 3
+ },
+ {
+  "question": "B_forced_vs_baseline",
+  "snapshot_id": "s004_approach_p5",
+  "phase": "approach",
+  "source_seed": 10000004,
+  "p": 5,
+  "a": "R15",
+  "b": "baseline",
+  "both": 0,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 3,
+  "dret": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dtime": [],
+  "n": 3
+ },
+ {
+  "question": "B_forced_vs_baseline",
+  "snapshot_id": "s004_approach_p5",
+  "phase": "approach",
+  "source_seed": 10000004,
+  "p": 5,
+  "a": "R20",
+  "b": "baseline",
+  "both": 0,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 3,
+  "dret": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dtime": [],
+  "n": 3
+ },
+ {
+  "question": "A_forced_vs_forced",
+  "snapshot_id": "s004_approach_p10",
+  "phase": "approach",
+  "source_seed": 10000004,
+  "p": 10,
+  "a": "R10",
+  "b": "R12",
+  "both": 0,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 3,
+  "dret": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dtime": [],
+  "n": 3
+ },
+ {
+  "question": "A_forced_vs_forced",
+  "snapshot_id": "s004_approach_p10",
+  "phase": "approach",
+  "source_seed": 10000004,
+  "p": 10,
+  "a": "R10",
+  "b": "R15",
+  "both": 0,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 3,
+  "dret": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dtime": [],
+  "n": 3
+ },
+ {
+  "question": "A_forced_vs_forced",
+  "snapshot_id": "s004_approach_p10",
+  "phase": "approach",
+  "source_seed": 10000004,
+  "p": 10,
+  "a": "R12",
+  "b": "R15",
+  "both": 0,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 3,
+  "dret": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dtime": [],
+  "n": 3
+ },
+ {
+  "question": "B_forced_vs_baseline",
+  "snapshot_id": "s004_approach_p10",
+  "phase": "approach",
+  "source_seed": 10000004,
+  "p": 10,
+  "a": "R10",
+  "b": "baseline",
+  "both": 0,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 3,
+  "dret": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dtime": [],
+  "n": 3
+ },
+ {
+  "question": "B_forced_vs_baseline",
+  "snapshot_id": "s004_approach_p10",
+  "phase": "approach",
+  "source_seed": 10000004,
+  "p": 10,
+  "a": "R12",
+  "b": "baseline",
+  "both": 0,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 3,
+  "dret": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dtime": [],
+  "n": 3
+ },
+ {
+  "question": "B_forced_vs_baseline",
+  "snapshot_id": "s004_approach_p10",
+  "phase": "approach",
+  "source_seed": 10000004,
+  "p": 10,
+  "a": "R15",
+  "b": "baseline",
+  "both": 0,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 3,
+  "dret": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dtime": [],
+  "n": 3
+ },
+ {
+  "question": "A_forced_vs_forced",
+  "snapshot_id": "s004_grasp_lift_p5",
+  "phase": "grasp_lift",
+  "source_seed": 10000004,
+  "p": 5,
+  "a": "R10",
+  "b": "R15",
+  "both": 0,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 3,
+  "dret": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dtime": [],
+  "n": 3
+ },
+ {
+  "question": "A_forced_vs_forced",
+  "snapshot_id": "s004_grasp_lift_p5",
+  "phase": "grasp_lift",
+  "source_seed": 10000004,
+  "p": 5,
+  "a": "R10",
+  "b": "R20",
+  "both": 0,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 3,
+  "dret": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dtime": [],
+  "n": 3
+ },
+ {
+  "question": "A_forced_vs_forced",
+  "snapshot_id": "s004_grasp_lift_p5",
+  "phase": "grasp_lift",
+  "source_seed": 10000004,
+  "p": 5,
+  "a": "R15",
+  "b": "R20",
+  "both": 0,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 3,
+  "dret": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dtime": [],
+  "n": 3
+ },
+ {
+  "question": "B_forced_vs_baseline",
+  "snapshot_id": "s004_grasp_lift_p5",
+  "phase": "grasp_lift",
+  "source_seed": 10000004,
+  "p": 5,
+  "a": "R10",
+  "b": "baseline",
+  "both": 0,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 3,
+  "dret": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dtime": [],
+  "n": 3
+ },
+ {
+  "question": "B_forced_vs_baseline",
+  "snapshot_id": "s004_grasp_lift_p5",
+  "phase": "grasp_lift",
+  "source_seed": 10000004,
+  "p": 5,
+  "a": "R15",
+  "b": "baseline",
+  "both": 0,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 3,
+  "dret": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dtime": [],
+  "n": 3
+ },
+ {
+  "question": "B_forced_vs_baseline",
+  "snapshot_id": "s004_grasp_lift_p5",
+  "phase": "grasp_lift",
+  "source_seed": 10000004,
+  "p": 5,
+  "a": "R20",
+  "b": "baseline",
+  "both": 0,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 3,
+  "dret": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dtime": [],
+  "n": 3
+ },
+ {
+  "question": "A_forced_vs_forced",
+  "snapshot_id": "s004_grasp_lift_p10",
+  "phase": "grasp_lift",
+  "source_seed": 10000004,
+  "p": 10,
+  "a": "R10",
+  "b": "R12",
+  "both": 1,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 2,
+  "dret": [
+   0.0,
+   0.0,
+   -0.0009770870313131619
+  ],
+  "dtime": [
+   1
+  ],
+  "n": 3
+ },
+ {
+  "question": "A_forced_vs_forced",
+  "snapshot_id": "s004_grasp_lift_p10",
+  "phase": "grasp_lift",
+  "source_seed": 10000004,
+  "p": 10,
+  "a": "R10",
+  "b": "R15",
+  "both": 0,
+  "only_a": 1,
+  "only_b": 2,
+  "neither": 0,
+  "dret": [
+   -0.8157987247463816,
+   -0.8117933878570538,
+   0.7890711930690637
+  ],
+  "dtime": [],
+  "n": 3
+ },
+ {
+  "question": "A_forced_vs_forced",
+  "snapshot_id": "s004_grasp_lift_p10",
+  "phase": "grasp_lift",
+  "source_seed": 10000004,
+  "p": 10,
+  "a": "R12",
+  "b": "R15",
+  "both": 0,
+  "only_a": 1,
+  "only_b": 2,
+  "neither": 0,
+  "dret": [
+   -0.8157987247463816,
+   -0.8117933878570538,
+   0.7900482801003768
+  ],
+  "dtime": [],
+  "n": 3
+ },
+ {
+  "question": "B_forced_vs_baseline",
+  "snapshot_id": "s004_grasp_lift_p10",
+  "phase": "grasp_lift",
+  "source_seed": 10000004,
+  "p": 10,
+  "a": "R10",
+  "b": "baseline",
+  "both": 1,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 2,
+  "dret": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "dtime": [
+   0
+  ],
+  "n": 3
+ },
+ {
+  "question": "B_forced_vs_baseline",
+  "snapshot_id": "s004_grasp_lift_p10",
+  "phase": "grasp_lift",
+  "source_seed": 10000004,
+  "p": 10,
+  "a": "R12",
+  "b": "baseline",
+  "both": 1,
+  "only_a": 0,
+  "only_b": 0,
+  "neither": 2,
+  "dret": [
+   0.0,
+   0.0,
+   0.0009770870313131619
+  ],
+  "dtime": [
+   -1
+  ],
+  "n": 3
+ },
+ {
+  "question": "B_forced_vs_baseline",
+  "snapshot_id": "s004_grasp_lift_p10",
+  "phase": "grasp_lift",
+  "source_seed": 10000004,
+  "p": 10,
+  "a": "R15",
+  "b": "baseline",
+  "both": 0,
+  "only_a": 2,
+  "only_b": 1,
+  "neither": 0,
+  "dret": [
+   0.8157987247463816,
+   0.8117933878570538,
+   -0.7890711930690637
+  ],
+  "dtime": [],
+  "n": 3
+ }
+]

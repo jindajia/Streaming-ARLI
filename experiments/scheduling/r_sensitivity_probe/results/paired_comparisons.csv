@@ -1,0 +1,133 @@
+question,snapshot_id,phase,source_seed,p,a,b,n_pairs,both_succeed,only_a,only_b,both_fail,disc_return_diff_a_minus_b,completion_time_diff_a_minus_b_when_both_succeed
+A_forced_vs_forced,s014_ordinary_motion_p5,ordinary_motion,10000014,5,R10,R15,3,3,0,0,0,+0.0020 +0.0020 +0.0059,-2 -2 -6
+A_forced_vs_forced,s014_ordinary_motion_p5,ordinary_motion,10000014,5,R10,R20,3,3,0,0,0,+0.0020 +0.0030 +0.0000,-2 -3 +0
+A_forced_vs_forced,s014_ordinary_motion_p5,ordinary_motion,10000014,5,R15,R20,3,3,0,0,0,+0.0000 +0.0010 -0.0059,+0 -1 +6
+B_forced_vs_baseline,s014_ordinary_motion_p5,ordinary_motion,10000014,5,R10,baseline,3,3,0,0,0,+0.0020 +0.0039 +0.0059,-2 -4 -6
+B_forced_vs_baseline,s014_ordinary_motion_p5,ordinary_motion,10000014,5,R15,baseline,3,3,0,0,0,+0.0000 +0.0020 +0.0000,+0 -2 +0
+B_forced_vs_baseline,s014_ordinary_motion_p5,ordinary_motion,10000014,5,R20,baseline,3,3,0,0,0,+0.0000 +0.0010 +0.0059,+0 -1 -6
+A_forced_vs_forced,s014_ordinary_motion_p10,ordinary_motion,10000014,10,R10,R12,3,3,0,0,0,+0.0010 +0.0000 +0.0020,-1 +0 -2
+A_forced_vs_forced,s014_ordinary_motion_p10,ordinary_motion,10000014,10,R10,R15,3,3,0,0,0,-0.0010 -0.0010 -0.0010,+1 +1 +1
+A_forced_vs_forced,s014_ordinary_motion_p10,ordinary_motion,10000014,10,R12,R15,3,3,0,0,0,-0.0020 -0.0010 -0.0030,+2 +1 +3
+B_forced_vs_baseline,s014_ordinary_motion_p10,ordinary_motion,10000014,10,R10,baseline,3,3,0,0,0,+0.0020 -0.0020 +0.0020,-2 +2 -2
+B_forced_vs_baseline,s014_ordinary_motion_p10,ordinary_motion,10000014,10,R12,baseline,3,3,0,0,0,+0.0010 -0.0020 +0.0000,-1 +2 +0
+B_forced_vs_baseline,s014_ordinary_motion_p10,ordinary_motion,10000014,10,R15,baseline,3,3,0,0,0,+0.0030 -0.0010 +0.0030,-3 +1 -3
+A_forced_vs_forced,s014_approach_p5,approach,10000014,5,R10,R15,3,3,0,0,0,+0.0086 +0.0000 +0.0043,-8 +0 -4
+A_forced_vs_forced,s014_approach_p5,approach,10000014,5,R10,R20,3,3,0,0,0,+0.0107 +0.0021 -0.0021,-10 -2 +2
+A_forced_vs_forced,s014_approach_p5,approach,10000014,5,R15,R20,3,3,0,0,0,+0.0021 +0.0021 -0.0064,-2 -2 +6
+B_forced_vs_baseline,s014_approach_p5,approach,10000014,5,R10,baseline,3,3,0,0,0,+0.0129 -0.0075 -0.0075,-12 +7 +7
+B_forced_vs_baseline,s014_approach_p5,approach,10000014,5,R15,baseline,3,3,0,0,0,+0.0043 -0.0075 -0.0118,-4 +7 +11
+B_forced_vs_baseline,s014_approach_p5,approach,10000014,5,R20,baseline,3,3,0,0,0,+0.0021 -0.0096 -0.0054,-2 +9 +5
+A_forced_vs_forced,s014_approach_p10,approach,10000014,10,R10,R12,3,3,0,0,0,-0.0021 +0.0011 +0.0032,+2 -1 -3
+A_forced_vs_forced,s014_approach_p10,approach,10000014,10,R10,R15,3,3,0,0,0,-0.0053 +0.0000 +0.0064,+5 +0 -6
+A_forced_vs_forced,s014_approach_p10,approach,10000014,10,R12,R15,3,3,0,0,0,-0.0032 -0.0011 +0.0032,+3 +1 -3
+B_forced_vs_baseline,s014_approach_p10,approach,10000014,10,R10,baseline,3,3,0,0,0,-0.0011 +0.0011 -0.0011,+1 -1 +1
+B_forced_vs_baseline,s014_approach_p10,approach,10000014,10,R12,baseline,3,3,0,0,0,+0.0011 +0.0000 -0.0043,-1 +0 +4
+B_forced_vs_baseline,s014_approach_p10,approach,10000014,10,R15,baseline,3,3,0,0,0,+0.0043 +0.0011 -0.0075,-4 -1 +7
+A_forced_vs_forced,s014_grasp_lift_p5,grasp_lift,10000014,5,R10,R15,3,3,0,0,0,+0.0131 +0.0142 +0.0087,-12 -13 -8
+A_forced_vs_forced,s014_grasp_lift_p5,grasp_lift,10000014,5,R10,R20,3,3,0,0,0,+0.0164 +0.0109 +0.0109,-15 -10 -10
+A_forced_vs_forced,s014_grasp_lift_p5,grasp_lift,10000014,5,R15,R20,3,3,0,0,0,+0.0033 -0.0033 +0.0022,-3 +3 -2
+B_forced_vs_baseline,s014_grasp_lift_p5,grasp_lift,10000014,5,R10,baseline,3,3,0,0,0,+0.0175 +0.0120 +0.0120,-16 -11 -11
+B_forced_vs_baseline,s014_grasp_lift_p5,grasp_lift,10000014,5,R15,baseline,3,3,0,0,0,+0.0043 -0.0022 +0.0033,-4 +2 -3
+B_forced_vs_baseline,s014_grasp_lift_p5,grasp_lift,10000014,5,R20,baseline,3,3,0,0,0,+0.0011 +0.0011 +0.0011,-1 -1 -1
+A_forced_vs_forced,s014_grasp_lift_p10,grasp_lift,10000014,10,R10,R12,3,3,0,0,0,+0.0011 +0.0022 +0.0000,-1 -2 +0
+A_forced_vs_forced,s014_grasp_lift_p10,grasp_lift,10000014,10,R10,R15,3,3,0,0,0,+0.0022 +0.0011 +0.0165,-2 -1 -15
+A_forced_vs_forced,s014_grasp_lift_p10,grasp_lift,10000014,10,R12,R15,3,3,0,0,0,+0.0011 -0.0011 +0.0165,-1 +1 -15
+B_forced_vs_baseline,s014_grasp_lift_p10,grasp_lift,10000014,10,R10,baseline,3,3,0,0,0,+0.0033 +0.0011 +0.0143,-3 -1 -13
+B_forced_vs_baseline,s014_grasp_lift_p10,grasp_lift,10000014,10,R12,baseline,3,3,0,0,0,+0.0022 -0.0011 +0.0143,-2 +1 -13
+B_forced_vs_baseline,s014_grasp_lift_p10,grasp_lift,10000014,10,R15,baseline,3,3,0,0,0,+0.0011 +0.0000 -0.0022,-1 +0 +2
+A_forced_vs_forced,s014_transfer_p5,transfer,10000014,5,R10,R15,3,3,0,0,0,+0.0000 +0.0024 +0.0036,+0 -2 -3
+A_forced_vs_forced,s014_transfer_p5,transfer,10000014,5,R10,R20,3,3,0,0,0,-0.0012 +0.0012 +0.0012,+1 -1 -1
+A_forced_vs_forced,s014_transfer_p5,transfer,10000014,5,R15,R20,3,3,0,0,0,-0.0012 -0.0012 -0.0024,+1 +1 +2
+B_forced_vs_baseline,s014_transfer_p5,transfer,10000014,5,R10,baseline,3,3,0,0,0,-0.0012 +0.0012 +0.0012,+1 -1 -1
+B_forced_vs_baseline,s014_transfer_p5,transfer,10000014,5,R15,baseline,3,3,0,0,0,-0.0012 -0.0012 -0.0024,+1 +1 +2
+B_forced_vs_baseline,s014_transfer_p5,transfer,10000014,5,R20,baseline,3,3,0,0,0,+0.0000 +0.0000 +0.0000,+0 +0 +0
+A_forced_vs_forced,s014_transfer_p10,transfer,10000014,10,R10,R12,3,3,0,0,0,+0.0012 -0.0134 +0.0012,-1 +11 -1
+A_forced_vs_forced,s014_transfer_p10,transfer,10000014,10,R10,R15,3,3,0,0,0,-0.0012 -0.0048 +0.0036,+1 +4 -3
+A_forced_vs_forced,s014_transfer_p10,transfer,10000014,10,R12,R15,3,3,0,0,0,-0.0024 +0.0085 +0.0024,+2 -7 -2
+B_forced_vs_baseline,s014_transfer_p10,transfer,10000014,10,R10,baseline,3,3,0,0,0,+0.0000 -0.0012 +0.0036,+0 +1 -3
+B_forced_vs_baseline,s014_transfer_p10,transfer,10000014,10,R12,baseline,3,3,0,0,0,-0.0012 +0.0122 +0.0024,+1 -10 -2
+B_forced_vs_baseline,s014_transfer_p10,transfer,10000014,10,R15,baseline,3,3,0,0,0,+0.0012 +0.0036 +0.0000,-1 -3 +0
+A_forced_vs_forced,s016_ordinary_motion_p5,ordinary_motion,10000016,5,R10,R15,3,2,0,1,0,+0.0020 +0.0010 -0.8212,-2 -1
+A_forced_vs_forced,s016_ordinary_motion_p5,ordinary_motion,10000016,5,R10,R20,3,2,0,1,0,+0.0172 +0.0250 -0.8162,-17 -25
+A_forced_vs_forced,s016_ordinary_motion_p5,ordinary_motion,10000016,5,R15,R20,3,3,0,0,0,+0.0152 +0.0240 +0.0050,-15 -24 -5
+B_forced_vs_baseline,s016_ordinary_motion_p5,ordinary_motion,10000016,5,R10,baseline,3,2,0,1,0,+0.0361 +0.0230 -0.7141,-36 -23
+B_forced_vs_baseline,s016_ordinary_motion_p5,ordinary_motion,10000016,5,R15,baseline,3,3,0,0,0,+0.0341 +0.0220 +0.1071,-34 -22 -114
+B_forced_vs_baseline,s016_ordinary_motion_p5,ordinary_motion,10000016,5,R20,baseline,3,3,0,0,0,+0.0189 -0.0020 +0.1022,-19 +2 -109
+A_forced_vs_forced,s016_ordinary_motion_p10,ordinary_motion,10000016,10,R10,R12,3,3,0,0,0,+0.0591 -0.0018 -0.0040,-61 +2 +4
+A_forced_vs_forced,s016_ordinary_motion_p10,ordinary_motion,10000016,10,R10,R15,3,2,1,0,0,+0.0887 +0.0027 +0.8243,-93 -3
+A_forced_vs_forced,s016_ordinary_motion_p10,ordinary_motion,10000016,10,R12,R15,3,2,1,0,0,+0.0296 +0.0045 +0.8283,-32 -5
+B_forced_vs_baseline,s016_ordinary_motion_p10,ordinary_motion,10000016,10,R10,baseline,3,2,1,0,0,+0.0933 +0.0142 +0.8243,-98 -16
+B_forced_vs_baseline,s016_ordinary_motion_p10,ordinary_motion,10000016,10,R12,baseline,3,2,1,0,0,+0.0342 +0.0160 +0.8283,-37 -18
+B_forced_vs_baseline,s016_ordinary_motion_p10,ordinary_motion,10000016,10,R15,baseline,3,2,0,0,1,+0.0045 +0.0115 +0.0000,-5 -13
+A_forced_vs_forced,s016_approach_p5,approach,10000016,5,R10,R15,3,1,1,1,0,+0.0031 -0.7204 +0.8502,-3
+A_forced_vs_forced,s016_approach_p5,approach,10000016,5,R10,R20,3,1,1,1,0,+0.0186 -0.7276 +0.8502,-18
+A_forced_vs_forced,s016_approach_p5,approach,10000016,5,R15,R20,3,2,0,0,1,+0.0155 -0.0072 +0.0000,-15 +8
+B_forced_vs_baseline,s016_approach_p5,approach,10000016,5,R10,baseline,3,2,0,1,0,+0.0289 -0.7141 +0.1135,-28 -117
+B_forced_vs_baseline,s016_approach_p5,approach,10000016,5,R15,baseline,3,2,0,1,0,+0.0257 +0.0063 -0.7367,-25 -7
+B_forced_vs_baseline,s016_approach_p5,approach,10000016,5,R20,baseline,3,2,0,1,0,+0.0102 +0.0135 -0.7367,-10 -15
+A_forced_vs_forced,s016_approach_p10,approach,10000016,10,R10,R12,3,3,0,0,0,+0.0021 -0.0577 +0.0031,-2 +58 -3
+A_forced_vs_forced,s016_approach_p10,approach,10000016,10,R10,R15,3,2,1,0,0,-0.0062 +0.7875 +0.0300,+6 -29
+A_forced_vs_forced,s016_approach_p10,approach,10000016,10,R12,R15,3,2,1,0,0,-0.0082 +0.8452 +0.0269,+8 -26
+B_forced_vs_baseline,s016_approach_p10,approach,10000016,10,R10,baseline,3,2,1,0,0,+0.0082 +0.7875 +0.0951,-8 -95
+B_forced_vs_baseline,s016_approach_p10,approach,10000016,10,R12,baseline,3,2,1,0,0,+0.0061 +0.8452 +0.0920,-6 -92
+B_forced_vs_baseline,s016_approach_p10,approach,10000016,10,R15,baseline,3,2,0,0,1,+0.0144 +0.0000 +0.0651,-14 -66
+A_forced_vs_forced,s016_grasp_lift_p5,grasp_lift,10000016,5,R10,R15,3,0,0,1,2,-0.7897 +0.0000 +0.0000,
+A_forced_vs_forced,s016_grasp_lift_p5,grasp_lift,10000016,5,R10,R20,3,0,0,3,0,-0.7657 -0.7277 -0.7610,
+A_forced_vs_forced,s016_grasp_lift_p5,grasp_lift,10000016,5,R15,R20,3,1,0,2,0,+0.0240 -0.7277 -0.7610,-25
+B_forced_vs_baseline,s016_grasp_lift_p5,grasp_lift,10000016,5,R10,baseline,3,0,0,1,2,-0.7705 +0.0000 +0.0000,
+B_forced_vs_baseline,s016_grasp_lift_p5,grasp_lift,10000016,5,R15,baseline,3,1,0,0,2,+0.0192 +0.0000 +0.0000,-20
+B_forced_vs_baseline,s016_grasp_lift_p5,grasp_lift,10000016,5,R20,baseline,3,1,2,0,0,-0.0048 +0.7277 +0.7610,+5
+A_forced_vs_forced,s016_grasp_lift_p10,grasp_lift,10000016,10,R10,R12,3,0,2,0,1,+0.7610 +0.0000 +0.7313,
+A_forced_vs_forced,s016_grasp_lift_p10,grasp_lift,10000016,10,R10,R15,3,1,1,1,0,+0.7610 -0.7424 -0.0203,+22
+A_forced_vs_forced,s016_grasp_lift_p10,grasp_lift,10000016,10,R12,R15,3,0,0,2,1,+0.0000 -0.7424 -0.7517,
+B_forced_vs_baseline,s016_grasp_lift_p10,grasp_lift,10000016,10,R10,baseline,3,0,2,1,0,+0.7610 -0.7387 +0.7313,
+B_forced_vs_baseline,s016_grasp_lift_p10,grasp_lift,10000016,10,R12,baseline,3,0,0,1,2,+0.0000 -0.7387 +0.0000,
+B_forced_vs_baseline,s016_grasp_lift_p10,grasp_lift,10000016,10,R15,baseline,3,1,1,0,1,+0.0000 +0.0037 +0.7517,-4
+A_forced_vs_forced,s016_transfer_p5,transfer,10000016,5,R10,R15,3,3,0,0,0,+0.0024 +0.0120 -0.0024,-2 -10 +2
+A_forced_vs_forced,s016_transfer_p5,transfer,10000016,5,R10,R20,3,3,0,0,0,-0.0024 +0.0120 +0.0048,+2 -10 -4
+A_forced_vs_forced,s016_transfer_p5,transfer,10000016,5,R15,R20,3,3,0,0,0,-0.0048 +0.0000 +0.0072,+4 +0 -6
+B_forced_vs_baseline,s016_transfer_p5,transfer,10000016,5,R10,baseline,3,3,0,0,0,-0.0096 +0.0012 -0.0060,+8 -1 +5
+B_forced_vs_baseline,s016_transfer_p5,transfer,10000016,5,R15,baseline,3,3,0,0,0,-0.0120 -0.0108 -0.0036,+10 +9 +3
+B_forced_vs_baseline,s016_transfer_p5,transfer,10000016,5,R20,baseline,3,3,0,0,0,-0.0072 -0.0108 -0.0108,+6 +9 +9
+A_forced_vs_forced,s016_transfer_p10,transfer,10000016,10,R10,R12,3,3,0,0,0,-0.0048 -0.0036 -0.0108,+4 +3 +9
+A_forced_vs_forced,s016_transfer_p10,transfer,10000016,10,R10,R15,3,3,0,0,0,+0.0000 +0.0096 -0.0072,+0 -8 +6
+A_forced_vs_forced,s016_transfer_p10,transfer,10000016,10,R12,R15,3,3,0,0,0,+0.0048 +0.0132 +0.0036,-4 -11 -3
+B_forced_vs_baseline,s016_transfer_p10,transfer,10000016,10,R10,baseline,3,3,0,0,0,-0.0096 -0.0036 -0.0084,+8 +3 +7
+B_forced_vs_baseline,s016_transfer_p10,transfer,10000016,10,R12,baseline,3,3,0,0,0,-0.0048 +0.0000 +0.0024,+4 +0 -2
+B_forced_vs_baseline,s016_transfer_p10,transfer,10000016,10,R15,baseline,3,3,0,0,0,-0.0096 -0.0132 -0.0012,+8 +11 +1
+A_forced_vs_forced,s004_ordinary_motion_p5,ordinary_motion,10000004,5,R10,R15,3,0,0,0,3,+0.0000 +0.0000 +0.0000,
+A_forced_vs_forced,s004_ordinary_motion_p5,ordinary_motion,10000004,5,R10,R20,3,0,0,0,3,+0.0000 +0.0000 +0.0000,
+A_forced_vs_forced,s004_ordinary_motion_p5,ordinary_motion,10000004,5,R15,R20,3,0,0,0,3,+0.0000 +0.0000 +0.0000,
+B_forced_vs_baseline,s004_ordinary_motion_p5,ordinary_motion,10000004,5,R10,baseline,3,0,0,0,3,+0.0000 +0.0000 +0.0000,
+B_forced_vs_baseline,s004_ordinary_motion_p5,ordinary_motion,10000004,5,R15,baseline,3,0,0,0,3,+0.0000 +0.0000 +0.0000,
+B_forced_vs_baseline,s004_ordinary_motion_p5,ordinary_motion,10000004,5,R20,baseline,3,0,0,0,3,+0.0000 +0.0000 +0.0000,
+A_forced_vs_forced,s004_ordinary_motion_p10,ordinary_motion,10000004,10,R10,R12,3,0,0,1,2,+0.0000 -0.7466 +0.0000,
+A_forced_vs_forced,s004_ordinary_motion_p10,ordinary_motion,10000004,10,R10,R15,3,0,0,1,2,+0.0000 -0.7485 +0.0000,
+A_forced_vs_forced,s004_ordinary_motion_p10,ordinary_motion,10000004,10,R12,R15,3,1,0,0,2,+0.0000 -0.0018 +0.0000,+2
+B_forced_vs_baseline,s004_ordinary_motion_p10,ordinary_motion,10000004,10,R10,baseline,3,0,0,1,2,+0.0000 -0.7540 +0.0000,
+B_forced_vs_baseline,s004_ordinary_motion_p10,ordinary_motion,10000004,10,R12,baseline,3,1,0,0,2,+0.0000 -0.0074 +0.0000,+8
+B_forced_vs_baseline,s004_ordinary_motion_p10,ordinary_motion,10000004,10,R15,baseline,3,1,0,0,2,+0.0000 -0.0056 +0.0000,+6
+A_forced_vs_forced,s004_approach_p5,approach,10000004,5,R10,R15,3,0,0,0,3,+0.0000 +0.0000 +0.0000,
+A_forced_vs_forced,s004_approach_p5,approach,10000004,5,R10,R20,3,0,0,0,3,+0.0000 +0.0000 +0.0000,
+A_forced_vs_forced,s004_approach_p5,approach,10000004,5,R15,R20,3,0,0,0,3,+0.0000 +0.0000 +0.0000,
+B_forced_vs_baseline,s004_approach_p5,approach,10000004,5,R10,baseline,3,0,0,0,3,+0.0000 +0.0000 +0.0000,
+B_forced_vs_baseline,s004_approach_p5,approach,10000004,5,R15,baseline,3,0,0,0,3,+0.0000 +0.0000 +0.0000,
+B_forced_vs_baseline,s004_approach_p5,approach,10000004,5,R20,baseline,3,0,0,0,3,+0.0000 +0.0000 +0.0000,
+A_forced_vs_forced,s004_approach_p10,approach,10000004,10,R10,R12,3,0,0,0,3,+0.0000 +0.0000 +0.0000,
+A_forced_vs_forced,s004_approach_p10,approach,10000004,10,R10,R15,3,0,0,0,3,+0.0000 +0.0000 +0.0000,
+A_forced_vs_forced,s004_approach_p10,approach,10000004,10,R12,R15,3,0,0,0,3,+0.0000 +0.0000 +0.0000,
+B_forced_vs_baseline,s004_approach_p10,approach,10000004,10,R10,baseline,3,0,0,0,3,+0.0000 +0.0000 +0.0000,
+B_forced_vs_baseline,s004_approach_p10,approach,10000004,10,R12,baseline,3,0,0,0,3,+0.0000 +0.0000 +0.0000,
+B_forced_vs_baseline,s004_approach_p10,approach,10000004,10,R15,baseline,3,0,0,0,3,+0.0000 +0.0000 +0.0000,
+A_forced_vs_forced,s004_grasp_lift_p5,grasp_lift,10000004,5,R10,R15,3,0,0,0,3,+0.0000 +0.0000 +0.0000,
+A_forced_vs_forced,s004_grasp_lift_p5,grasp_lift,10000004,5,R10,R20,3,0,0,0,3,+0.0000 +0.0000 +0.0000,
+A_forced_vs_forced,s004_grasp_lift_p5,grasp_lift,10000004,5,R15,R20,3,0,0,0,3,+0.0000 +0.0000 +0.0000,
+B_forced_vs_baseline,s004_grasp_lift_p5,grasp_lift,10000004,5,R10,baseline,3,0,0,0,3,+0.0000 +0.0000 +0.0000,
+B_forced_vs_baseline,s004_grasp_lift_p5,grasp_lift,10000004,5,R15,baseline,3,0,0,0,3,+0.0000 +0.0000 +0.0000,
+B_forced_vs_baseline,s004_grasp_lift_p5,grasp_lift,10000004,5,R20,baseline,3,0,0,0,3,+0.0000 +0.0000 +0.0000,
+A_forced_vs_forced,s004_grasp_lift_p10,grasp_lift,10000004,10,R10,R12,3,1,0,0,2,+0.0000 +0.0000 -0.0010,+1
+A_forced_vs_forced,s004_grasp_lift_p10,grasp_lift,10000004,10,R10,R15,3,0,1,2,0,-0.8158 -0.8118 +0.7891,
+A_forced_vs_forced,s004_grasp_lift_p10,grasp_lift,10000004,10,R12,R15,3,0,1,2,0,-0.8158 -0.8118 +0.7900,
+B_forced_vs_baseline,s004_grasp_lift_p10,grasp_lift,10000004,10,R10,baseline,3,1,0,0,2,+0.0000 +0.0000 +0.0000,+0
+B_forced_vs_baseline,s004_grasp_lift_p10,grasp_lift,10000004,10,R12,baseline,3,1,0,0,2,+0.0000 +0.0000 +0.0010,-1
+B_forced_vs_baseline,s004_grasp_lift_p10,grasp_lift,10000004,10,R15,baseline,3,0,2,1,0,+0.8158 +0.8118 -0.7891,
