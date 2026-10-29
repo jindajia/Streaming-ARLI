@@ -1,4 +1,7 @@
-# STATUS — SCH-01
+# STATUS — SCH-01 (LEGACY 7-step-budget experiment, archived 2026-10-29)
+
+> Archived: final preserved progress 50,120 steps; continuation job 8764189 cancelled unstarted. See
+> [LEGACY_BUDGET7.md](LEGACY_BUDGET7.md). Current work: [fixed_delay10_v2/STATUS.md](fixed_delay10_v2/STATUS.md).
 
 _Last updated 2026-10-29 01:55 EDT._ Branch `experiment/queue-scheduler` (worktree `streaming_arli_sched`). Nothing here
 claims a task-success improvement; all timing is the proxy-derived logical-time model (DECISIONS S2).

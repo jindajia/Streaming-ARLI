@@ -1,5 +1,9 @@
 # SCH-01 — queue-aware adaptive inference scheduling (RTC ON, frozen pi0, ALOHA Transfer Cube)
 
+> **Current version: [`fixed_delay10_v2/`](fixed_delay10_v2/)** (deterministic delay table, N = 10 → 10 control steps).
+> Everything else in this directory is the **legacy 7-step-budget experiment**, archived as a reference:
+> [LEGACY_BUDGET7.md](LEGACY_BUDGET7.md).
+
 Isolated experiment inside Streaming-ARLI (branch `experiment/queue-scheduler`). It does not touch the ARLI /
 steering code paths, jobs, checkpoints or results.
 
