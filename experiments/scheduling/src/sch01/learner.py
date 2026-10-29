@@ -60,7 +60,9 @@ class Net(nn.Module):
 class Critics(nn.Module):
     @nn.compact
     def __call__(self, s):
-        return jnp.stack([Net(core.NUM_ACTIONS, name=f"q{i}")(s) for i in range(2)])  # [2, B, A]
+        # zero-initialised heads: every action starts with the same Q (no invented preference for untried R/N;
+        # random heads gave O(0.1-1) arbitrary gaps that the actor exploited -- DECISIONS S14)
+        return jnp.stack([Net(core.NUM_ACTIONS, zero_head=True, name=f"q{i}")(s) for i in range(2)])  # [2, B, A]
 
 
 STATE_KEYS = ("img_now", "img_src", "queue", "qmask", "robot", "runtime")
@@ -194,16 +196,19 @@ def _update(rng, A, C, Ct, T, b, strength, actor_on, gamma, tau, p0, ratio):
         loss = jnp.sum(p * jnp.where(b["s_mask"], alpha * logp - qmin, 0.0), -1).mean()
         ent = -jnp.sum(p * logp, -1)
         pref = jnp.take_along_axis(p, b["s_ref"][:, None], -1)[:, 0]
-        return loss, (ent, pref)
+        rmag = jnp.abs(jnp.where(b["s_mask"], res, 0.0)).max(-1)
+        return loss, (ent, pref, rmag)
 
-    (la, (ent, pref)), ga = jax.value_and_grad(actor_loss, has_aux=True)(A.params)
+    (la, (ent, pref, rmag)), ga = jax.value_and_grad(actor_loss, has_aux=True)(A.params)
     if actor_on:
         A = A.apply_gradients(grads=ga)
         target_ent = jnp.minimum(prior_entropy(b["s_nfeas"], strength, p0),
                                  ratio * jnp.log(jnp.maximum(b["s_nfeas"], 1.0)))
         gt = jax.grad(lambda tp: (tp["log_alpha"] * jax.lax.stop_gradient(ent - target_ent)).mean())(T.params)
         T = T.apply_gradients(grads=gt)
-    info.update(actor_loss=la, entropy=ent.mean(), ref_prob=pref.mean(), alpha=alpha,
+    qgap = (jnp.where(b["s_mask"], qmin, -jnp.inf).max(-1) - jnp.where(b["s_mask"], qmin, jnp.inf).min(-1)).mean()
+    info.update(actor_loss=la, entropy=ent.mean(), ref_prob=pref.mean(), alpha=alpha, residual_max=rmag.mean(),
+                q_gap_feasible=qgap,
                 target_entropy=jnp.minimum(prior_entropy(b["s_nfeas"], strength, p0),
                                            ratio * jnp.log(jnp.maximum(b["s_nfeas"], 1.0))).mean())
     return rng, A, C, Ct, T, info

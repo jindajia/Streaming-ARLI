@@ -39,3 +39,13 @@ Tags: **[plan]** from the research-notes plan; **[ours]** implementation choice 
   (snapshot, replicate). Never written to the learner's replay or read by training.
 - S11 Renderer: EGL images differ by ±1 intensity for identical states (Streaming-ARLI DECISIONS D31); closed-loop runs
   are not bit-reproducible; equivalence checks compare decisions/physics, not images.
+- S12 **[ours] Entropy target tracks the prior (change after smoke job 8763771).** With target entropy 0.1·log M and
+  α₀ = 0.01, the entropy term erased the reference prior within ~150 actor updates while the prior was still at full
+  strength (reference probability 0.98 → ~0, deterministic parity 0, evaluation switched to mean N = 5): under the
+  prior, non-reference log π ≈ −12, so α·log π ≈ −0.12 dominates critic action gaps of ~1e-3, and the target (≈0.5
+  nats) was far above the prior's own entropy (≈0.013), so α grew. Now the per-state target is
+  min(H(prior-only policy at the current strength), 0.1·log M) (≈0.008–0.013 nats at strength 1, reaching the cap as
+  the prior anneals) and α₀ = 1e-3. Fixed choices, not tuned on evaluation outcomes.
+- S13 Numerics: computing the velocity inside the RTC VJP changes XLA fusion, so RTC with all-zero weights differs from
+  the plain step by ≤0.011 (normalised units) for identical inputs (gpu_checks, job 8763771). All scheduled requests
+  in every arm use the RTC path; only the synchronous startup chunk uses the plain step.
