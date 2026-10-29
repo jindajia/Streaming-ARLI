@@ -49,3 +49,9 @@ Tags: **[plan]** from the research-notes plan; **[ours]** implementation choice 
 - S13 Numerics: computing the velocity inside the RTC VJP changes XLA fusion, so RTC with all-zero weights differs from
   the plain step by ≤0.011 (normalised units) for identical inputs (gpu_checks, job 8763771). All scheduled requests
   in every arm use the RTC path; only the synchronous startup chunk uses the plain step.
+- S14 **[ours] Critic output heads zero-initialised (change after smoke job 8763817).** With random (lecun) heads the
+  critics assigned arbitrary O(0.1–1) values to never-tried R/N actions; the actor exploited them and erased the prior
+  within ~200 updates despite S12. Zero heads start every action at the same Q, so only experienced outcomes create
+  preferences. Smoke 8763859: reference probability 0.91–1.0 over 1,400 updates, deterministic parity 1.0 until the
+  1,600-step debug evaluation (0.87 there); residual logits grow to ~14 (comparable to the prior's ~12–13), i.e.
+  departures appear gradually where the critic prefers another action.
