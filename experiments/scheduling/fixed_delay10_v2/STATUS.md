@@ -19,8 +19,6 @@ _Last updated 2026-10-29 01:35 EDT._ gpu-debug only; ≤5 jobs for this request.
 | 8764392 | gpu-debug | v2 smoke | completed |
 | 8764415 | gpu-debug | Stage 1 diagnostic `diag_v2_coarse` (12 snapshots, ~456 rollouts) | running |
 
-## Next
-Inspect heatmaps → Stage 2 seed-0 online run `rn_seed0_d10` in 0.78 h gpu-debug segments to 150k (milestone) and 300k.
 
 ## Stage 1 result — diagnostic `diag_v2_coarse` (job 8764415, 29 min, 456 rollouts, 104,909 diagnostic env steps)
 Both source episodes (seeds 20000100/101) succeeded under the new baseline; all 12 snapshots captured (none missing).
@@ -31,3 +29,21 @@ branches reach success 2.9 ticks earlier on average (SD 6.7, n = 213; by N: −3
 Interpretation: no evidence that changing the first decision improves success in these states; a small, noisy timing
 effect. Two paired replicates on baseline-solved states cannot establish a benefit.
 `results/diagnostic/diag_v2_coarse/` (heatmaps.png/.svg, branch_summary.csv, branches_raw.jsonl, snapshots.json).
+
+## Stage 2 — online seed 0 `rn_seed0_d10` (gpu-debug, 0.78 h segments, one writer)
+
+| Training steps | Successes / 50 | Reference parity | Note |
+|---|---|---|---|
+| fixed baseline (N=10, 10-step delay) | **36** | — | recovery decisions 0 |
+| 0 | 34 | 1.00 | identical decisions; 2-episode gap = renderer non-determinism |
+| 5,334 | 35 | 1.00 | end of warm-up |
+| 25,146 | 36 | 0.78 | prior strength 0.56 |
+| 25,146 (prior disabled, supplemental) | 35 | 0.12 | separate file, not on the primary curve |
+| 50,055 | 31 | 0.75 | prior removed |
+| 75,114 | 39 | 0.65 | |
+| 100,247 | 37 | 0.68 | |
+| 125,116 | 36 | 0.52 | |
+| **150,000** | **35** | 0.48 | **milestone saved** (`ckpt/milestone_0150000`, 38,347 replay rows) |
+
+Segments: 8764519 (0 → 50,055), 8764520 (→ 114,806), 8764681 (→ 175,264), each exit 3 = checkpointed after ~51 min;
+8764850 running; 8764852+ queued (≤ 2 jobs at a time).
