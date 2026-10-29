@@ -16,7 +16,7 @@ an idle tick t is made on o_t.
 Rendering is not bit-deterministic (+-1 intensity), so a regenerated rollout can diverge from the episode logged
 during training even with the same seed and checkpoint; meta.json records both outcomes and whether they match.
 
-Phase 2 (probe): every recorded decision state (full scheduler input: current and source 64x64 images, queue +
+Phase 2 (probe, one state at a time = the online policy's own forward pass): every recorded decision state (full scheduler input: current and source 64x64 images, queue +
 mask, robot state, runtime features incl. plan age / source N / remaining time; same feasibility mask) is fed to
 every checkpoint: residual logits (actor head, before the prior), Q1, Q2 (online critics).  Probabilities with or
 without the prior are formed in the viewer from these exact values with the checkpoint's own prior strength.
@@ -196,11 +196,11 @@ def main():
                   f"requests {len(res['requests'])} decisions {len(res['decisions'])} {wall:.1f}s", flush=True)
 
     # ---------------- phase 2: probes ----------------
-    import jax.numpy as jnp
 
-    @jax.jit
-    def probe(ap_, cp_, s):
-        return L.actor_def.apply({"params": ap_}, s), L.critic_def.apply({"params": cp_}, s)
+    # One state at a time through the SAME jitted actor function the policy used (Learner._act on a batch of 1):
+    # batched evaluation changes GPU kernel choices and gave residual differences up to ~0.4 logits (one argmax flip
+    # in 8,569 own-checkpoint states), so probes are computed exactly as the online policy computes them.
+    crit = jax.jit(lambda cp_, s_: L.critic_def.apply({"params": cp_}, s_))
 
     eps = sorted(d for d in os.listdir(out_root) if os.path.exists(f"{out_root}/{d}/meta.json"))
     want = [f"{p['id']}_s{s['seed']}" for p in policies for s in seeds]
@@ -218,13 +218,13 @@ def main():
                 sys.exit(3)
             z = np.load(f"{arch}/{e}.npz")
             n = len(z["t"])
-            B = 1 << max(6, int(np.ceil(np.log2(max(n, 1)))))  # pad to a power of two: few compilations
-            s = {}
-            for k in STATE_KEYS:
-                v = z[k]
-                s[k] = jnp.asarray(np.concatenate([v, np.zeros((B - n,) + v.shape[1:], v.dtype)]))
-            r, q = probe(L.A.params, L.C.params, s)
-            r, q = np.asarray(r)[:n], np.asarray(q)[:, :n]
+            zs = {k: z[k] for k in STATE_KEYS}
+            r = np.zeros((n, core.NUM_ACTIONS), np.float32)
+            q = np.zeros((2, n, core.NUM_ACTIONS), np.float32)
+            for i in range(n):
+                si = {k: zs[k][i:i + 1] for k in STATE_KEYS}
+                r[i] = np.asarray(L._act(L.A.params, si))[0]
+                q[:, i] = np.asarray(crit(L.C.params, si))[:, 0]
             arr = np.stack([r, q[0], q[1]], 1).astype(np.float32)  # [n, 3, 201]
             os.makedirs(f"{out_root}/{e}/probes", exist_ok=True)
             arr.tofile(f"{out_root}/{e}/probes/{c['id']}.bin.tmp")

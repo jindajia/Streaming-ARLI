@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SCH-01 Scheduler Viewer</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <h1>SCH-01 scheduler viewer</h1>
+    <span class="sub" id="runLabel">fixed_delay10_v2 · rn_seed0_d10</span>
+  </div>
+  <nav class="tabs" role="tablist">
+    <button class="tab active" data-tab="playback" role="tab">Playback &amp; probes</button>
+    <button class="tab" data-tab="learning" role="tab">Learning diagnostics</button>
+    <button class="tab" data-tab="about" role="tab">About the data</button>
+  </nav>
+</header>
+
+<section class="controls" id="controls">
+  <div class="ckrow">
+    <div class="cklabel">
+      <div class="ctl-title" id="ckTitle">Checkpoint</div>
+      <button id="btnBaseline" class="pill" title="Fixed baseline schedule (not a checkpoint)">Fixed baseline</button>
+    </div>
+    <div class="ckslider" id="ckSlider" tabindex="0" aria-label="Checkpoint selector"></div>
+    <div class="ckread" id="ckRead"></div>
+  </div>
+  <div class="eprow">
+    <label class="ctl-title" for="seedSel">Episode seed</label>
+    <select id="seedSel"></select>
+    <span id="epRead" class="epread"></span>
+  </div>
+  <div class="mode" id="modeBanner"></div>
+</section>
+
+<main id="tab-playback" class="tabpane active">
+  <div class="mainrow">
+    <section class="videocol">
+      <div class="videobox">
+        <canvas id="video" width="640" height="480"></canvas>
+        <div class="videotag" id="videoTag"></div>
+      </div>
+      <div class="transport">
+        <button id="bPrevDec" title="Previous decision (Shift+←)">⏮ dec</button>
+        <button id="bPrev" title="Previous control step (←)">◀ step</button>
+        <button id="bPlay" class="primary" title="Play / pause (Space)">▶ Play</button>
+        <button id="bNext" title="Next control step (→)">step ▶</button>
+        <button id="bNextDec" title="Next decision (Shift+→)">dec ⏭</button>
+        <label>Speed <select id="speedSel">
+          <option value="0.1">0.1×</option><option value="0.25">0.25×</option><option value="0.5">0.5×</option>
+          <option value="1" selected>1× (50 Hz)</option><option value="2">2×</option></select></label>
+      </div>
+      <input type="range" id="tickRange" min="0" max="400" value="0" step="1" aria-label="Control step">
+      <div class="tickread" id="tickRead"></div>
+      <div class="lockrow">
+        <button id="bLock" class="lockbtn">🔒 Lock state across checkpoints</button>
+        <button id="bNearest">Jump to nearest decision</button>
+      </div>
+      <div class="lockinfo" id="lockInfo"></div>
+      <div class="readouts" id="readouts"></div>
+    </section>
+
+    <section class="schedcol" id="schedCol">
+      <div class="statusbox" id="statusBox"></div>
+      <div class="pkeep" id="pkeepBox"></div>
+      <div class="heatwrap">
+        <div class="heathdr">
+          <span class="ctl-title">Scheduling preferences</span>
+          <span class="seg" id="probView">
+            <button data-v="joint" class="on">Unconditional P(action)</button>
+            <button data-v="cond">Conditional P(R,N | REPLAN)</button>
+          </span>
+          <span class="seg" id="scaleView">
+            <button data-v="log" class="on">log scale</button><button data-v="lin">linear</button>
+          </span>
+        </div>
+        <div id="heatA" class="heat"></div>
+        <div id="heatB" class="heat"></div>
+        <div class="marg">
+          <div id="margN" class="margc"></div>
+          <div id="margR" class="margc"></div>
+        </div>
+        <div id="topCands"></div>
+        <details id="logitDetails"><summary>Residual logits and prior contribution (expand)</summary>
+          <div id="logitTable"></div></details>
+      </div>
+      <div class="heatwrap">
+        <div class="heathdr">
+          <span class="ctl-title">Critic</span>
+          <span class="seg" id="critView">
+            <button data-v="prob">Actor probability</button>
+            <button data-v="qmin" class="on">min(Q1,Q2)</button>
+            <button data-v="qdis">|Q1 − Q2|</button>
+            <button data-v="adv">Q advantage vs baseline action</button>
+          </span>
+        </div>
+        <div id="heatC" class="heat"></div>
+        <div class="note">Q is the critics' learned soft return estimate (γ = 0.999 per control step, entropy-regularised
+          target), <b>not</b> a success probability and not calibrated. Observed rewards are shown separately in the
+          episode plots.</div>
+      </div>
+    </section>
+  </div>
+
+  <section class="timeline">
+    <div class="sechdr"><span class="ctl-title">Execution and inference timeline</span>
+      <span class="note">Simulator control time (50 Hz control steps; inference timing from the deterministic delay
+        table d(N), not GPU wall time). Click to pause and seek.</span></div>
+    <div id="timeline" class="tl"></div>
+    <div class="legend" id="tlLegend"></div>
+  </section>
+
+  <section class="plots">
+    <div class="sechdr"><span class="ctl-title">Over episode time</span>
+      <span class="note">x = episode control step. Event markers / step plots only (no interpolation between
+        decisions). Click any chart to pause and seek.</span>
+      <label class="chk"><input type="checkbox" id="chkQ" checked> show critic estimates</label></div>
+    <div class="plotgrid" id="epPlots"></div>
+  </section>
+
+  <section class="plots across" id="acrossSec">
+    <div class="sechdr"><span class="ctl-title">Across training checkpoints (locked state)</span>
+      <span class="note">x = training environment steps of the probed checkpoint. Every point evaluates the SAME frozen
+        scheduler input (counterfactual probe). Click a point to select that checkpoint.</span></div>
+    <div class="plotgrid" id="acrossPlots"></div>
+  </section>
+</main>
+
+<main id="tab-learning" class="tabpane">
+  <div class="sechdr">
+    <span class="ctl-title">Learning diagnostics (from the run's own logs)</span>
+    <label>Smoothing (training episodes) <select id="smoothSel">
+      <option value="1">raw</option><option value="25" selected>moving mean, 25 episodes</option>
+      <option value="100">moving mean, 100 episodes</option></select></label>
+    <span class="note">Click any chart to select the nearest saved checkpoint (updates the playback / probe
+      controls).</span>
+  </div>
+  <div class="plotgrid learn" id="learnPlots"></div>
+  <div class="note" id="learnNotes"></div>
+</main>
+
+<main id="tab-about" class="tabpane">
+  <div id="about" class="about"></div>
+</main>
+
+<div id="tip" class="tip"></div>
+<script src="chart.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
