@@ -1,0 +1,110 @@
+{
+ "checks": {
+  "runtime_q_matches_qmask": {
+   "violations": 0
+  },
+  "runtime_remaining_integer": {
+   "violations": 0
+  },
+  "runtime_const_one": {
+   "violations": 0
+  },
+  "state_mask_equals_delay_table": {
+   "violations": 0
+  },
+  "nfeas_equals_mask_sum": {
+   "violations": 0
+  },
+  "ref_equals_rule": {
+   "violations": 0
+  },
+  "action_feasible_in_state": {
+   "violations": 0
+  },
+  "KEEP_duration_1": {
+   "violations": 0
+  },
+  "REPLAN_duration_equals_R_nonterminal": {
+   "violations": 0
+  },
+  "REPLAN_duration_le_R_terminal": {
+   "violations": 0
+  },
+  "duration_positive": {
+   "violations": 0
+  },
+  "G_matches_reward_model": {
+   "violations": 0
+  },
+  "next_remaining_equals_rem_minus_D": {
+   "violations": 0
+  },
+  "next_state_is_following_state": {
+   "violations": 0
+  },
+  "terminal_count_equals_episodes": {
+   "violations": 0
+  },
+  "nonterminal_next_mask_nonempty": {
+   "violations": 0
+  },
+  "timeout_terminal_at_400": {
+   "violations": 0
+  },
+  "finite_queue": {
+   "violations": 0
+  },
+  "finite_robot": {
+   "violations": 0
+  },
+  "finite_runtime": {
+   "violations": 0
+  },
+  "finite_G_D": {
+   "violations": 0
+  },
+  "input_ranges": {
+   "queue_absmax": 1.4629477262496948,
+   "robot_absmax": 1.4442106485366821,
+   "runtime_min": 0.0,
+   "runtime_max": 1.0,
+   "frame_min": 0,
+   "frame_max": 255,
+   "frames": 60849,
+   "states_feature_z_gt_8": 0,
+   "states_feature_z_gt_15": 0,
+   "states": 60849
+  },
+  "replay_counts": {
+   "decisions": 59907,
+   "states": 60849,
+   "keep_frac": 0.5646418615520724,
+   "terminal": 942,
+   "terminal_success": 650,
+   "D_hist": {
+    "1": 33935,
+    "2": 74,
+    "3": 85,
+    "4": 95,
+    "5": 81,
+    "6": 3064,
+    "7": 702,
+    "8": 875,
+    "9": 895,
+    "10": 9154,
+    "11": 4188,
+    "12": 5806,
+    "13": 2,
+    "14": 1,
+    "15": 5,
+    "16": 59,
+    "18": 88,
+    "19": 1,
+    "20": 1,
+    "21": 795,
+    "22": 1
+   }
+  }
+ },
+ "failed": {}
+}

@@ -1,0 +1,1995 @@
+{
+ "checkpoint": 100247,
+ "seed": 10000000,
+ "source": {
+  "success": true,
+  "t_end": 280,
+  "requests": 21
+ },
+ "snapshots": [
+  {
+   "name": "early_movement",
+   "t": 40,
+   "chunk": 5,
+   "p": 0,
+   "q": 25,
+   "actor_argmax": [
+    "KEEP",
+    null,
+    null
+   ],
+   "candidates": [
+    {
+     "name": "KEEP",
+     "action": 0,
+     "decoded": [
+      "KEEP",
+      null,
+      null
+     ],
+     "prob_100k": 0.7688159841896246
+    },
+    {
+     "name": "actor_preferred_REPLAN",
+     "action": 93,
+     "decoded": [
+      "REPLAN",
+      12,
+      7
+     ],
+     "prob_100k": 0.2120304609851331
+    },
+    {
+     "name": "alternative_REPLAN",
+     "action": 80,
+     "decoded": [
+      "REPLAN",
+      10,
+      10
+     ],
+     "prob_100k": 0.0005179484147900497
+    }
+   ],
+   "critic_scores": {
+    "100247": {
+     "KEEP": {
+      "Q1": 0.6907970309257507,
+      "Q2": 0.6850979924201965
+     },
+     "actor_preferred_REPLAN": {
+      "Q1": 0.6979004144668579,
+      "Q2": 0.6960738301277161
+     },
+     "alternative_REPLAN": {
+      "Q1": 0.6609644889831543,
+      "Q2": 0.6862740516662598
+     }
+    },
+    "225337": {
+     "KEEP": {
+      "Q1": 0.6136025786399841,
+      "Q2": 0.6195709705352783
+     },
+     "actor_preferred_REPLAN": {
+      "Q1": 0.622542142868042,
+      "Q2": 0.6140491962432861
+     },
+     "alternative_REPLAN": {
+      "Q1": 0.6178462505340576,
+      "Q2": 0.6211289167404175
+     }
+    },
+    "300155": {
+     "KEEP": {
+      "Q1": 0.699038028717041,
+      "Q2": 0.6200272440910339
+     },
+     "actor_preferred_REPLAN": {
+      "Q1": 0.5886357426643372,
+      "Q2": 0.6312357187271118
+     },
+     "alternative_REPLAN": {
+      "Q1": 0.8132963180541992,
+      "Q2": 0.7393442988395691
+     }
+    }
+   }
+  },
+  {
+   "name": "grasp_contact",
+   "t": 130,
+   "chunk": 11,
+   "p": 1,
+   "q": 24,
+   "actor_argmax": [
+    "KEEP",
+    null,
+    null
+   ],
+   "candidates": [
+    {
+     "name": "KEEP",
+     "action": 0,
+     "decoded": [
+      "KEEP",
+      null,
+      null
+     ],
+     "prob_100k": 0.7371365229659483
+    },
+    {
+     "name": "actor_preferred_REPLAN",
+     "action": 80,
+     "decoded": [
+      "REPLAN",
+      10,
+      10
+     ],
+     "prob_100k": 0.26281563612338094
+    },
+    {
+     "name": "alternative_REPLAN",
+     "action": 115,
+     "decoded": [
+      "REPLAN",
+      15,
+      5
+     ],
+     "prob_100k": 2.623414300348931e-14
+    }
+   ],
+   "critic_scores": {
+    "100247": {
+     "KEEP": {
+      "Q1": 0.8256209492683411,
+      "Q2": 0.8122177720069885
+     },
+     "actor_preferred_REPLAN": {
+      "Q1": 0.8342117667198181,
+      "Q2": 0.8250945806503296
+     },
+     "alternative_REPLAN": {
+      "Q1": 0.0,
+      "Q2": 0.0
+     }
+    },
+    "225337": {
+     "KEEP": {
+      "Q1": 0.787943422794342,
+      "Q2": 0.7823896408081055
+     },
+     "actor_preferred_REPLAN": {
+      "Q1": 0.7893127202987671,
+      "Q2": 0.7903780937194824
+     },
+     "alternative_REPLAN": {
+      "Q1": 0.0,
+      "Q2": 0.0
+     }
+    },
+    "300155": {
+     "KEEP": {
+      "Q1": 0.699038028717041,
+      "Q2": 0.6200272440910339
+     },
+     "actor_preferred_REPLAN": {
+      "Q1": 0.8132963180541992,
+      "Q2": 0.7393442988395691
+     },
+     "alternative_REPLAN": {
+      "Q1": 0.0,
+      "Q2": 0.0
+     }
+    }
+   }
+  }
+ ],
+ "branches": [
+  {
+   "snapshot": "early_movement",
+   "t_snap": 40,
+   "candidate": "KEEP",
+   "action": 0,
+   "rep": 0,
+   "duplicate_run": false,
+   "success": true,
+   "t_end": 272,
+   "steps_to_termination": 232,
+   "task_return": 0.942,
+   "discounted_task_return": 0.7418612546470659,
+   "inference_calls": 16,
+   "underrun": 0,
+   "first_request": {
+    "obs_t": 48,
+    "r": 6,
+    "n": 3,
+    "handoff_t": 54,
+    "discarded": 11
+   },
+   "request_signature": [
+    [
+     48,
+     6,
+     3
+    ],
+    [
+     62,
+     6,
+     3
+    ],
+    [
+     68,
+     12,
+     7
+    ],
+    [
+     80,
+     12,
+     7
+    ],
+    [
+     92,
+     10,
+     10
+    ],
+    [
+     117,
+     10,
+     10
+    ],
+    [
+     143,
+     6,
+     3
+    ],
+    [
+     149,
+     10,
+     10
+    ],
+    [
+     162,
+     11,
+     10
+    ],
+    [
+     181,
+     10,
+     10
+    ],
+    [
+     191,
+     12,
+     7
+    ],
+    [
+     217,
+     10,
+     10
+    ],
+    [
+     234,
+     10,
+     10
+    ],
+    [
+     244,
+     10,
+     10
+    ],
+    [
+     254,
+     10,
+     10
+    ],
+    [
+     264,
+     10,
+     10
+    ]
+   ],
+   "wall_s": 5.623464107513428
+  },
+  {
+   "snapshot": "early_movement",
+   "t_snap": 40,
+   "candidate": "actor_preferred_REPLAN",
+   "action": 93,
+   "rep": 0,
+   "duplicate_run": false,
+   "success": true,
+   "t_end": 270,
+   "steps_to_termination": 230,
+   "task_return": 0.9425,
+   "discounted_task_return": 0.7438479567125342,
+   "inference_calls": 16,
+   "underrun": 0,
+   "first_request": {
+    "obs_t": 40,
+    "r": 12,
+    "n": 7,
+    "handoff_t": 52,
+    "discarded": 13
+   },
+   "request_signature": [
+    [
+     40,
+     12,
+     7
+    ],
+    [
+     52,
+     12,
+     7
+    ],
+    [
+     64,
+     12,
+     7
+    ],
+    [
+     76,
+     12,
+     7
+    ],
+    [
+     88,
+     10,
+     10
+    ],
+    [
+     113,
+     10,
+     10
+    ],
+    [
+     139,
+     6,
+     3
+    ],
+    [
+     160,
+     10,
+     10
+    ],
+    [
+     178,
+     10,
+     10
+    ],
+    [
+     188,
+     12,
+     7
+    ],
+    [
+     200,
+     12,
+     7
+    ],
+    [
+     222,
+     10,
+     10
+    ],
+    [
+     232,
+     10,
+     10
+    ],
+    [
+     242,
+     10,
+     10
+    ],
+    [
+     252,
+     10,
+     10
+    ],
+    [
+     262,
+     10,
+     10
+    ]
+   ],
+   "wall_s": 3.8677237033843994
+  },
+  {
+   "snapshot": "early_movement",
+   "t_snap": 40,
+   "candidate": "alternative_REPLAN",
+   "action": 80,
+   "rep": 0,
+   "duplicate_run": false,
+   "success": true,
+   "t_end": 272,
+   "steps_to_termination": 232,
+   "task_return": 0.942,
+   "discounted_task_return": 0.7418612546470659,
+   "inference_calls": 16,
+   "underrun": 0,
+   "first_request": {
+    "obs_t": 40,
+    "r": 10,
+    "n": 10,
+    "handoff_t": 50,
+    "discarded": 15
+   },
+   "request_signature": [
+    [
+     40,
+     10,
+     10
+    ],
+    [
+     52,
+     6,
+     3
+    ],
+    [
+     68,
+     10,
+     10
+    ],
+    [
+     78,
+     10,
+     10
+    ],
+    [
+     88,
+     10,
+     10
+    ],
+    [
+     113,
+     10,
+     10
+    ],
+    [
+     139,
+     6,
+     3
+    ],
+    [
+     160,
+     10,
+     10
+    ],
+    [
+     179,
+     10,
+     10
+    ],
+    [
+     189,
+     12,
+     7
+    ],
+    [
+     201,
+     12,
+     7
+    ],
+    [
+     224,
+     10,
+     10
+    ],
+    [
+     234,
+     10,
+     10
+    ],
+    [
+     244,
+     10,
+     10
+    ],
+    [
+     254,
+     10,
+     10
+    ],
+    [
+     264,
+     10,
+     10
+    ]
+   ],
+   "wall_s": 3.93395733833313
+  },
+  {
+   "snapshot": "grasp_contact",
+   "t_snap": 130,
+   "candidate": "KEEP",
+   "action": 0,
+   "rep": 0,
+   "duplicate_run": false,
+   "success": true,
+   "t_end": 276,
+   "steps_to_termination": 146,
+   "task_return": 0.9635,
+   "discounted_task_return": 0.8309831844027222,
+   "inference_calls": 10,
+   "underrun": 0,
+   "first_request": {
+    "obs_t": 146,
+    "r": 6,
+    "n": 3,
+    "handoff_t": 152,
+    "discarded": 2
+   },
+   "request_signature": [
+    [
+     146,
+     6,
+     3
+    ],
+    [
+     152,
+     10,
+     10
+    ],
+    [
+     166,
+     11,
+     10
+    ],
+    [
+     192,
+     10,
+     10
+    ],
+    [
+     202,
+     12,
+     7
+    ],
+    [
+     214,
+     12,
+     7
+    ],
+    [
+     226,
+     12,
+     7
+    ],
+    [
+     247,
+     10,
+     10
+    ],
+    [
+     257,
+     10,
+     10
+    ],
+    [
+     267,
+     12,
+     7
+    ]
+   ],
+   "wall_s": 2.402785301208496
+  },
+  {
+   "snapshot": "grasp_contact",
+   "t_snap": 130,
+   "candidate": "actor_preferred_REPLAN",
+   "action": 80,
+   "rep": 0,
+   "duplicate_run": false,
+   "success": true,
+   "t_end": 271,
+   "steps_to_termination": 141,
+   "task_return": 0.96475,
+   "discounted_task_return": 0.8364043529827186,
+   "inference_calls": 9,
+   "underrun": 0,
+   "first_request": {
+    "obs_t": 130,
+    "r": 10,
+    "n": 10,
+    "handoff_t": 140,
+    "discarded": 14
+   },
+   "request_signature": [
+    [
+     130,
+     10,
+     10
+    ],
+    [
+     159,
+     6,
+     3
+    ],
+    [
+     170,
+     10,
+     10
+    ],
+    [
+     191,
+     12,
+     7
+    ],
+    [
+     203,
+     12,
+     7
+    ],
+    [
+     223,
+     10,
+     10
+    ],
+    [
+     246,
+     10,
+     10
+    ],
+    [
+     256,
+     10,
+     10
+    ],
+    [
+     266,
+     10,
+     10
+    ]
+   ],
+   "wall_s": 2.303760290145874
+  },
+  {
+   "snapshot": "grasp_contact",
+   "t_snap": 130,
+   "candidate": "alternative_REPLAN",
+   "action": 115,
+   "rep": 0,
+   "duplicate_run": false,
+   "success": true,
+   "t_end": 272,
+   "steps_to_termination": 142,
+   "task_return": 0.9645,
+   "discounted_task_return": 0.8353179486297359,
+   "inference_calls": 10,
+   "underrun": 0,
+   "first_request": {
+    "obs_t": 130,
+    "r": 15,
+    "n": 5,
+    "handoff_t": 145,
+    "discarded": 9
+   },
+   "request_signature": [
+    [
+     130,
+     15,
+     5
+    ],
+    [
+     160,
+     10,
+     10
+    ],
+    [
+     179,
+     10,
+     10
+    ],
+    [
+     190,
+     12,
+     7
+    ],
+    [
+     202,
+     12,
+     7
+    ],
+    [
+     223,
+     10,
+     10
+    ],
+    [
+     233,
+     10,
+     10
+    ],
+    [
+     243,
+     10,
+     10
+    ],
+    [
+     253,
+     10,
+     10
+    ],
+    [
+     263,
+     10,
+     10
+    ]
+   ],
+   "wall_s": 2.4082205295562744
+  },
+  {
+   "snapshot": "early_movement",
+   "t_snap": 40,
+   "candidate": "KEEP",
+   "action": 0,
+   "rep": 1,
+   "duplicate_run": false,
+   "success": true,
+   "t_end": 270,
+   "steps_to_termination": 230,
+   "task_return": 0.9425,
+   "discounted_task_return": 0.7438479567125342,
+   "inference_calls": 16,
+   "underrun": 0,
+   "first_request": {
+    "obs_t": 48,
+    "r": 6,
+    "n": 3,
+    "handoff_t": 54,
+    "discarded": 11
+   },
+   "request_signature": [
+    [
+     48,
+     6,
+     3
+    ],
+    [
+     62,
+     6,
+     3
+    ],
+    [
+     68,
+     12,
+     7
+    ],
+    [
+     80,
+     10,
+     10
+    ],
+    [
+     90,
+     10,
+     10
+    ],
+    [
+     115,
+     10,
+     10
+    ],
+    [
+     141,
+     6,
+     3
+    ],
+    [
+     159,
+     10,
+     10
+    ],
+    [
+     178,
+     10,
+     10
+    ],
+    [
+     188,
+     12,
+     7
+    ],
+    [
+     200,
+     12,
+     7
+    ],
+    [
+     226,
+     10,
+     10
+    ],
+    [
+     236,
+     10,
+     10
+    ],
+    [
+     246,
+     10,
+     10
+    ],
+    [
+     256,
+     10,
+     10
+    ],
+    [
+     266,
+     12,
+     7
+    ]
+   ],
+   "wall_s": 3.7981784343719482
+  },
+  {
+   "snapshot": "early_movement",
+   "t_snap": 40,
+   "candidate": "actor_preferred_REPLAN",
+   "action": 93,
+   "rep": 1,
+   "duplicate_run": false,
+   "success": true,
+   "t_end": 269,
+   "steps_to_termination": 229,
+   "task_return": 0.94275,
+   "discounted_task_return": 0.7448427995120462,
+   "inference_calls": 15,
+   "underrun": 0,
+   "first_request": {
+    "obs_t": 40,
+    "r": 12,
+    "n": 7,
+    "handoff_t": 52,
+    "discarded": 13
+   },
+   "request_signature": [
+    [
+     40,
+     12,
+     7
+    ],
+    [
+     52,
+     12,
+     7
+    ],
+    [
+     64,
+     12,
+     7
+    ],
+    [
+     76,
+     10,
+     10
+    ],
+    [
+     86,
+     10,
+     10
+    ],
+    [
+     110,
+     10,
+     10
+    ],
+    [
+     131,
+     6,
+     3
+    ],
+    [
+     155,
+     6,
+     3
+    ],
+    [
+     167,
+     11,
+     10
+    ],
+    [
+     191,
+     12,
+     7
+    ],
+    [
+     215,
+     10,
+     10
+    ],
+    [
+     233,
+     10,
+     10
+    ],
+    [
+     243,
+     10,
+     10
+    ],
+    [
+     253,
+     10,
+     10
+    ],
+    [
+     263,
+     10,
+     10
+    ]
+   ],
+   "wall_s": 3.7457275390625
+  },
+  {
+   "snapshot": "early_movement",
+   "t_snap": 40,
+   "candidate": "alternative_REPLAN",
+   "action": 80,
+   "rep": 1,
+   "duplicate_run": false,
+   "success": true,
+   "t_end": 269,
+   "steps_to_termination": 229,
+   "task_return": 0.94275,
+   "discounted_task_return": 0.7448427995120462,
+   "inference_calls": 16,
+   "underrun": 0,
+   "first_request": {
+    "obs_t": 40,
+    "r": 10,
+    "n": 10,
+    "handoff_t": 50,
+    "discarded": 15
+   },
+   "request_signature": [
+    [
+     40,
+     10,
+     10
+    ],
+    [
+     52,
+     6,
+     3
+    ],
+    [
+     68,
+     10,
+     10
+    ],
+    [
+     78,
+     10,
+     10
+    ],
+    [
+     88,
+     10,
+     10
+    ],
+    [
+     112,
+     10,
+     10
+    ],
+    [
+     138,
+     6,
+     3
+    ],
+    [
+     158,
+     10,
+     10
+    ],
+    [
+     176,
+     10,
+     10
+    ],
+    [
+     186,
+     12,
+     7
+    ],
+    [
+     198,
+     12,
+     7
+    ],
+    [
+     223,
+     10,
+     10
+    ],
+    [
+     233,
+     10,
+     10
+    ],
+    [
+     243,
+     10,
+     10
+    ],
+    [
+     253,
+     10,
+     10
+    ],
+    [
+     263,
+     10,
+     10
+    ]
+   ],
+   "wall_s": 3.9089603424072266
+  },
+  {
+   "snapshot": "grasp_contact",
+   "t_snap": 130,
+   "candidate": "KEEP",
+   "action": 0,
+   "rep": 1,
+   "duplicate_run": false,
+   "success": true,
+   "t_end": 279,
+   "steps_to_termination": 149,
+   "task_return": 0.96275,
+   "discounted_task_return": 0.8277434767180841,
+   "inference_calls": 11,
+   "underrun": 0,
+   "first_request": {
+    "obs_t": 146,
+    "r": 6,
+    "n": 3,
+    "handoff_t": 152,
+    "discarded": 2
+   },
+   "request_signature": [
+    [
+     146,
+     6,
+     3
+    ],
+    [
+     152,
+     10,
+     10
+    ],
+    [
+     166,
+     11,
+     10
+    ],
+    [
+     192,
+     10,
+     10
+    ],
+    [
+     202,
+     12,
+     7
+    ],
+    [
+     214,
+     12,
+     7
+    ],
+    [
+     226,
+     12,
+     7
+    ],
+    [
+     248,
+     10,
+     10
+    ],
+    [
+     258,
+     10,
+     10
+    ],
+    [
+     268,
+     10,
+     10
+    ],
+    [
+     278,
+     12,
+     7
+    ]
+   ],
+   "wall_s": 2.56018328666687
+  },
+  {
+   "snapshot": "grasp_contact",
+   "t_snap": 130,
+   "candidate": "actor_preferred_REPLAN",
+   "action": 80,
+   "rep": 1,
+   "duplicate_run": false,
+   "success": true,
+   "t_end": 273,
+   "steps_to_termination": 143,
+   "task_return": 0.96425,
+   "discounted_task_return": 0.8342326306811062,
+   "inference_calls": 10,
+   "underrun": 0,
+   "first_request": {
+    "obs_t": 130,
+    "r": 10,
+    "n": 10,
+    "handoff_t": 140,
+    "discarded": 14
+   },
+   "request_signature": [
+    [
+     130,
+     10,
+     10
+    ],
+    [
+     159,
+     6,
+     3
+    ],
+    [
+     171,
+     10,
+     10
+    ],
+    [
+     190,
+     12,
+     7
+    ],
+    [
+     202,
+     12,
+     7
+    ],
+    [
+     226,
+     10,
+     10
+    ],
+    [
+     236,
+     10,
+     10
+    ],
+    [
+     246,
+     10,
+     10
+    ],
+    [
+     256,
+     10,
+     10
+    ],
+    [
+     266,
+     10,
+     10
+    ]
+   ],
+   "wall_s": 2.435673236846924
+  },
+  {
+   "snapshot": "grasp_contact",
+   "t_snap": 130,
+   "candidate": "alternative_REPLAN",
+   "action": 115,
+   "rep": 1,
+   "duplicate_run": false,
+   "success": true,
+   "t_end": 272,
+   "steps_to_termination": 142,
+   "task_return": 0.9645,
+   "discounted_task_return": 0.8353179486297359,
+   "inference_calls": 10,
+   "underrun": 0,
+   "first_request": {
+    "obs_t": 130,
+    "r": 15,
+    "n": 5,
+    "handoff_t": 145,
+    "discarded": 9
+   },
+   "request_signature": [
+    [
+     130,
+     15,
+     5
+    ],
+    [
+     160,
+     10,
+     10
+    ],
+    [
+     179,
+     10,
+     10
+    ],
+    [
+     189,
+     12,
+     7
+    ],
+    [
+     201,
+     12,
+     7
+    ],
+    [
+     223,
+     10,
+     10
+    ],
+    [
+     233,
+     10,
+     10
+    ],
+    [
+     243,
+     10,
+     10
+    ],
+    [
+     253,
+     10,
+     10
+    ],
+    [
+     263,
+     10,
+     10
+    ]
+   ],
+   "wall_s": 2.4054946899414062
+  },
+  {
+   "snapshot": "early_movement",
+   "t_snap": 40,
+   "candidate": "KEEP",
+   "action": 0,
+   "rep": 2,
+   "duplicate_run": false,
+   "success": true,
+   "t_end": 274,
+   "steps_to_termination": 234,
+   "task_return": 0.9415,
+   "discounted_task_return": 0.7398785239990263,
+   "inference_calls": 15,
+   "underrun": 0,
+   "first_request": {
+    "obs_t": 48,
+    "r": 6,
+    "n": 3,
+    "handoff_t": 54,
+    "discarded": 11
+   },
+   "request_signature": [
+    [
+     48,
+     6,
+     3
+    ],
+    [
+     62,
+     6,
+     3
+    ],
+    [
+     68,
+     12,
+     7
+    ],
+    [
+     80,
+     10,
+     10
+    ],
+    [
+     90,
+     10,
+     10
+    ],
+    [
+     115,
+     10,
+     10
+    ],
+    [
+     141,
+     6,
+     3
+    ],
+    [
+     160,
+     10,
+     10
+    ],
+    [
+     178,
+     10,
+     10
+    ],
+    [
+     188,
+     12,
+     7
+    ],
+    [
+     200,
+     12,
+     7
+    ],
+    [
+     222,
+     10,
+     10
+    ],
+    [
+     245,
+     10,
+     10
+    ],
+    [
+     255,
+     10,
+     10
+    ],
+    [
+     265,
+     10,
+     10
+    ]
+   ],
+   "wall_s": 3.7433037757873535
+  },
+  {
+   "snapshot": "early_movement",
+   "t_snap": 40,
+   "candidate": "actor_preferred_REPLAN",
+   "action": 93,
+   "rep": 2,
+   "duplicate_run": false,
+   "success": true,
+   "t_end": 274,
+   "steps_to_termination": 234,
+   "task_return": 0.9415,
+   "discounted_task_return": 0.7398785239990263,
+   "inference_calls": 16,
+   "underrun": 0,
+   "first_request": {
+    "obs_t": 40,
+    "r": 12,
+    "n": 7,
+    "handoff_t": 52,
+    "discarded": 13
+   },
+   "request_signature": [
+    [
+     40,
+     12,
+     7
+    ],
+    [
+     52,
+     12,
+     7
+    ],
+    [
+     64,
+     12,
+     7
+    ],
+    [
+     76,
+     10,
+     10
+    ],
+    [
+     86,
+     10,
+     10
+    ],
+    [
+     110,
+     10,
+     10
+    ],
+    [
+     136,
+     6,
+     3
+    ],
+    [
+     161,
+     6,
+     3
+    ],
+    [
+     173,
+     10,
+     10
+    ],
+    [
+     193,
+     12,
+     7
+    ],
+    [
+     205,
+     12,
+     7
+    ],
+    [
+     227,
+     10,
+     10
+    ],
+    [
+     237,
+     10,
+     10
+    ],
+    [
+     247,
+     10,
+     10
+    ],
+    [
+     257,
+     10,
+     10
+    ],
+    [
+     267,
+     10,
+     10
+    ]
+   ],
+   "wall_s": 3.8584213256835938
+  },
+  {
+   "snapshot": "early_movement",
+   "t_snap": 40,
+   "candidate": "alternative_REPLAN",
+   "action": 80,
+   "rep": 2,
+   "duplicate_run": false,
+   "success": true,
+   "t_end": 276,
+   "steps_to_termination": 236,
+   "task_return": 0.941,
+   "discounted_task_return": 0.7378997568295522,
+   "inference_calls": 16,
+   "underrun": 0,
+   "first_request": {
+    "obs_t": 40,
+    "r": 10,
+    "n": 10,
+    "handoff_t": 50,
+    "discarded": 15
+   },
+   "request_signature": [
+    [
+     40,
+     10,
+     10
+    ],
+    [
+     51,
+     6,
+     3
+    ],
+    [
+     67,
+     10,
+     10
+    ],
+    [
+     77,
+     10,
+     10
+    ],
+    [
+     87,
+     10,
+     10
+    ],
+    [
+     111,
+     10,
+     10
+    ],
+    [
+     137,
+     6,
+     3
+    ],
+    [
+     162,
+     6,
+     3
+    ],
+    [
+     176,
+     10,
+     10
+    ],
+    [
+     186,
+     12,
+     7
+    ],
+    [
+     198,
+     12,
+     7
+    ],
+    [
+     221,
+     10,
+     10
+    ],
+    [
+     243,
+     10,
+     10
+    ],
+    [
+     253,
+     10,
+     10
+    ],
+    [
+     263,
+     10,
+     10
+    ],
+    [
+     273,
+     10,
+     10
+    ]
+   ],
+   "wall_s": 3.9455912113189697
+  },
+  {
+   "snapshot": "grasp_contact",
+   "t_snap": 130,
+   "candidate": "KEEP",
+   "action": 0,
+   "rep": 2,
+   "duplicate_run": false,
+   "success": true,
+   "t_end": 277,
+   "steps_to_termination": 147,
+   "task_return": 0.96325,
+   "discounted_task_return": 0.8299022012183196,
+   "inference_calls": 10,
+   "underrun": 0,
+   "first_request": {
+    "obs_t": 146,
+    "r": 6,
+    "n": 3,
+    "handoff_t": 152,
+    "discarded": 2
+   },
+   "request_signature": [
+    [
+     146,
+     6,
+     3
+    ],
+    [
+     152,
+     10,
+     10
+    ],
+    [
+     166,
+     11,
+     10
+    ],
+    [
+     190,
+     12,
+     7
+    ],
+    [
+     202,
+     12,
+     7
+    ],
+    [
+     214,
+     12,
+     7
+    ],
+    [
+     226,
+     12,
+     7
+    ],
+    [
+     247,
+     10,
+     10
+    ],
+    [
+     257,
+     10,
+     10
+    ],
+    [
+     267,
+     10,
+     10
+    ]
+   ],
+   "wall_s": 2.406508445739746
+  },
+  {
+   "snapshot": "grasp_contact",
+   "t_snap": 130,
+   "candidate": "actor_preferred_REPLAN",
+   "action": 80,
+   "rep": 2,
+   "duplicate_run": false,
+   "success": true,
+   "t_end": 271,
+   "steps_to_termination": 141,
+   "task_return": 0.96475,
+   "discounted_task_return": 0.8364043529827186,
+   "inference_calls": 9,
+   "underrun": 0,
+   "first_request": {
+    "obs_t": 130,
+    "r": 10,
+    "n": 10,
+    "handoff_t": 140,
+    "discarded": 14
+   },
+   "request_signature": [
+    [
+     130,
+     10,
+     10
+    ],
+    [
+     159,
+     6,
+     3
+    ],
+    [
+     170,
+     10,
+     10
+    ],
+    [
+     191,
+     12,
+     7
+    ],
+    [
+     203,
+     12,
+     7
+    ],
+    [
+     224,
+     10,
+     10
+    ],
+    [
+     248,
+     10,
+     10
+    ],
+    [
+     258,
+     10,
+     10
+    ],
+    [
+     268,
+     10,
+     10
+    ]
+   ],
+   "wall_s": 2.307483673095703
+  },
+  {
+   "snapshot": "grasp_contact",
+   "t_snap": 130,
+   "candidate": "alternative_REPLAN",
+   "action": 115,
+   "rep": 2,
+   "duplicate_run": false,
+   "success": true,
+   "t_end": 271,
+   "steps_to_termination": 141,
+   "task_return": 0.96475,
+   "discounted_task_return": 0.8364043529827186,
+   "inference_calls": 10,
+   "underrun": 0,
+   "first_request": {
+    "obs_t": 130,
+    "r": 15,
+    "n": 5,
+    "handoff_t": 145,
+    "discarded": 9
+   },
+   "request_signature": [
+    [
+     130,
+     15,
+     5
+    ],
+    [
+     160,
+     10,
+     10
+    ],
+    [
+     179,
+     10,
+     10
+    ],
+    [
+     190,
+     12,
+     7
+    ],
+    [
+     202,
+     12,
+     7
+    ],
+    [
+     222,
+     10,
+     10
+    ],
+    [
+     232,
+     10,
+     10
+    ],
+    [
+     242,
+     10,
+     10
+    ],
+    [
+     252,
+     10,
+     10
+    ],
+    [
+     262,
+     10,
+     10
+    ]
+   ],
+   "wall_s": 2.403158187866211
+  },
+  {
+   "snapshot": "early_movement",
+   "t_snap": 40,
+   "candidate": "KEEP",
+   "action": 0,
+   "rep": 0,
+   "duplicate_run": true,
+   "success": true,
+   "t_end": 270,
+   "steps_to_termination": 230,
+   "task_return": 0.9425,
+   "discounted_task_return": 0.7438479567125342,
+   "inference_calls": 17,
+   "underrun": 0,
+   "first_request": {
+    "obs_t": 48,
+    "r": 6,
+    "n": 3,
+    "handoff_t": 54,
+    "discarded": 11
+   },
+   "request_signature": [
+    [
+     48,
+     6,
+     3
+    ],
+    [
+     62,
+     6,
+     3
+    ],
+    [
+     68,
+     12,
+     7
+    ],
+    [
+     80,
+     12,
+     7
+    ],
+    [
+     92,
+     10,
+     10
+    ],
+    [
+     117,
+     10,
+     10
+    ],
+    [
+     143,
+     6,
+     3
+    ],
+    [
+     149,
+     10,
+     10
+    ],
+    [
+     162,
+     11,
+     10
+    ],
+    [
+     181,
+     10,
+     10
+    ],
+    [
+     191,
+     12,
+     7
+    ],
+    [
+     203,
+     12,
+     7
+    ],
+    [
+     226,
+     10,
+     10
+    ],
+    [
+     236,
+     10,
+     10
+    ],
+    [
+     246,
+     10,
+     10
+    ],
+    [
+     256,
+     10,
+     10
+    ],
+    [
+     266,
+     10,
+     10
+    ]
+   ],
+   "wall_s": 3.9098622798919678
+  },
+  {
+   "snapshot": "grasp_contact",
+   "t_snap": 130,
+   "candidate": "KEEP",
+   "action": 0,
+   "rep": 0,
+   "duplicate_run": true,
+   "success": true,
+   "t_end": 276,
+   "steps_to_termination": 146,
+   "task_return": 0.9635,
+   "discounted_task_return": 0.8309831844027222,
+   "inference_calls": 10,
+   "underrun": 0,
+   "first_request": {
+    "obs_t": 146,
+    "r": 6,
+    "n": 3,
+    "handoff_t": 152,
+    "discarded": 2
+   },
+   "request_signature": [
+    [
+     146,
+     6,
+     3
+    ],
+    [
+     152,
+     10,
+     10
+    ],
+    [
+     166,
+     11,
+     10
+    ],
+    [
+     192,
+     10,
+     10
+    ],
+    [
+     202,
+     12,
+     7
+    ],
+    [
+     214,
+     12,
+     7
+    ],
+    [
+     226,
+     12,
+     7
+    ],
+    [
+     247,
+     10,
+     10
+    ],
+    [
+     257,
+     10,
+     10
+    ],
+    [
+     267,
+     12,
+     7
+    ]
+   ],
+   "wall_s": 2.4068660736083984
+  }
+ ],
+ "replay_checks": [
+  {
+   "snapshot": "early_movement",
+   "physics_state_maxdiff_after_restore": 0.0,
+   "one_step_physics_maxdiff": 0.0,
+   "one_step_image_maxdiff": 0,
+   "one_step_image_pixels_differing": 0
+  },
+  {
+   "snapshot": "grasp_contact",
+   "physics_state_maxdiff_after_restore": 0.0,
+   "one_step_physics_maxdiff": 0.0,
+   "one_step_image_maxdiff": 1,
+   "one_step_image_pixels_differing": 1
+  }
+ ]
+}

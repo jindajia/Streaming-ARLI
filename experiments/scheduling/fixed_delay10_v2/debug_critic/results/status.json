@@ -1,0 +1,95 @@
+{
+ "started": "2026-10-29 12:25:26",
+ "host": "x1001c1s7b0n0",
+ "slurm_job": "8766798",
+ "git": "844e6f470ddaf1e413a890d65c0ca79afa63b9ae",
+ "phases": {
+  "audit": {
+   "seconds": 0.3663358688354492,
+   "failed": {}
+  },
+  "decomposition_fixed": {
+   "seconds": 23.308348655700684,
+   "set_sizes": {
+    "ordinary_all": 2048,
+    "ordinary_pre100k": 1024,
+    "KEEP": 512,
+    "REPLAN": 512,
+    "terminal_success": 512,
+    "terminal_timeout": 292,
+    "rem_0_50": 512,
+    "rem_50_150": 512,
+    "rem_150_300": 512,
+    "rem_300_400": 512
+   }
+  },
+  "full_replay": {
+   "seconds": 17.511680364608765,
+   "ckpts": [
+    100247,
+    225337,
+    300155
+   ]
+  },
+  "pilot": {
+   "branch_rollouts": 20,
+   "source_rollouts": 1,
+   "seconds": 103.89560914039612
+  },
+  "ablation": {
+   "total_critic_updates": 600,
+   "seconds": 39.71076846122742
+  }
+ },
+ "skipped": [],
+ "jax_backend": "gpu",
+ "replay": {
+  "decisions": 59907,
+  "parts": [
+   "part_000000000_000003420.pkl",
+   "part_000003420_000008931.pkl",
+   "part_000008931_000016237.pkl",
+   "part_000016237_000022820.pkl",
+   "part_000022820_000028506.pkl",
+   "part_000028506_000031319.pkl",
+   "part_000031319_000033235.pkl",
+   "part_000033235_000038347.pkl",
+   "part_000038347_000042264.pkl",
+   "part_000042264_000046265.pkl",
+   "part_000046265_000050658.pkl",
+   "part_000050658_000053144.pkl",
+   "part_000053144_000054011.pkl",
+   "part_000054011_000056969.pkl",
+   "part_000056969_000059907.pkl"
+  ],
+  "decisions_at_ckpt": {
+   "100247": 28506,
+   "225337": 50658,
+   "300155": 59907
+  },
+  "grad_steps_total": 295155,
+  "batch": 256
+ },
+ "elapsed_s": 314.1280720233917,
+ "checkpoints": {
+  "100247": {
+   "file": "ckpt/learner_0100247.msgpack",
+   "sha256": "c10970cdb45e6718ac7770bb0e72fea66206b9e3b806b758e23a07c723e32f56",
+   "alpha": 0.002059002872556448,
+   "prior_strength": 0.0
+  },
+  "225337": {
+   "file": "ckpt/learner_0225337.msgpack",
+   "sha256": "92d3a04050514b9df3f26870c03e6e6b2b1bf362110659b326c88fa628a7c541",
+   "alpha": 0.002115114824846387,
+   "prior_strength": 0.0
+  },
+  "300155": {
+   "file": "ckpt/learner_0300155.msgpack",
+   "sha256": "d439fdf12bf52390dda77274f1de5f790ab684efc1099456c13c88d0024dd7ba",
+   "alpha": 0.031181475147604942,
+   "prior_strength": 0.0
+  }
+ },
+ "finished": "2026-10-29 12:30:40"
+}
