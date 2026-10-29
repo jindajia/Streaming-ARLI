@@ -1,0 +1,46 @@
+{
+ "baseline": {
+  "success": true,
+  "t_end": 237,
+  "obs_t": [
+   15,
+   40,
+   65,
+   90,
+   115,
+   140
+  ],
+  "kinds": [
+   "baseline_replan"
+  ],
+  "exec_len": [
+   25
+  ],
+  "wall_ms_N10": 377.9464976137711
+ },
+ "snapshot": {
+  "t": 30,
+  "p": 5,
+  "q": 20,
+  "baseline_first": {
+   "obs_t": 40,
+   "handoff_t": 50,
+   "old_executed": 25
+  },
+  "replan_7_5": {
+   "obs_t": 30,
+   "ready_t": 37,
+   "handoff_t": 37,
+   "old_executed": 12,
+   "discarded": 13,
+   "shift": 15,
+   "committed": 7
+  },
+  "next_after_early": {
+   "obs_t": 52,
+   "shift": 22
+  },
+  "baseline_success": true,
+  "replan_success": true
+ }
+}
