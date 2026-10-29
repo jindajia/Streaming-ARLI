@@ -2,7 +2,7 @@
 # GPU smoke: real-stack checks, then a short online run with a deterministic mid-run stop and resume.
 set -e
 rm -rf /N/scratch/jindjia/arli/runs_scheduling/smoke
-python scripts/gpu_checks.py
+[ -n "$SKIP_CHECKS" ] || python scripts/gpu_checks.py
 python -m sch01.train --config configs/smoke.yaml --stop_after_episodes 3 || echo "first segment exit $?"
 python -m sch01.train --config configs/smoke.yaml
 python - <<'PY'
@@ -14,6 +14,6 @@ for f in ('reference_eval','evals'):
 ep=[json.loads(l) for l in open(f'{d}/episodes.jsonl')]
 print('train episodes', [(e['steps'], e['success'], e['departures'], e['grad_steps'], e['replay']) for e in ep])
 up=[json.loads(l) for l in open(f'{d}/updates.jsonl')]
-print('updates', [(u['grad_steps'], u['actor_on'], round(u['critic_loss'],4), round(u['entropy'],3), round(u['ref_prob'],3)) for u in up])
+print('updates', [(u['grad_steps'], u['actor_on'], round(u['critic_loss'],4), round(u['entropy'],3), round(u['ref_prob'],3), round(u['alpha'],5), round(u.get('target_entropy',-1),4)) for u in up])
 PY
 echo SMOKE_DONE

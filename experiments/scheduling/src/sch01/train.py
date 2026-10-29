@@ -36,7 +36,7 @@ class Cfg:
     actor_lr: float = 1e-4
     critic_lr: float = 3e-4
     alpha_lr: float = 3e-4
-    alpha_init: float = 0.01
+    alpha_init: float = 0.001
     target_entropy_ratio: float = 0.1
     p0: float = 0.999
     prior_hold_until: int = 5_000

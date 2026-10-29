@@ -4,7 +4,8 @@ policy(u | s) = softmax over feasible u of  residual(s)[u] + prior(s, step)[u]
 prior: reference action logit = strength(step) * log(p0 (M-1)/(1-p0)), other feasible logits 0 (core.prior_logits).
 Critic target: y = G + gamma^D (1 - terminal) * sum_u' pi(u'|s') [min_i Qbar_i(s', u') - alpha log pi(u'|s')].
 Actor loss:    sum_u pi(u|s) [alpha log pi(u|s) - min_i Q_i(s, u)]  over feasible u.
-Temperature:   log-alpha descends on (H(pi(.|s)) - target_ratio * log M(s)), M = number of feasible actions.
+Temperature:   log-alpha descends on (H(pi(.|s)) - target(s)), target(s) = min(H(prior-only policy at the current
+               strength), target_ratio * log M(s)), M = number of feasible actions (DECISIONS S12).
 All expectations use the same feasibility masks as sampling.
 """
 
@@ -77,6 +78,17 @@ def prior_logits_batch(ref, nfeas, mask, strength, p0):
     big = jnp.where(nfeas > 1, big, 0.0)
     onehot = jax.nn.one_hot(ref, core.NUM_ACTIONS)
     return jnp.where(mask, onehot * big[:, None], NEG)
+
+
+def prior_entropy(nfeas, strength, p0):
+    """Entropy of the prior-only policy (zero residual) with M = nfeas feasible actions at the given strength.
+    Used as the per-state entropy target while the prior is annealed (DECISIONS S12)."""
+    m = jnp.maximum(nfeas, 1.0)
+    b = strength * jnp.log(p0 * jnp.maximum(m - 1, 1) / (1 - p0))
+    p_ref = jnp.exp(b) / (jnp.exp(b) + m - 1)
+    p_oth = (1 - p_ref) / jnp.maximum(m - 1, 1)
+    h = -p_ref * jnp.log(p_ref) - (m - 1) * p_oth * jnp.log(jnp.maximum(p_oth, 1e-30))
+    return jnp.where(m > 1, h, 0.0)
 
 
 def masked_policy(residual, ref, nfeas, mask, strength, p0):
@@ -187,8 +199,11 @@ def _update(rng, A, C, Ct, T, b, strength, actor_on, gamma, tau, p0, ratio):
     (la, (ent, pref)), ga = jax.value_and_grad(actor_loss, has_aux=True)(A.params)
     if actor_on:
         A = A.apply_gradients(grads=ga)
-        target_ent = ratio * jnp.log(jnp.maximum(b["s_nfeas"], 1.0))
+        target_ent = jnp.minimum(prior_entropy(b["s_nfeas"], strength, p0),
+                                 ratio * jnp.log(jnp.maximum(b["s_nfeas"], 1.0)))
         gt = jax.grad(lambda tp: (tp["log_alpha"] * jax.lax.stop_gradient(ent - target_ent)).mean())(T.params)
         T = T.apply_gradients(grads=gt)
-    info.update(actor_loss=la, entropy=ent.mean(), ref_prob=pref.mean(), alpha=alpha)
+    info.update(actor_loss=la, entropy=ent.mean(), ref_prob=pref.mean(), alpha=alpha,
+                target_entropy=jnp.minimum(prior_entropy(b["s_nfeas"], strength, p0),
+                                           ratio * jnp.log(jnp.maximum(b["s_nfeas"], 1.0))).mean())
     return rng, A, C, Ct, T, info
