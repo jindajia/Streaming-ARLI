@@ -1,6 +1,6 @@
 # STATUS — SCH-01 fixed_delay10_v2
 
-_Last updated 2026-10-29 01:35 EDT._ gpu-debug only; ≤5 jobs for this request. Simulation timing = deterministic table.
+_Last updated 2026-10-29 06:15 EDT._ **Stage 1 and Stage 2 (seed 0, 300k) complete.** gpu-debug only; ≤5 jobs for this request. Simulation timing = deterministic table.
 
 ## Done
 - Legacy 7-step-budget experiment archived ([../LEGACY_BUDGET7.md](../LEGACY_BUDGET7.md)): final progress 50,120 steps;
@@ -44,6 +44,52 @@ effect. Two paired replicates on baseline-solved states cannot establish a benef
 | 100,247 | 37 | 0.68 | |
 | 125,116 | 36 | 0.52 | |
 | **150,000** | **35** | 0.48 | **milestone saved** (`ckpt/milestone_0150000`, 38,347 replay rows) |
+| 175,264 | 36 | 0.22 | |
+| 200,252 | 35 | 0.48 | |
+| 225,337 | 35 | 0.40 | |
+| 250,150 | 36 | 0.19 | |
+| 275,165 | 34 | 0.18 | |
+| **300,155** | **32** | 0.07 | final (run DONE) |
 
-Segments: 8764519 (0 → 50,055), 8764520 (→ 114,806), 8764681 (→ 175,264), each exit 3 = checkpointed after ~51 min;
-8764850 running; 8764852+ queued (≤ 2 jobs at a time).
+Segments (all gpu-debug, A100, one writer): 8764519 (0 → 50,055), 8764520 (→ 114,806), 8764681 (→ 175,264,
+incl. 150k milestone), 8764850 (→ 243,444), 8765095 (→ 300,155), each exit 3 = checkpointed after 50.7–51.7 min;
+8765331 (6.6 min: final 300k evaluation, DONE). Totals: 942 training episodes (650 successful), 295,155 gradient
+updates (294,899 with the actor on), 59,907 scheduler decisions, 26,081 inference requests.
+
+### Learned behaviour (held-out evaluations, means per episode)
+
+| | fixed baseline | learned @25k | @150k | @300k |
+|---|---|---|---|---|
+| successes / 50 | 36 | 36 | 35 | 32 |
+| selected N | 10.0 | 7.96 | 7.68 | 7.34 |
+| R (old actions after the decision) | 10.0 | 10.69 | 10.44 | 9.36 |
+| launch phase p | 15.0 | 4.06 | 1.49 | 0.11 |
+| old actions executed per chunk | 25.0 | 14.75 | 11.93 | 9.47 |
+| observation age at handoff (steps) | 10.0 | 10.69 | 10.44 | 9.36 |
+| inference calls / 1,000 steps | 39.6 | 68.4 | 86.0 | 107.4 |
+| modeled inference ms / 1,000 steps | 7,914 | 12,522 | 15,206 | 18,455 |
+| underrun steps | 0 | 0 | 0 | 0 |
+
+Training-episode success (stochastic): 0.66 (0–50k, 154 episodes), 0.72 (50–150k, 319), 0.68 (150–300k, 469).
+
+### Assessment
+The scheduler learned a consistent, very different policy — request a new chunk almost immediately after each
+handoff (p → 0), with fewer denoising steps (N ≈ 7–8) and R ≈ 10, so each chunk executes ~10 instead of 25 actions
+and inference calls rise ~2.7× — but **held-out success did not improve**: 31–39/50 across checkpoints versus 36/50
+for the fixed baseline, ending at 32/50. All differences are within the 50-episode binomial uncertainty (one training
+seed); the step-0 evaluation of an identical schedule already differed by 2 episodes (34 vs 36) through renderer
+non-determinism. With zero GPU-cost penalty and a tiny per-step time penalty, frequent replanning is nearly free in
+the reward, so the learned preference for it is not evidence of better control. The Stage 1 diagnostic (ceiling-
+limited, ~3-step earlier success for early replacement, three −0.5 cells) is consistent with "no clear success
+advantage" in unperturbed ALOHA Transfer Cube.
+
+### Limitations
+One training seed; 50 evaluation episodes per point (Wilson intervals are over episodes, not seeds); simulation delay
+table rather than measured latency, idealised scheduler overhead; unperturbed task with a strong baseline (72 %);
+the diagnostic used 2 replicates on states both source episodes already solved. Recovery-rule states (q < 10) occur
+only after departures (1,214 in training, 1–283 per evaluation); none under the fixed baseline. Measured RTC wall time is
+logged per request (`wall_s`) but never advances the simulator.
+
+### Figures
+`results/online/rn_seed0_d10/eval_success.png` (+ .svg), `training_success.png`, `schedule.png`, `timing_compute.png`;
+CSV/JSONL `evals.csv`, `evals_raw.jsonl`. Diagnostic: `results/diagnostic/diag_v2_coarse/`.
