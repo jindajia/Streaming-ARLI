@@ -1,0 +1,550 @@
+{
+ "frozen_before_branch_outcomes": true,
+ "rule": "(anchored on WHEN the forced handoffs land; forced handoffs fall in [start+15, start+25] for p = 5 and\n[start+20, start+25] for p = 10, start = 25(c-1); chunks must be distinct, >= 2, with both snapshots available):\n  approach        latest chunk with start <= t1 - 25: every forced handoff installs a new chunk before first contact\n  grasp_lift      approach + 1: forced handoffs straddle first right-finger contact (closing / lift)\n  transfer        latest chunk with start <= t3 - 30 (all forced handoffs >= 5 steps before first left-finger\n                  contact) and after grasp_lift; missing if the left finger never touches the cube\n  ordinary_motion chunk 2 (free-space motion from the home pose), if it precedes the approach chunk",
+ "source_seed_rule": "fixed-baseline held-out records (reference_eval.jsonl): median-t_end success 10000014 (272), latest success 10000016 (376), lowest-numbered failure 10000004",
+ "R_sets": {
+  "p5": [
+   10,
+   15,
+   20
+  ],
+  "p10": [
+   10,
+   12,
+   15
+  ]
+ },
+ "continuation_seeds": [
+  0,
+  1,
+  2
+ ],
+ "video_snapshots": [
+  "s014_grasp_lift_p5",
+  "s014_transfer_p5"
+ ],
+ "snapshots": [
+  {
+   "snapshot_id": "s014_approach_p5",
+   "source_seed": 10000014,
+   "phase": "approach",
+   "chunk": 5,
+   "p": 5,
+   "q": 20,
+   "t": 105,
+   "remaining_horizon": 295,
+   "stage_at_snapshot": 0,
+   "events": {
+    "t1_right_contact": 135,
+    "t2_lifted": 135,
+    "t3_left_contact": 264,
+    "t4_success": 264
+   },
+   "source_outcome": {
+    "success": true,
+    "t_end": 264
+   },
+   "description": "Right gripper (open) arriving at the cube; no contact yet (first right-finger contact at 135).",
+   "image": "snapshot_images/s014_approach_p5.jpg"
+  },
+  {
+   "snapshot_id": "s014_approach_p10",
+   "source_seed": 10000014,
+   "phase": "approach",
+   "chunk": 5,
+   "p": 10,
+   "q": 15,
+   "t": 110,
+   "remaining_horizon": 290,
+   "stage_at_snapshot": 0,
+   "events": {
+    "t1_right_contact": 135,
+    "t2_lifted": 135,
+    "t3_left_contact": 264,
+    "t4_success": 264
+   },
+   "source_outcome": {
+    "success": true,
+    "t_end": 264
+   },
+   "description": "Right gripper (open) arriving at the cube; no contact yet (first right-finger contact at 135).",
+   "image": "snapshot_images/s014_approach_p10.jpg"
+  },
+  {
+   "snapshot_id": "s014_grasp_lift_p5",
+   "source_seed": 10000014,
+   "phase": "grasp_lift",
+   "chunk": 6,
+   "p": 5,
+   "q": 20,
+   "t": 130,
+   "remaining_horizon": 270,
+   "stage_at_snapshot": 0,
+   "events": {
+    "t1_right_contact": 135,
+    "t2_lifted": 135,
+    "t3_left_contact": 264,
+    "t4_success": 264
+   },
+   "source_outcome": {
+    "success": true,
+    "t_end": 264
+   },
+   "description": "Right gripper around the cube, closing; first contact and lift both register at 135 (lift held from 148).",
+   "image": "snapshot_images/s014_grasp_lift_p5.jpg"
+  },
+  {
+   "snapshot_id": "s014_grasp_lift_p10",
+   "source_seed": 10000014,
+   "phase": "grasp_lift",
+   "chunk": 6,
+   "p": 10,
+   "q": 15,
+   "t": 135,
+   "remaining_horizon": 265,
+   "stage_at_snapshot": 2,
+   "events": {
+    "t1_right_contact": 135,
+    "t2_lifted": 135,
+    "t3_left_contact": 264,
+    "t4_success": 264
+   },
+   "source_outcome": {
+    "success": true,
+    "t_end": 264
+   },
+   "description": "Right gripper around the cube, closing; first contact and lift both register at 135 (lift held from 148).",
+   "image": "snapshot_images/s014_grasp_lift_p10.jpg"
+  },
+  {
+   "snapshot_id": "s014_transfer_p5",
+   "source_seed": 10000014,
+   "phase": "transfer",
+   "chunk": 10,
+   "p": 5,
+   "q": 20,
+   "t": 230,
+   "remaining_horizon": 170,
+   "stage_at_snapshot": 2,
+   "events": {
+    "t1_right_contact": 135,
+    "t2_lifted": 135,
+    "t3_left_contact": 264,
+    "t4_success": 264
+   },
+   "source_outcome": {
+    "success": true,
+    "t_end": 264
+   },
+   "description": "Cube lifted to the centre in the right gripper; open left gripper approaching (left contact = success at 264).",
+   "image": "snapshot_images/s014_transfer_p5.jpg"
+  },
+  {
+   "snapshot_id": "s014_transfer_p10",
+   "source_seed": 10000014,
+   "phase": "transfer",
+   "chunk": 10,
+   "p": 10,
+   "q": 15,
+   "t": 235,
+   "remaining_horizon": 165,
+   "stage_at_snapshot": 2,
+   "events": {
+    "t1_right_contact": 135,
+    "t2_lifted": 135,
+    "t3_left_contact": 264,
+    "t4_success": 264
+   },
+   "source_outcome": {
+    "success": true,
+    "t_end": 264
+   },
+   "description": "Cube lifted to the centre in the right gripper; open left gripper approaching (left contact = success at 264).",
+   "image": "snapshot_images/s014_transfer_p10.jpg"
+  },
+  {
+   "snapshot_id": "s014_ordinary_motion_p5",
+   "source_seed": 10000014,
+   "phase": "ordinary_motion",
+   "chunk": 2,
+   "p": 5,
+   "q": 20,
+   "t": 30,
+   "remaining_horizon": 370,
+   "stage_at_snapshot": 0,
+   "events": {
+    "t1_right_contact": 135,
+    "t2_lifted": 135,
+    "t3_left_contact": 264,
+    "t4_success": 264
+   },
+   "source_outcome": {
+    "success": true,
+    "t_end": 264
+   },
+   "description": "Right arm in free-space motion from the home pose towards the cube; cube far from both grippers.",
+   "image": "snapshot_images/s014_ordinary_motion_p5.jpg"
+  },
+  {
+   "snapshot_id": "s014_ordinary_motion_p10",
+   "source_seed": 10000014,
+   "phase": "ordinary_motion",
+   "chunk": 2,
+   "p": 10,
+   "q": 15,
+   "t": 35,
+   "remaining_horizon": 365,
+   "stage_at_snapshot": 0,
+   "events": {
+    "t1_right_contact": 135,
+    "t2_lifted": 135,
+    "t3_left_contact": 264,
+    "t4_success": 264
+   },
+   "source_outcome": {
+    "success": true,
+    "t_end": 264
+   },
+   "description": "Right arm in free-space motion from the home pose towards the cube; cube far from both grippers.",
+   "image": "snapshot_images/s014_ordinary_motion_p10.jpg"
+  },
+  {
+   "snapshot_id": "s016_approach_p5",
+   "source_seed": 10000016,
+   "phase": "approach",
+   "chunk": 3,
+   "p": 5,
+   "q": 20,
+   "t": 55,
+   "remaining_horizon": 345,
+   "stage_at_snapshot": 0,
+   "events": {
+    "t1_right_contact": 92,
+    "t2_lifted": 206,
+    "t3_left_contact": 366,
+    "t4_success": 366
+   },
+   "source_outcome": {
+    "success": true,
+    "t_end": 366
+   },
+   "description": "Right arm moving in towards the cube; gripper not yet at the cube (first contact at 92).",
+   "image": "snapshot_images/s016_approach_p5.jpg"
+  },
+  {
+   "snapshot_id": "s016_approach_p10",
+   "source_seed": 10000016,
+   "phase": "approach",
+   "chunk": 3,
+   "p": 10,
+   "q": 15,
+   "t": 60,
+   "remaining_horizon": 340,
+   "stage_at_snapshot": 0,
+   "events": {
+    "t1_right_contact": 92,
+    "t2_lifted": 206,
+    "t3_left_contact": 366,
+    "t4_success": 366
+   },
+   "source_outcome": {
+    "success": true,
+    "t_end": 366
+   },
+   "description": "Right arm moving in towards the cube; gripper not yet at the cube (first contact at 92).",
+   "image": "snapshot_images/s016_approach_p10.jpg"
+  },
+  {
+   "snapshot_id": "s016_grasp_lift_p5",
+   "source_seed": 10000016,
+   "phase": "grasp_lift",
+   "chunk": 4,
+   "p": 5,
+   "q": 20,
+   "t": 80,
+   "remaining_horizon": 320,
+   "stage_at_snapshot": 0,
+   "events": {
+    "t1_right_contact": 92,
+    "t2_lifted": 206,
+    "t3_left_contact": 366,
+    "t4_success": 366
+   },
+   "source_outcome": {
+    "success": true,
+    "t_end": 366
+   },
+   "description": "Right gripper reaching the cube; first contact at 92, but the cube is only lifted at 206 after a long struggle.",
+   "image": "snapshot_images/s016_grasp_lift_p5.jpg"
+  },
+  {
+   "snapshot_id": "s016_grasp_lift_p10",
+   "source_seed": 10000016,
+   "phase": "grasp_lift",
+   "chunk": 4,
+   "p": 10,
+   "q": 15,
+   "t": 85,
+   "remaining_horizon": 315,
+   "stage_at_snapshot": 0,
+   "events": {
+    "t1_right_contact": 92,
+    "t2_lifted": 206,
+    "t3_left_contact": 366,
+    "t4_success": 366
+   },
+   "source_outcome": {
+    "success": true,
+    "t_end": 366
+   },
+   "description": "Right gripper reaching the cube; first contact at 92, but the cube is only lifted at 206 after a long struggle.",
+   "image": "snapshot_images/s016_grasp_lift_p10.jpg"
+  },
+  {
+   "snapshot_id": "s016_transfer_p5",
+   "source_seed": 10000016,
+   "phase": "transfer",
+   "chunk": 14,
+   "p": 5,
+   "q": 20,
+   "t": 330,
+   "remaining_horizon": 70,
+   "stage_at_snapshot": 2,
+   "events": {
+    "t1_right_contact": 92,
+    "t2_lifted": 206,
+    "t3_left_contact": 366,
+    "t4_success": 366
+   },
+   "source_outcome": {
+    "success": true,
+    "t_end": 366
+   },
+   "description": "Cube lifted at the centre in the right gripper; open left gripper approaching (left contact = success at 366).",
+   "image": "snapshot_images/s016_transfer_p5.jpg"
+  },
+  {
+   "snapshot_id": "s016_transfer_p10",
+   "source_seed": 10000016,
+   "phase": "transfer",
+   "chunk": 14,
+   "p": 10,
+   "q": 15,
+   "t": 335,
+   "remaining_horizon": 65,
+   "stage_at_snapshot": 2,
+   "events": {
+    "t1_right_contact": 92,
+    "t2_lifted": 206,
+    "t3_left_contact": 366,
+    "t4_success": 366
+   },
+   "source_outcome": {
+    "success": true,
+    "t_end": 366
+   },
+   "description": "Cube lifted at the centre in the right gripper; open left gripper approaching (left contact = success at 366).",
+   "image": "snapshot_images/s016_transfer_p10.jpg"
+  },
+  {
+   "snapshot_id": "s016_ordinary_motion_p5",
+   "source_seed": 10000016,
+   "phase": "ordinary_motion",
+   "chunk": 2,
+   "p": 5,
+   "q": 20,
+   "t": 30,
+   "remaining_horizon": 370,
+   "stage_at_snapshot": 0,
+   "events": {
+    "t1_right_contact": 92,
+    "t2_lifted": 206,
+    "t3_left_contact": 366,
+    "t4_success": 366
+   },
+   "source_outcome": {
+    "success": true,
+    "t_end": 366
+   },
+   "description": "Right arm in free-space motion from the home pose; cube far from both grippers.",
+   "image": "snapshot_images/s016_ordinary_motion_p5.jpg"
+  },
+  {
+   "snapshot_id": "s016_ordinary_motion_p10",
+   "source_seed": 10000016,
+   "phase": "ordinary_motion",
+   "chunk": 2,
+   "p": 10,
+   "q": 15,
+   "t": 35,
+   "remaining_horizon": 365,
+   "stage_at_snapshot": 0,
+   "events": {
+    "t1_right_contact": 92,
+    "t2_lifted": 206,
+    "t3_left_contact": 366,
+    "t4_success": 366
+   },
+   "source_outcome": {
+    "success": true,
+    "t_end": 366
+   },
+   "description": "Right arm in free-space motion from the home pose; cube far from both grippers.",
+   "image": "snapshot_images/s016_ordinary_motion_p10.jpg"
+  },
+  {
+   "snapshot_id": "s004_approach_p5",
+   "source_seed": 10000004,
+   "phase": "approach",
+   "chunk": 4,
+   "p": 5,
+   "q": 20,
+   "t": 80,
+   "remaining_horizon": 320,
+   "stage_at_snapshot": 0,
+   "events": {
+    "t1_right_contact": 103,
+    "t2_lifted": null,
+    "t3_left_contact": null,
+    "t4_success": null
+   },
+   "source_outcome": {
+    "success": false,
+    "t_end": 400
+   },
+   "description": "Right gripper arriving at the cube; no contact yet (first contact at 103).",
+   "image": "snapshot_images/s004_approach_p5.jpg"
+  },
+  {
+   "snapshot_id": "s004_approach_p10",
+   "source_seed": 10000004,
+   "phase": "approach",
+   "chunk": 4,
+   "p": 10,
+   "q": 15,
+   "t": 85,
+   "remaining_horizon": 315,
+   "stage_at_snapshot": 0,
+   "events": {
+    "t1_right_contact": 103,
+    "t2_lifted": null,
+    "t3_left_contact": null,
+    "t4_success": null
+   },
+   "source_outcome": {
+    "success": false,
+    "t_end": 400
+   },
+   "description": "Right gripper arriving at the cube; no contact yet (first contact at 103).",
+   "image": "snapshot_images/s004_approach_p10.jpg"
+  },
+  {
+   "snapshot_id": "s004_grasp_lift_p5",
+   "source_seed": 10000004,
+   "phase": "grasp_lift",
+   "chunk": 5,
+   "p": 5,
+   "q": 20,
+   "t": 105,
+   "remaining_horizon": 295,
+   "stage_at_snapshot": 1,
+   "events": {
+    "t1_right_contact": 103,
+    "t2_lifted": null,
+    "t3_left_contact": null,
+    "t4_success": null
+   },
+   "source_outcome": {
+    "success": false,
+    "t_end": 400
+   },
+   "description": "Right gripper at the cube just after first contact (103); in the source the cube is never lifted and contact is lost at 178.",
+   "image": "snapshot_images/s004_grasp_lift_p5.jpg"
+  },
+  {
+   "snapshot_id": "s004_grasp_lift_p10",
+   "source_seed": 10000004,
+   "phase": "grasp_lift",
+   "chunk": 5,
+   "p": 10,
+   "q": 15,
+   "t": 110,
+   "remaining_horizon": 290,
+   "stage_at_snapshot": 1,
+   "events": {
+    "t1_right_contact": 103,
+    "t2_lifted": null,
+    "t3_left_contact": null,
+    "t4_success": null
+   },
+   "source_outcome": {
+    "success": false,
+    "t_end": 400
+   },
+   "description": "Right gripper at the cube just after first contact (103); in the source the cube is never lifted and contact is lost at 178.",
+   "image": "snapshot_images/s004_grasp_lift_p10.jpg"
+  },
+  {
+   "snapshot_id": "s004_transfer_p5",
+   "source_seed": 10000004,
+   "phase": "transfer",
+   "p": 5,
+   "missing": true,
+   "reason": "phase not reached in the source episode"
+  },
+  {
+   "snapshot_id": "s004_transfer_p10",
+   "source_seed": 10000004,
+   "phase": "transfer",
+   "p": 10,
+   "missing": true,
+   "reason": "phase not reached in the source episode"
+  },
+  {
+   "snapshot_id": "s004_ordinary_motion_p5",
+   "source_seed": 10000004,
+   "phase": "ordinary_motion",
+   "chunk": 2,
+   "p": 5,
+   "q": 20,
+   "t": 30,
+   "remaining_horizon": 370,
+   "stage_at_snapshot": 0,
+   "events": {
+    "t1_right_contact": 103,
+    "t2_lifted": null,
+    "t3_left_contact": null,
+    "t4_success": null
+   },
+   "source_outcome": {
+    "success": false,
+    "t_end": 400
+   },
+   "description": "Right arm in free-space motion from the home pose; cube far from both grippers.",
+   "image": "snapshot_images/s004_ordinary_motion_p5.jpg"
+  },
+  {
+   "snapshot_id": "s004_ordinary_motion_p10",
+   "source_seed": 10000004,
+   "phase": "ordinary_motion",
+   "chunk": 2,
+   "p": 10,
+   "q": 15,
+   "t": 35,
+   "remaining_horizon": 365,
+   "stage_at_snapshot": 0,
+   "events": {
+    "t1_right_contact": 103,
+    "t2_lifted": null,
+    "t3_left_contact": null,
+    "t4_success": null
+   },
+   "source_outcome": {
+    "success": false,
+    "t_end": 400
+   },
+   "description": "Right arm in free-space motion from the home pose; cube far from both grippers.",
+   "image": "snapshot_images/s004_ordinary_motion_p10.jpg"
+  }
+ ]
+}

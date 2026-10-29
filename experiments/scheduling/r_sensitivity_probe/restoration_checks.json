@@ -1,0 +1,374 @@
+{
+ "checks": [
+  {
+   "seed": 10000014,
+   "chunk": 6,
+   "p": 5,
+   "t": 130,
+   "forced_R": 15,
+   "physics_maxdiff": 0.0,
+   "ctrl_maxdiff": 0.0,
+   "queue_equal": true,
+   "prev_plan_equal": true,
+   "counters_equal": true,
+   "rerendered_vs_saved_input_maxdiff": 1,
+   "rerendered_pixels_differing": 1,
+   "repeats": [
+    {
+     "success": true,
+     "t_end": 271,
+     "termination": "success",
+     "steps_from_snapshot": 141,
+     "steps_to_success": 141,
+     "steps_to_timeout": null,
+     "task_return": 0.96475,
+     "discounted_task_return": 0.8364043529827186,
+     "inference_calls": 6,
+     "underrun_ticks": 0,
+     "max_stage": 4,
+     "first_stage1": 135,
+     "first_stage2": 135,
+     "first_stage3": 271,
+     "first_stage4": 271,
+     "first_request": {
+      "obs_t": 130,
+      "ready_t": 140,
+      "handoff_t": 145,
+      "r": 15,
+      "n": 10,
+      "d": 10,
+      "shift": 15,
+      "committed": 15,
+      "overlap_end": 35,
+      "p_at_launch": 5,
+      "q_at_launch": 20,
+      "old_executed": 20,
+      "discarded": 5,
+      "decision_kind": "forced",
+      "abandoned": false,
+      "installed_slice": "new[15:40]"
+     },
+     "terminated_before_first_handoff": false,
+     "request_signature": [
+      [
+       130,
+       15,
+       10
+      ],
+      [
+       160,
+       10,
+       10
+      ],
+      [
+       185,
+       10,
+       10
+      ],
+      [
+       210,
+       10,
+       10
+      ],
+      [
+       235,
+       10,
+       10
+      ],
+      [
+       260,
+       10,
+       10
+      ]
+     ],
+     "anomalies": []
+    },
+    {
+     "success": true,
+     "t_end": 272,
+     "termination": "success",
+     "steps_from_snapshot": 142,
+     "steps_to_success": 142,
+     "steps_to_timeout": null,
+     "task_return": 0.9645,
+     "discounted_task_return": 0.8353179486297359,
+     "inference_calls": 6,
+     "underrun_ticks": 0,
+     "max_stage": 4,
+     "first_stage1": 135,
+     "first_stage2": 135,
+     "first_stage3": 272,
+     "first_stage4": 272,
+     "first_request": {
+      "obs_t": 130,
+      "ready_t": 140,
+      "handoff_t": 145,
+      "r": 15,
+      "n": 10,
+      "d": 10,
+      "shift": 15,
+      "committed": 15,
+      "overlap_end": 35,
+      "p_at_launch": 5,
+      "q_at_launch": 20,
+      "old_executed": 20,
+      "discarded": 5,
+      "decision_kind": "forced",
+      "abandoned": false,
+      "installed_slice": "new[15:40]"
+     },
+     "terminated_before_first_handoff": false,
+     "request_signature": [
+      [
+       130,
+       15,
+       10
+      ],
+      [
+       160,
+       10,
+       10
+      ],
+      [
+       185,
+       10,
+       10
+      ],
+      [
+       210,
+       10,
+       10
+      ],
+      [
+       235,
+       10,
+       10
+      ],
+      [
+       260,
+       10,
+       10
+      ]
+     ],
+     "anomalies": []
+    }
+   ],
+   "identical_outcome": false
+  },
+  {
+   "seed": 10000016,
+   "chunk": 8,
+   "p": 10,
+   "t": 185,
+   "forced_R": 12,
+   "physics_maxdiff": 0.0,
+   "ctrl_maxdiff": 0.0,
+   "queue_equal": true,
+   "prev_plan_equal": true,
+   "counters_equal": true,
+   "rerendered_vs_saved_input_maxdiff": 1,
+   "rerendered_pixels_differing": 1,
+   "repeats": [
+    {
+     "success": true,
+     "t_end": 399,
+     "termination": "success",
+     "steps_from_snapshot": 214,
+     "steps_to_success": 214,
+     "steps_to_timeout": null,
+     "task_return": 0.9465,
+     "discounted_task_return": 0.7598855021895977,
+     "inference_calls": 9,
+     "underrun_ticks": 0,
+     "max_stage": 4,
+     "first_stage1": 186,
+     "first_stage2": 233,
+     "first_stage3": 399,
+     "first_stage4": 399,
+     "first_request": {
+      "obs_t": 185,
+      "ready_t": 195,
+      "handoff_t": 197,
+      "r": 12,
+      "n": 10,
+      "d": 10,
+      "shift": 20,
+      "committed": 12,
+      "overlap_end": 30,
+      "p_at_launch": 10,
+      "q_at_launch": 15,
+      "old_executed": 22,
+      "discarded": 3,
+      "decision_kind": "forced",
+      "abandoned": false,
+      "installed_slice": "new[12:37]"
+     },
+     "terminated_before_first_handoff": false,
+     "request_signature": [
+      [
+       185,
+       12,
+       10
+      ],
+      [
+       212,
+       10,
+       10
+      ],
+      [
+       237,
+       10,
+       10
+      ],
+      [
+       262,
+       10,
+       10
+      ],
+      [
+       287,
+       10,
+       10
+      ],
+      [
+       312,
+       10,
+       10
+      ],
+      [
+       337,
+       10,
+       10
+      ],
+      [
+       362,
+       10,
+       10
+      ],
+      [
+       387,
+       10,
+       10
+      ]
+     ],
+     "anomalies": []
+    },
+    {
+     "success": true,
+     "t_end": 399,
+     "termination": "success",
+     "steps_from_snapshot": 214,
+     "steps_to_success": 214,
+     "steps_to_timeout": null,
+     "task_return": 0.9465,
+     "discounted_task_return": 0.7598855021895977,
+     "inference_calls": 9,
+     "underrun_ticks": 0,
+     "max_stage": 4,
+     "first_stage1": 186,
+     "first_stage2": 233,
+     "first_stage3": 399,
+     "first_stage4": 399,
+     "first_request": {
+      "obs_t": 185,
+      "ready_t": 195,
+      "handoff_t": 197,
+      "r": 12,
+      "n": 10,
+      "d": 10,
+      "shift": 20,
+      "committed": 12,
+      "overlap_end": 30,
+      "p_at_launch": 10,
+      "q_at_launch": 15,
+      "old_executed": 22,
+      "discarded": 3,
+      "decision_kind": "forced",
+      "abandoned": false,
+      "installed_slice": "new[12:37]"
+     },
+     "terminated_before_first_handoff": false,
+     "request_signature": [
+      [
+       185,
+       12,
+       10
+      ],
+      [
+       212,
+       10,
+       10
+      ],
+      [
+       237,
+       10,
+       10
+      ],
+      [
+       262,
+       10,
+       10
+      ],
+      [
+       287,
+       10,
+       10
+      ],
+      [
+       312,
+       10,
+       10
+      ],
+      [
+       337,
+       10,
+       10
+      ],
+      [
+       362,
+       10,
+       10
+      ],
+      [
+       387,
+       10,
+       10
+      ]
+     ],
+     "anomalies": []
+    }
+   ],
+   "identical_outcome": true
+  }
+ ],
+ "control_rollouts": 4,
+ "provenance": {
+  "pi0_checkpoint": "/N/scratch/jindjia/arli/checkpoints/pi0_aloha_sim",
+  "norm_stats_sha256": "ee0bab07a3401239ca5075ea82b38ebaa2375c9dadb5e8458c275e0a4ef10c4d",
+  "params_metadata_sha256": "ce1369a79b8385d07b4fe373cc482c95c93b919d99abd2eae6ef07ca2f813c23",
+  "delay_table": {
+   "3": 6,
+   "4": 7,
+   "5": 7,
+   "6": 8,
+   "7": 9,
+   "8": 9,
+   "9": 10,
+   "10": 10
+  },
+  "N": 10,
+  "d": 10,
+  "H": 50,
+  "K": 25,
+  "rtc": {
+   "enabled": true,
+   "mask": "official exp soft mask: weight 1 on new[0:R] (committed), decaying until H - shift",
+   "max_guidance": 10.0,
+   "reference": "previous full normalised prediction shifted by t - its observation tick"
+  },
+  "git": "3e7ef159e481d50071c9ef4de3808911220a8da9",
+  "host": "x1001c1s7b0n0",
+  "slurm_job": "8769035",
+  "gpu": "NVIDIA A100-SXM4-40GB"
+ }
+}
