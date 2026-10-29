@@ -23,7 +23,8 @@ button.primary { background: var(--accent); color: #fff; border-color: var(--acc
 .controls { background: var(--surf); border-bottom: 1px solid var(--line); padding: 8px 16px; position: sticky; top: 0; z-index: 5; }
 .ckrow { display: grid; grid-template-columns: 150px 1fr 330px; gap: 12px; align-items: center; }
 .cklabel { display: flex; flex-direction: column; gap: 4px; }
-.ckslider { height: 54px; position: relative; outline: none; }
+.ckslider { height: 54px; position: relative; outline: none; min-width: 0; overflow: hidden; }
+.ckslider canvas { display: block; }
 .ckslider:focus { box-shadow: 0 0 0 2px var(--accent) inset; border-radius: 6px; }
 .ckread { font-size: 12px; line-height: 1.35; }
 .eprow { display: flex; gap: 10px; align-items: center; margin-top: 4px; flex-wrap: wrap; }
@@ -47,7 +48,7 @@ button.primary { background: var(--accent); color: #fff; border-color: var(--acc
 .lockinfo { margin-top: 6px; font-size: 12px; }
 .lockinfo .imgs { display: flex; gap: 10px; margin-top: 4px; }
 .lockinfo canvas { width: 128px; height: 128px; image-rendering: pixelated; border: 1px solid var(--line); }
-.readouts { margin-top: 8px; display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 3px 10px; font-size: 12px; }
+.readouts { margin-top: 8px; display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 3px 10px; font-size: 12px; }
 .readouts div { display: flex; justify-content: space-between; border-bottom: 1px dotted var(--line); padding: 1px 0; gap: 6px; }
 .readouts b { font-variant-numeric: tabular-nums; }
 .statusbox { padding: 6px 8px; border-radius: 6px; margin-bottom: 6px; font-size: 12.5px; }

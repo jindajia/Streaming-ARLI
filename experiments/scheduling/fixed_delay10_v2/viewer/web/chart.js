@@ -38,7 +38,7 @@ function showTip(html, ev) {
 
 class Chart {
   constructor(parent, opts = {}) {
-    this.o = Object.assign({ h: 150, m: { l: 64, r: 12, t: 22, b: 26 } }, opts);
+    this.o = Object.assign({ h: 150, m: { l: 64, r: 12, t: 34, b: 26 } }, opts);
     this.box = document.createElement('div');
     this.box.className = 'chartbox';
     parent.appendChild(this.box);
@@ -145,7 +145,7 @@ class Chart {
     // title + legend
     g.textAlign = 'left'; g.textBaseline = 'alphabetic'; g.fillStyle = '#141413'; g.font = '600 11.5px system-ui, sans-serif';
     g.fillText(s.title || '', m.l, 13);
-    let lx = m.l + g.measureText(s.title || '').width + 14;
+    let lx = m.l, ly = 26;
     g.font = '10.5px system-ui, sans-serif';
     for (const se of s.series) {
       if (!se.label) continue;
@@ -153,11 +153,11 @@ class Chart {
       if (lx + w + 22 > W - 2) break;
       g.strokeStyle = se.color; g.fillStyle = se.color; g.lineWidth = 2;
       if (se.dash) g.setLineDash(se.dash);
-      if (se.type === 'points') { g.beginPath(); g.arc(lx + 6, 9, 3, 0, 7); g.fill(); }
-      else if (se.type === 'band') { g.globalAlpha = 0.25; g.fillRect(lx, 5, 12, 8); g.globalAlpha = 1; }
-      else { g.beginPath(); g.moveTo(lx, 9); g.lineTo(lx + 12, 9); g.stroke(); }
+      if (se.type === 'points') { g.beginPath(); g.arc(lx + 6, ly - 4, 3, 0, 7); g.fill(); }
+      else if (se.type === 'band') { g.globalAlpha = 0.25; g.fillRect(lx, ly - 8, 12, 8); g.globalAlpha = 1; }
+      else { g.beginPath(); g.moveTo(lx, ly - 4); g.lineTo(lx + 12, ly - 4); g.stroke(); }
       g.setLineDash([]); g.lineWidth = 1;
-      g.fillStyle = '#5b5a55'; g.fillText(se.label, lx + 16, 13);
+      g.fillStyle = '#5b5a55'; g.fillText(se.label, lx + 16, ly);
       lx += w + 30;
     }
     if (s.yLabel) {

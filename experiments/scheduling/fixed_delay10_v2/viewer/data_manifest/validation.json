@@ -1,0 +1,19 @@
+{
+ "totals": {
+  "episodes": 90,
+  "decisions": 9993,
+  "frames": 31406,
+  "max_sum_err": 4.5711402218984176e-08,
+  "max_recompute_err": 8.27152464299985e-08,
+  "prior_equal_checked": 990
+ },
+ "n_failures": 0,
+ "failures": [],
+ "probe_check": {
+  "episodes": 84,
+  "argmax_agree": 8569,
+  "decisions": 8569,
+  "max_abs_residual_diff": 0.0,
+  "max_abs_prob_diff": 2.9793777223119378e-08
+ }
+}

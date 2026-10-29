@@ -1,0 +1,156 @@
+[
+ {
+  "id": "ck0000000",
+  "file": "ckpt/learner_0000000.msgpack",
+  "train_steps": 0,
+  "grad_steps": 0,
+  "eval_tag": "0",
+  "prior_strength": 1.0,
+  "eval_success": 34,
+  "eval_episodes": 50,
+  "sha256": "b7b5132dc81de8d6dbbf44eaac4551372b6b22b7810ef69684ba52057f9e1909"
+ },
+ {
+  "id": "ck0005334",
+  "file": "ckpt/learner_0005334.msgpack",
+  "train_steps": 5334,
+  "grad_steps": 334,
+  "eval_tag": "5000",
+  "prior_strength": 0.9925777777777778,
+  "eval_success": 35,
+  "eval_episodes": 50,
+  "sha256": "d26f6fc68bc2112487b4126c2450920d3d96b36688855d842defdd60778ddeb4"
+ },
+ {
+  "id": "ck0025146",
+  "file": "ckpt/learner_0025146.msgpack",
+  "train_steps": 25146,
+  "grad_steps": 20146,
+  "eval_tag": "25000",
+  "prior_strength": 0.5523111111111111,
+  "eval_success": 36,
+  "eval_episodes": 50,
+  "sha256": "39e4a4f70e598fedae883d6db82574e6ebea8b40a06de17b3fa4b1c9620a4188"
+ },
+ {
+  "id": "ck0050055",
+  "file": "ckpt/learner_0050055.msgpack",
+  "train_steps": 50055,
+  "grad_steps": 45055,
+  "eval_tag": "50000",
+  "prior_strength": 0.0,
+  "eval_success": 31,
+  "eval_episodes": 50,
+  "sha256": "e9806cc9544c10f80e4acb265c678afa6d43b2d2066d524e4e71aacc6aa03b5b"
+ },
+ {
+  "id": "ck0075114",
+  "file": "ckpt/learner_0075114.msgpack",
+  "train_steps": 75114,
+  "grad_steps": 70114,
+  "eval_tag": "75000",
+  "prior_strength": 0.0,
+  "eval_success": 39,
+  "eval_episodes": 50,
+  "sha256": "ba63bc803138ceadec16e0cc0beabd0fe67965973a98576c562c5f5eb643ddfa"
+ },
+ {
+  "id": "ck0100247",
+  "file": "ckpt/learner_0100247.msgpack",
+  "train_steps": 100247,
+  "grad_steps": 95247,
+  "eval_tag": "100000",
+  "prior_strength": 0.0,
+  "eval_success": 37,
+  "eval_episodes": 50,
+  "sha256": "c10970cdb45e6718ac7770bb0e72fea66206b9e3b806b758e23a07c723e32f56"
+ },
+ {
+  "id": "ck0125116",
+  "file": "ckpt/learner_0125116.msgpack",
+  "train_steps": 125116,
+  "grad_steps": 120116,
+  "eval_tag": "125000",
+  "prior_strength": 0.0,
+  "eval_success": 36,
+  "eval_episodes": 50,
+  "sha256": "5239076b8f37bdd9ce09533b5dd6c5ecb7f1a75adaa288a879aef30f6e6e1beb"
+ },
+ {
+  "id": "ck0150000",
+  "file": "ckpt/learner_0150000.msgpack",
+  "train_steps": 150000,
+  "grad_steps": 145000,
+  "eval_tag": "150000",
+  "prior_strength": 0.0,
+  "eval_success": 35,
+  "eval_episodes": 50,
+  "sha256": "a7a3406fd88a8917e8c50a949d2a56b95f566fffa424eccbfaba89aa5512fe76"
+ },
+ {
+  "id": "ck0175264",
+  "file": "ckpt/learner_0175264.msgpack",
+  "train_steps": 175264,
+  "grad_steps": 170264,
+  "eval_tag": "175000",
+  "prior_strength": 0.0,
+  "eval_success": 36,
+  "eval_episodes": 50,
+  "sha256": "73c5be75a0a092bbfb04e6e8feb9cde85a81ad3f80589308b594c3f5eca93807"
+ },
+ {
+  "id": "ck0200252",
+  "file": "ckpt/learner_0200252.msgpack",
+  "train_steps": 200252,
+  "grad_steps": 195252,
+  "eval_tag": "200000",
+  "prior_strength": 0.0,
+  "eval_success": 35,
+  "eval_episodes": 50,
+  "sha256": "439e56497a4c4ceabb10251b659aa0058786cf1bea33da5c8f338e44b35ff10f"
+ },
+ {
+  "id": "ck0225337",
+  "file": "ckpt/learner_0225337.msgpack",
+  "train_steps": 225337,
+  "grad_steps": 220337,
+  "eval_tag": "225000",
+  "prior_strength": 0.0,
+  "eval_success": 35,
+  "eval_episodes": 50,
+  "sha256": "92d3a04050514b9df3f26870c03e6e6b2b1bf362110659b326c88fa628a7c541"
+ },
+ {
+  "id": "ck0250150",
+  "file": "ckpt/learner_0250150.msgpack",
+  "train_steps": 250150,
+  "grad_steps": 245150,
+  "eval_tag": "250000",
+  "prior_strength": 0.0,
+  "eval_success": 36,
+  "eval_episodes": 50,
+  "sha256": "88c9b412250e93b341fbb707e62d2babb12a43f0cb433bb7a820cb1cdcc94df9"
+ },
+ {
+  "id": "ck0275165",
+  "file": "ckpt/learner_0275165.msgpack",
+  "train_steps": 275165,
+  "grad_steps": 270165,
+  "eval_tag": "275000",
+  "prior_strength": 0.0,
+  "eval_success": 34,
+  "eval_episodes": 50,
+  "sha256": "eeec10b223f09dd1ba761ad25e46550f9aedbed3dd1b7a43fe8fb016d3e2c3ec"
+ },
+ {
+  "id": "ck0300155",
+  "file": "ckpt/learner_0300155.msgpack",
+  "train_steps": 300155,
+  "grad_steps": 295155,
+  "eval_tag": "300000",
+  "prior_strength": 0.0,
+  "eval_success": 32,
+  "eval_episodes": 50,
+  "sha256": "d439fdf12bf52390dda77274f1de5f790ab684efc1099456c13c88d0024dd7ba"
+ }
+]

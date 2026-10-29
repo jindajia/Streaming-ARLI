@@ -1,0 +1,150 @@
+{
+ "note": "Curated inspection set, NOT an unbiased new benchmark. Seeds are held-out evaluation seeds whose outcomes were already logged during training; categories chosen to cover successful, failed and changed-outcome cases.",
+ "rule": "(deterministic; first = lowest\nseed in the category, categories filled in this order, a seed is used once):\n\n  1. always_success  - succeeded under the fixed baseline and every learned checkpoint\n  2. always_fail     - failed under the fixed baseline and every learned checkpoint\n  3. baseline_success_final_fail - fixed baseline succeeded, final (300k) checkpoint failed\n  4. baseline_fail_final_success - fixed baseline failed, final checkpoint succeeded\n  5. most_flips      - most outcome changes between consecutive checkpoints (ties: lowest seed)\n  6. random          - one remaining seed drawn with numpy default_rng(0) (an un-curated control)",
+ "seeds": [
+  {
+   "seed": 10000000,
+   "category": "always_success",
+   "n_candidates": 23,
+   "logged_baseline_success": true,
+   "logged_learned_successes": 14,
+   "logged_outcome_flips": 0,
+   "logged_success_by_checkpoint": {
+    "0": true,
+    "5334": true,
+    "25146": true,
+    "50055": true,
+    "75114": true,
+    "100247": true,
+    "125116": true,
+    "150000": true,
+    "175264": true,
+    "200252": true,
+    "225337": true,
+    "250150": true,
+    "275165": true,
+    "300155": true
+   }
+  },
+  {
+   "seed": 10000004,
+   "category": "always_fail",
+   "n_candidates": 5,
+   "logged_baseline_success": false,
+   "logged_learned_successes": 0,
+   "logged_outcome_flips": 0,
+   "logged_success_by_checkpoint": {
+    "0": false,
+    "5334": false,
+    "25146": false,
+    "50055": false,
+    "75114": false,
+    "100247": false,
+    "125116": false,
+    "150000": false,
+    "175264": false,
+    "200252": false,
+    "225337": false,
+    "250150": false,
+    "275165": false,
+    "300155": false
+   }
+  },
+  {
+   "seed": 10000007,
+   "category": "baseline_success_final_fail",
+   "n_candidates": 5,
+   "logged_baseline_success": true,
+   "logged_learned_successes": 4,
+   "logged_outcome_flips": 5,
+   "logged_success_by_checkpoint": {
+    "0": true,
+    "5334": true,
+    "25146": false,
+    "50055": false,
+    "75114": true,
+    "100247": false,
+    "125116": false,
+    "150000": true,
+    "175264": false,
+    "200252": false,
+    "225337": false,
+    "250150": false,
+    "275165": false,
+    "300155": false
+   }
+  },
+  {
+   "seed": 10000020,
+   "category": "baseline_fail_final_success",
+   "n_candidates": 1,
+   "logged_baseline_success": false,
+   "logged_learned_successes": 11,
+   "logged_outcome_flips": 3,
+   "logged_success_by_checkpoint": {
+    "0": false,
+    "5334": false,
+    "25146": true,
+    "50055": false,
+    "75114": true,
+    "100247": true,
+    "125116": true,
+    "150000": true,
+    "175264": true,
+    "200252": true,
+    "225337": true,
+    "250150": true,
+    "275165": true,
+    "300155": true
+   }
+  },
+  {
+   "seed": 10000035,
+   "category": "most_flips",
+   "n_candidates": 1,
+   "logged_baseline_success": false,
+   "logged_learned_successes": 6,
+   "logged_outcome_flips": 10,
+   "logged_success_by_checkpoint": {
+    "0": false,
+    "5334": false,
+    "25146": true,
+    "50055": false,
+    "75114": true,
+    "100247": false,
+    "125116": true,
+    "150000": false,
+    "175264": true,
+    "200252": true,
+    "225337": false,
+    "250150": true,
+    "275165": false,
+    "300155": false
+   }
+  },
+  {
+   "seed": 10000043,
+   "category": "random",
+   "n_candidates": 45,
+   "logged_baseline_success": false,
+   "logged_learned_successes": 6,
+   "logged_outcome_flips": 6,
+   "logged_success_by_checkpoint": {
+    "0": false,
+    "5334": false,
+    "25146": true,
+    "50055": false,
+    "75114": false,
+    "100247": true,
+    "125116": true,
+    "150000": true,
+    "175264": true,
+    "200252": false,
+    "225337": false,
+    "250150": true,
+    "275165": false,
+    "300155": false
+   }
+  }
+ ]
+}

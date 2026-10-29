@@ -93,3 +93,16 @@ logged per request (`wall_s`) but never advances the simulator.
 ### Figures
 `results/online/rn_seed0_d10/eval_success.png` (+ .svg), `training_success.png`, `schedule.png`, `timing_compute.png`;
 CSV/JSONL `evals.csv`, `evals_raw.jsonl`. Diagnostic: `results/diagnostic/diag_v2_coarse/`.
+
+## Interactive viewer (2026-10-29, inspection only)
+
+`viewer/` (branch `viewer/sch01-fixed-delay10-v2`) is a static web viewer for `rn_seed0_d10`:
+
+- Mode A plays back 90 NEW frozen-checkpoint rollouts: 6 curated held-out seeds × (fixed baseline + 14 checkpoints).
+- Mode B locks a decision state and probes it with every checkpoint.
+- A learning-diagnostics tab plots the run logs.
+
+The data were made by 2 gpu-debug jobs (8765943: record + probe, 14 min; 8766011: batch-1 re-probe, 9 min). The run
+directory was not modified. How to open it: `viewer/README.md`. Findings: `viewer/OBSERVATIONS.md`. In particular, the
+logs show **critic divergence after ~242k steps** (`q_taken` 1.1 → 128, critic loss → 3.8e4 at 300k), so the 250k–300k
+checkpoints' Q values are not meaningful.

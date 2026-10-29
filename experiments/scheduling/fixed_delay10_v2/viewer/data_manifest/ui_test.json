@@ -1,0 +1,32 @@
+{
+ "results": [
+  "PASS initial selection from URL hash",
+  "PASS playback advanced to tick 60 in ~1.2 s at 1x (50 Hz)",
+  "PASS pause holds the tick",
+  "PASS readouts follow the cursor tick",
+  "PASS ArrowRight steps one control step",
+  "PASS next-decision lands on a decision tick (64)",
+  "PASS status box shows a decision at a decision tick",
+  "PASS selected action == recorded == argmax (70)",
+  "PASS P(KEEP) + sum P(REPLAN) = 1.000000023",
+  "PASS in-flight tick 1: labelled, lock disabled",
+  "PASS jump to nearest decision",
+  "PASS timeline click paused and seeked to 142 (~T/2=142.0)",
+  "PASS episode chart click seeks",
+  "PASS checkpoint switch preserves seed and tick",
+  "PASS switch notice shown",
+  "PASS fixed baseline selectable separately",
+  "PASS lock: source episode / decision / tick unchanged while the slider moves",
+  "PASS lock: frozen input identical",
+  "PASS lock: same feasibility mask for every probed checkpoint",
+  "PASS lock: every probed distribution sums to 1",
+  "PASS lock: prior-on == prior-off where strength is 0",
+  "PASS lock: probing the source checkpoint reproduces the recorded action",
+  "PASS across-checkpoint chart click selects the nearest checkpoint",
+  "PASS unlock returns to playback",
+  "PASS learning chart click selects checkpoint (ck0025146)",
+  "PASS narrow layout: no horizontal page scroll (scrollWidth 420)",
+  "PASS no console errors ([])"
+ ],
+ "console_errors": []
+}

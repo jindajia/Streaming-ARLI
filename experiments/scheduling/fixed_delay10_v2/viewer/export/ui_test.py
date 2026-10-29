@@ -98,14 +98,14 @@ def main():
         pg.evaluate("window.scrollBy(0, -200)")
         box = pg.locator("#timeline canvas").bounding_box()
         pg.click("#bPlay")
-        pg.mouse.click(box["x"] + 64 + (box["width"] - 76) * 0.5, box["y"] + 40)
+        pg.locator("#timeline canvas").click(position=dict(x=64 + (box["width"] - 76) * 0.5, y=40))
         T = pg.evaluate("curEp().T")
         tt = pg.evaluate("S.tick")
         ok(abs(tt - T / 2) <= 3 and not pg.evaluate("S.playing"), f"timeline click paused and seeked to {tt} (~T/2={T / 2})")
         # chart click seeks
         pg.locator("#epPlots canvas").first.scroll_into_view_if_needed()
         cb = pg.locator("#epPlots canvas").first.bounding_box()
-        pg.mouse.click(cb["x"] + 64 + (cb["width"] - 76) * 0.25, cb["y"] + 60)
+        pg.locator("#epPlots canvas").first.click(position=dict(x=64 + (cb["width"] - 76) * 0.25, y=60))
         ok(abs(pg.evaluate("S.tick") - T / 4) <= 3, "episode chart click seeks")
         # switch checkpoint keeps seed and tick
         pg.click("#bNextDec")
@@ -151,7 +151,7 @@ def main():
         # across-checkpoint chart click selects a checkpoint
         pg.locator("#acrossPlots canvas").first.scroll_into_view_if_needed()
         ab = pg.locator("#acrossPlots canvas").first.bounding_box()
-        pg.mouse.click(ab["x"] + 64 + (ab["width"] - 76) * ((300155 + 8000) / 316000), ab["y"] + 80)
+        pg.locator("#acrossPlots canvas").first.click(position=dict(x=64 + (ab["width"] - 76) * ((300155 + 8000) / 316000), y=80))
         pg.wait_for_timeout(200)
         ok(pg.evaluate("S.lock.probe") == ck_last, "across-checkpoint chart click selects the nearest checkpoint")
         for v in ("qdis", "adv", "prob"):
@@ -171,7 +171,7 @@ def main():
         pg.screenshot(path=f"{shots}/06_learning.png", full_page=True)
         pg.locator("#learnPlots canvas").first.scroll_into_view_if_needed()
         lb = pg.locator("#learnPlots canvas").first.bounding_box()
-        pg.mouse.click(lb["x"] + 64 + (lb["width"] - 76) * ((25146 + 5000) / 310000), lb["y"] + 80)
+        pg.locator("#learnPlots canvas").first.click(position=dict(x=64 + (lb["width"] - 76) * ((25146 + 5000) / 310000), y=80))
         pg.wait_for_timeout(500)
         want = min(idx["checkpoints"], key=lambda c: abs(c["train_steps"] - 25146))["id"]
         ok(pg.evaluate("S.pol") == want, f"learning chart click selects checkpoint ({pg.evaluate('S.pol')})")

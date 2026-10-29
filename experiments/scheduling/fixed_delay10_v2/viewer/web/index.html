@@ -44,11 +44,11 @@
         <div class="videotag" id="videoTag"></div>
       </div>
       <div class="transport">
-        <button id="bPrevDec" title="Previous decision (Shift+←)">⏮ dec</button>
+        <button id="bPrevDec" title="Previous decision (Shift+←)">« dec</button>
         <button id="bPrev" title="Previous control step (←)">◀ step</button>
         <button id="bPlay" class="primary" title="Play / pause (Space)">▶ Play</button>
         <button id="bNext" title="Next control step (→)">step ▶</button>
-        <button id="bNextDec" title="Next decision (Shift+→)">dec ⏭</button>
+        <button id="bNextDec" title="Next decision (Shift+→)">dec »</button>
         <label>Speed <select id="speedSel">
           <option value="0.1">0.1×</option><option value="0.25">0.25×</option><option value="0.5">0.5×</option>
           <option value="1" selected>1× (50 Hz)</option><option value="2">2×</option></select></label>
@@ -56,7 +56,7 @@
       <input type="range" id="tickRange" min="0" max="400" value="0" step="1" aria-label="Control step">
       <div class="tickread" id="tickRead"></div>
       <div class="lockrow">
-        <button id="bLock" class="lockbtn">🔒 Lock state across checkpoints</button>
+        <button id="bLock" class="lockbtn">Lock state across checkpoints</button>
         <button id="bNearest">Jump to nearest decision</button>
       </div>
       <div class="lockinfo" id="lockInfo"></div>
@@ -97,6 +97,7 @@
             <button data-v="adv">Q advantage vs baseline action</button>
           </span>
         </div>
+        <div id="critWarn"></div>
         <div id="heatC" class="heat"></div>
         <div class="note">Q is the critics' learned soft return estimate (γ = 0.999 per control step, entropy-regularised
           target), <b>not</b> a success probability and not calibrated. Observed rewards are shown separately in the

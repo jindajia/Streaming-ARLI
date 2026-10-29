@@ -199,7 +199,7 @@ function ckSliderDraw() {
     cv.addEventListener('mouseleave', () => showTip(null));
   }
   const dpr = window.devicePixelRatio || 1, W = el.clientWidth, H = 54;
-  cv.width = W * dpr; cv.height = H * dpr; cv.style.width = W + 'px'; cv.style.height = H + 'px';
+  cv.width = W * dpr; cv.height = H * dpr; cv.style.width = '100%'; cv.style.height = H + 'px';
   const g = cv.getContext('2d'); g.setTransform(dpr, 0, 0, dpr, 0, 0); g.clearRect(0, 0, W, H);
   const L = 14, R = W - 14, maxS = 310000, X = (s) => L + s / maxS * (R - L);
   App._ckX = X;
@@ -550,7 +550,7 @@ function renderSched() {
   }
   $('bLock').disabled = !S.lock && E.decAt[t] < 0;
   $('bLock').classList.toggle('on', !!S.lock);
-  $('bLock').textContent = S.lock ? '🔓 Unlock (return to playback)' : (E.decAt[t] >= 0 ? '🔒 Lock state across checkpoints' : '🔒 Lock (only at decision ticks)');
+  $('bLock').textContent = S.lock ? 'Unlock (return to playback)' : (E.decAt[t] >= 0 ? 'Lock state across checkpoints' : 'Lock (only at decision ticks)');
   if (!v) { ['heatA', 'heatB', 'heatC'].forEach((k) => drawHeat($(k), null)); $('pkeepBox').innerHTML = ''; return; }
   const st = v.stOn, stale = v.stale, staleText = `from last decision at tick ${v.t} (stale)`;
   // P(KEEP)
@@ -610,7 +610,18 @@ function renderSched() {
   renderCritic(v);
 }
 
+function criticWarning(ckId) {
+  // From the run's own updates.jsonl: the last logged update row at or before this checkpoint.
+  const c = App.ckById[ckId], U = App.learning && App.learning.updates;
+  if (!c || !U) return '';
+  let k = -1;
+  for (let j = 0; j < U.steps.length; j++) if (U.steps[j] <= c.train_steps) k = j;
+  if (k < 0 || !(U.q_taken[k] > 1)) return '';
+  return `<div class="warn">Critic divergence: at this checkpoint the logged mean Q of replay actions is ${fmtNum(U.q_taken[k])} and critic loss ${fmtNum(U.critic_loss[k])} (updates.jsonl, ${fmtSteps(U.steps[k])} steps). The return cannot exceed 1, so these Q values are not meaningful estimates; see Learning diagnostics.</div>`;
+}
+
 function renderCritic(v) {
+  $('critWarn').innerHTML = v.probeId ? criticWarning(v.probeId) : '';
   const el = $('heatC');
   if (!v.q1) {
     drawHeat(el, null); el.style.display = '';
@@ -726,7 +737,7 @@ function renderBanner() {
     b.className = 'mode b';
     b.innerHTML = `<b>Mode B — locked state across checkpoints.</b> Source: ${E.meta.policy.id === 'baseline' ? 'fixed-baseline' : 'checkpoint ' + fmtSteps(E.meta.policy.train_steps)} rollout, seed ${E.meta.seed}, tick ${E.meta.decisions.t[S.lock.i]}. ` +
       `Probed: ${S.lock.probe === 'baseline' ? 'fixed baseline rule' : 'checkpoint ' + fmtSteps(App.ckById[S.lock.probe].train_steps)}. These are counterfactual probes of one frozen input, not rollouts. ` +
-      `Use the checkpoint slider to change the probed checkpoint; ⏮/⏭ dec move the lock to another decision of the source episode.`;
+      `Use the checkpoint slider to change the probed checkpoint; « dec / dec » move the lock to another decision of the source episode.`;
   } else {
     b.className = 'mode a';
     b.innerHTML = `<b>Mode A — checkpoint rollout playback.</b> Newly recorded evaluation rollout of the frozen ${S.pol === 'baseline' ? 'fixed baseline' : 'checkpoint'} on held-out seed ${S.seed} (deterministic argmax, noise stream default_rng([seed, 1])). ` +
@@ -895,7 +906,7 @@ function renderAcross() {
   }
   const msg = host.querySelector('.note.lockmsg'); if (msg) msg.style.display = 'none';
   if (!App.charts.ac) {
-    const o = { h: 165, m: { l: 64, r: 12, t: 22, b: 26 } };
+    const o = { h: 175, m: { l: 64, r: 12, t: 34, b: 26 } };
     App.charts.ac = { p: new Chart(host, o), arg: new Chart(host, o), cond: new Chart(host, o), q: new Chart(host, o), qd: new Chart(host, o) };
   }
   Object.values(App.charts.ac).forEach((c) => { c.box.style.display = ''; });
@@ -996,7 +1007,7 @@ function renderLearning() {
   hover: hovEp([['t_end', ep.t_end]]) });
   const ul = (k, col, lab, extra = {}) => ({ type: 'line', x: up.steps, y: up[k], color: col, label: lab || k, ...extra });
   C.closs.set({ ...base, title: 'Critic loss (mean of both critics; log scale)', yLog: true, series: [ckl, ul('critic_loss', '#8a3d9a', 'critic loss')], hover: hovUp(['critic_loss']) });
-  C.qest.set({ ...base, title: 'Q estimates and targets (replay batches)', series: [ckl, ul('q_taken', COL.q, 'Q(s,a) taken'), ul('target', COL.good, 'target y', { dash: [4, 2] }), ul('q_max', '#a3a29c', 'max Q(s,a) in batch')], hover: hovUp(['q_taken', 'target', 'q_max']) });
+  C.qest.set({ ...base, title: 'Q estimates and targets (replay batches; log scale, values ≤ 0 not drawn)', yLog: true, series: [ckl, ul('q_taken', COL.q, 'Q(s,a) taken'), ul('target', COL.good, 'target y', { dash: [4, 2] }), ul('q_max', '#a3a29c', 'max Q(s,a) in batch')], hover: hovUp(['q_taken', 'target', 'q_max']) });
   C.qdis.set({ ...base, title: 'Critic disagreement and feasible Q gap', series: [ckl, ul('q_disagreement', '#8a3d9a', '|Q1−Q2| at replay action'), ul('q_gap_feasible', COL.accent2, 'max−min min-Q over feasible')], hover: hovUp(['q_disagreement', 'q_gap_feasible']) });
   C.ent.set({ ...base, title: 'Policy entropy vs target entropy (replay states)', series: [ckl, ul('entropy', '#3d3c38', 'entropy'), ul('target_entropy', COL.accent2, 'target entropy', { dash: [4, 2] })], hover: hovUp(['entropy', 'target_entropy']) });
   C.alpha.set({ ...base, title: 'Temperature α (log scale)', yLog: true, series: [ckl, ul('alpha', COL.keep, 'α')], hover: hovUp(['alpha']) });
