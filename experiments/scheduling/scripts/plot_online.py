@@ -114,7 +114,7 @@ def main():
     if eps:
         last = eps[-1]["steps"]
         bins = [(w0, [e for e in eps if w0 < e["steps"] <= w0 + W]) for w0 in range(0, last, W)]
-        bins = [(w0, b) for w0, b in bins if b]
+        bins = [(w0, b) for w0, b in bins if len(b) >= 10]  # skip partial windows
         xs = [(w0 + W / 2) / 1000 for w0, _ in bins]
         ys = [sum(e["success"] for e in b) / len(b) for _, b in bins]
         axes[0, 0].plot(xs, ys, color=ORANGE, lw=2, marker="s", ms=4)
