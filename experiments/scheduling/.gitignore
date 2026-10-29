@@ -1,0 +1,7 @@
+# large run artefacts live outside Git (see MANIFEST.md): /N/scratch/jindjia/arli/runs_scheduling/
+runs/
+checkpoints/
+*.pkl
+*.npz
+*.msgpack
+__pycache__/

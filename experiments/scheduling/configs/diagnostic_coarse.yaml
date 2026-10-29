@@ -1,0 +1,10 @@
+# Coarse same-state R/N screen (diagnostic only): 2 source episodes x up to 3 handoff snapshots,
+# N {3,5,7,10} x R {4,5,7,10,15,25} feasible pairs + KEEP-one-tick, 2 paired replicates.
+run_id: diag_coarse_v1
+source_seeds: [20000000, 20000001]
+handoff_ticks: [25, 100, 175]
+N_grid: [3, 5, 7, 10]
+R_grid: [4, 5, 7, 10, 15, 25]
+keep_branch: true
+replicates: 2
+max_wall_hours: 0.8

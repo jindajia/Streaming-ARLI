@@ -1,0 +1,6 @@
+# SCH-01 online joint R/N scheduler, seed 0 (RTC ON, frozen pi0, fresh actor/critics/optimizer, EMPTY replay).
+# Defaults (src/sch01/train.py Cfg): 300k total training control ticks incl. 5k warm-up; critic-only for the first
+# 256 updates; 1 update per new post-warm-up tick; batch 256; prior p0=0.999 held to 5k, linearly removed by 50k;
+# alpha_init 0.01, target entropy 0.1*log(#feasible); eval at 0, 5k, every 25k (50 held-out episodes).
+run_id: rn_seed0_v1
+seed: 0
