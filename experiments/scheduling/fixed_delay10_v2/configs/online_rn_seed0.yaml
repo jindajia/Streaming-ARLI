@@ -1,0 +1,7 @@
+# SCH-01 v2 online joint R/N scheduler, seed 0: fixed delay table (N=10 -> 10 ticks), RTC ON, frozen pi0,
+# fresh actor/critics/optimizers, EMPTY replay. All other settings = src/sch02/train.py Cfg defaults
+# (300k total ticks incl. 5k warm-up; 256 critic-only updates; 1 update per post-warm-up tick; batch 256;
+# lrs 1e-4/3e-4/3e-4; alpha0 1e-3 with prior-aware entropy target; p0 0.999 held to 5k, zero at 50k; gamma 0.999;
+# evals at 0, 5k, every 25k with 50 held-out episodes; prior-off supplemental eval at 25k; milestone at 150k).
+run_id: rn_seed0_d10
+seed: 0

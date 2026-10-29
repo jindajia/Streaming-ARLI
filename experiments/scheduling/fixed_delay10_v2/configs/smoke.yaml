@@ -1,0 +1,15 @@
+# GPU smoke: debug evaluations of 3 episodes (NOT full evaluation points)
+run_id: smoke
+run_root: /N/scratch/jindjia/arli/runs_scheduling/fixed_delay10_v2/smoke
+total_steps: 1400
+warmup_steps: 400
+critic_burnin_updates: 50
+eval_steps: [0, 400]
+eval_interval: 700
+supplemental_prior_off_at: [700]
+milestone_steps: 700
+eval_episodes: 3
+cap_frames: 6000
+cap_states: 6000
+cap_decisions: 6000
+log_update_every: 100

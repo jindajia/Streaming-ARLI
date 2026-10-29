@@ -1,0 +1,10 @@
+# Revised same-state diagnostic: 2 source seeds x chunks {2,5} x p {0,5,10}; baseline branch + feasible
+# REPLAN(R,N), N {3,5,7,10}, R {6,7,9,10,15,20,25}; 2 paired replicates.  Analysis only.
+run_id: diag_v2_coarse
+source_seeds: [20000100, 20000101]
+chunks: [2, 5]
+p_values: [0, 5, 10]
+N_grid: [3, 5, 7, 10]
+R_grid: [6, 7, 9, 10, 15, 20, 25]
+replicates: 2
+max_wall_hours: 0.78
