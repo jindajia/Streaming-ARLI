@@ -1,0 +1,22 @@
+{
+ "provenance": {
+  "pi0_checkpoint": "/N/scratch/jindjia/arli/checkpoints/pi0_aloha_sim",
+  "norm_stats_sha256": "ee0bab07a3401239ca5075ea82b38ebaa2375c9dadb5e8458c275e0a4ef10c4d",
+  "reference_record": "/N/scratch/jindjia/arli/runs_scheduling/action_disagreement_probe/reference/ref_10000004.npz",
+  "reference_record_sha256": "df844aaa9d002bd84dbf950f2771e7ac645d356098dc560b3221ba41e09fceac",
+  "git": "d7034bead7ba4390c2e65e117f1df8fabf172b03",
+  "host": "x1001c1s7b0n1",
+  "slurm_job": "8773720",
+  "gpu": "NVIDIA A100-SXM4-40GB",
+  "N": 10,
+  "d": 10,
+  "H": 50,
+  "K": 25,
+  "rtc": {
+   "enabled": true,
+   "max_guidance": 10.0
+  },
+  "horizon": 400
+ },
+ "finished": "2026-10-30 03:29:36"
+}

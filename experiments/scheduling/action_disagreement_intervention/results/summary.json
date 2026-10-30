@@ -1,0 +1,208 @@
+{
+ "success": {
+  "A": "0/10",
+  "B": "0/10",
+  "C": "0/10"
+ },
+ "completion_steps_from_175": {
+  "A": [],
+  "B": [],
+  "C": []
+ },
+ "failures_timeout_at_400": {
+  "A": 10,
+  "B": 10,
+  "C": 10
+ },
+ "mean_discounted_return": {
+  "A": -0.050393417297309215,
+  "B": -0.050393417297309215,
+  "C": -0.050393417297309215
+ },
+ "inference_calls": {
+  "A": [
+   9,
+   9,
+   9,
+   9,
+   9,
+   9,
+   9,
+   9,
+   9,
+   9
+  ],
+  "B": [
+   10,
+   10,
+   10,
+   10,
+   10,
+   10,
+   10,
+   10,
+   10,
+   10
+  ],
+  "C": [
+   11,
+   11,
+   11,
+   11,
+   11,
+   11,
+   11,
+   11,
+   11,
+   11
+  ]
+ },
+ "paired": {
+  "B_vs_A": {
+   "both_succeed": 0,
+   "only_a": 0,
+   "only_b": 0,
+   "both_fail": 10,
+   "dret": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "dtime": []
+  },
+  "C_vs_A": {
+   "both_succeed": 0,
+   "only_a": 0,
+   "only_b": 0,
+   "both_fail": 10,
+   "dret": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "dtime": []
+  },
+  "C_vs_B": {
+   "both_succeed": 0,
+   "only_a": 0,
+   "only_b": 0,
+   "both_fail": 10,
+   "dret": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "dtime": []
+  }
+ },
+ "schedule_as_expected": {
+  "B_s0": false,
+  "B_s1": false,
+  "B_s2": false,
+  "B_s3": false,
+  "B_s4": false,
+  "B_s5": false,
+  "B_s6": false,
+  "B_s7": false,
+  "B_s8": false,
+  "B_s9": false
+ },
+ "temporal": {
+  "all_branches_execute_recorded_old_actions_175_184": true,
+  "cube_pose_max_diff_175_184_across_rollouts": 0.0,
+  "B_and_C_identical_commands_175_194": {
+   "0": true,
+   "1": true,
+   "2": true,
+   "3": true,
+   "4": true,
+   "5": true,
+   "6": true,
+   "7": true,
+   "8": true,
+   "9": true
+  },
+  "first_step_where_A_and_B_commands_differ": {
+   "0": 185,
+   "1": 185,
+   "2": 185,
+   "3": 185,
+   "4": 185,
+   "5": 185,
+   "6": 185,
+   "7": 185,
+   "8": 185,
+   "9": 185
+  },
+  "right_contact_lost_step": [
+   178
+  ],
+  "right_contact_after_step_185": {
+   "A": 0,
+   "B": 0,
+   "C": 0
+  },
+  "regained_right_contact_after_185": {
+   "A": 0,
+   "B": 0,
+   "C": 0
+  },
+  "reached_left_contact": {
+   "A": 0,
+   "B": 0,
+   "C": 0
+  }
+ },
+ "controls": {
+  "refnoise_vs_saved_reference": {
+   "steps_compared": 225,
+   "first_command_difference_step": 225,
+   "max_command_diff": 0.009261392056941986,
+   "stage_sequence_equal": true,
+   "outcome": {
+    "replay_success": false,
+    "replay_t_end": 400,
+    "saved_t_end": 400
+   }
+  },
+  "A_s0_repeat": {
+   "identical_commands": false,
+   "first_difference_step": 225,
+   "t_end": [
+    400,
+    400
+   ],
+   "success": [
+    false,
+    false
+   ],
+   "main_A_s0_identical_to_rep1": false
+  }
+ },
+ "saved_reference_outcome": {
+  "success": false,
+  "t_end": 400,
+  "note": "original regenerated reference (separate from the paired continuations)"
+ }
+}

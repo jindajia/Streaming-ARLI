@@ -1,0 +1,82 @@
+{
+ "0": {
+  "rule": "numpy default_rng([10000004, 175, s, 505]).standard_normal((50, 32)) drawn 40 times in order",
+  "sha256_first3": [
+   "451c54e3c4f72037",
+   "de1cccc3eb5c649b",
+   "c758d3a7f7776d5e"
+  ]
+ },
+ "1": {
+  "rule": "numpy default_rng([10000004, 175, s, 505]).standard_normal((50, 32)) drawn 40 times in order",
+  "sha256_first3": [
+   "c96c24f6bacdeb86",
+   "8a9e51145c0f3978",
+   "a3a66a5e7d7738b8"
+  ]
+ },
+ "2": {
+  "rule": "numpy default_rng([10000004, 175, s, 505]).standard_normal((50, 32)) drawn 40 times in order",
+  "sha256_first3": [
+   "b2f33444bac0e289",
+   "5b83435b0d659d72",
+   "5cace9c217bde7e5"
+  ]
+ },
+ "3": {
+  "rule": "numpy default_rng([10000004, 175, s, 505]).standard_normal((50, 32)) drawn 40 times in order",
+  "sha256_first3": [
+   "125f3246ac3ddd0e",
+   "d2f7c63d2e65b263",
+   "b8ee526c432f1243"
+  ]
+ },
+ "4": {
+  "rule": "numpy default_rng([10000004, 175, s, 505]).standard_normal((50, 32)) drawn 40 times in order",
+  "sha256_first3": [
+   "d0ba43c49822a463",
+   "c70f9ccabb9880d6",
+   "f4ecbd9baaac93b3"
+  ]
+ },
+ "5": {
+  "rule": "numpy default_rng([10000004, 175, s, 505]).standard_normal((50, 32)) drawn 40 times in order",
+  "sha256_first3": [
+   "b9f9703026f9a66f",
+   "f7feccdf9f1b53d5",
+   "b38b68ce1ff4909f"
+  ]
+ },
+ "6": {
+  "rule": "numpy default_rng([10000004, 175, s, 505]).standard_normal((50, 32)) drawn 40 times in order",
+  "sha256_first3": [
+   "2e07b78b4e0f6b97",
+   "ea2b9609d141ce52",
+   "8655a385fd88a548"
+  ]
+ },
+ "7": {
+  "rule": "numpy default_rng([10000004, 175, s, 505]).standard_normal((50, 32)) drawn 40 times in order",
+  "sha256_first3": [
+   "fd28a6b21cb49823",
+   "2ef6ec64214e5be7",
+   "9e421e11eba2ee5e"
+  ]
+ },
+ "8": {
+  "rule": "numpy default_rng([10000004, 175, s, 505]).standard_normal((50, 32)) drawn 40 times in order",
+  "sha256_first3": [
+   "a93d418ca1b5eb35",
+   "4c1d73518a233b42",
+   "23fa4a3c8d8e97e6"
+  ]
+ },
+ "9": {
+  "rule": "numpy default_rng([10000004, 175, s, 505]).standard_normal((50, 32)) drawn 40 times in order",
+  "sha256_first3": [
+   "7cf4ab9d6fa73b4a",
+   "b727db37d50f6dd3",
+   "ffa4639cb18893a2"
+  ]
+ }
+}
