@@ -1,0 +1,42 @@
+{
+ "seed": 10000014,
+ "steps": 263,
+ "inference_calls": 878,
+ "eligible_steps": 173,
+ "noise_sha256": [
+  "8cd69cb2c938e802bb087dcff9cebff94e69d4a3db7094938bea1713aa991d6d",
+  "23a63bd386b2a814c7bf61134c130a1fe1d411b49ee5ab3ed37bb1187deb23f1"
+ ],
+ "noise_rule": "numpy default_rng([seed, 4242, k]).standard_normal((50, 32)), k = 0, 1",
+ "max_alignment_error": 0.0,
+ "checks": [
+  {
+   "seed": 10000014,
+   "launch_t": 15,
+   "shift": 15,
+   "committed": 10,
+   "overlap_end": 35,
+   "reproduce_installed_plan_maxabs": 0.0,
+   "repeat_identical": true
+  },
+  {
+   "seed": 10000014,
+   "launch_t": 40,
+   "shift": 25,
+   "committed": 10,
+   "overlap_end": 25,
+   "reproduce_installed_plan_maxabs": 0.0,
+   "repeat_identical": true
+  },
+  {
+   "seed": 10000014,
+   "launch_t": 65,
+   "shift": 25,
+   "committed": 10,
+   "overlap_end": 25,
+   "reproduce_installed_plan_maxabs": 0.0,
+   "repeat_identical": true
+  }
+ ],
+ "wall_s": 277.99067902565
+}
