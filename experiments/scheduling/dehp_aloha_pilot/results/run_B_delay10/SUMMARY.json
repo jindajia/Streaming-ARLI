@@ -1,0 +1,23 @@
+{
+ "counters": {
+  "env_steps": 179289,
+  "decisions": 7424,
+  "episodes": 556,
+  "successes": 365,
+  "iters": 29
+ },
+ "wall": {
+  "load_compile_s": 366.96684288978577,
+  "eval_s": 344.23033022880554,
+  "collect_s": 2134.261057138443,
+  "update_s": 7.434908866882324
+ },
+ "stats": {
+  "inference_calls": 7636,
+  "infer_wall_s": 1115.4041616455652,
+  "sim_wall_s": 988.71243746439,
+  "async_violations": 0,
+  "underruns": 0
+ },
+ "elapsed_min": 47.59633767604828
+}

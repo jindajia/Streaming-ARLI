@@ -1,0 +1,47 @@
+{
+ "config": {
+  "name": "run_A_nodelay",
+  "run": "A",
+  "seed": 0,
+  "run_root": "/N/scratch/jindjia/arli/runs_dehp",
+  "gamma": 0.999,
+  "lam": 0.99,
+  "actor_lr": 0.0001,
+  "critic_lr": 0.0003,
+  "clip": 0.05,
+  "batch_decisions": 256,
+  "epochs": 4,
+  "warmup_epochs": 20,
+  "eval_seeds": [
+   10000000,
+   10000001,
+   10000002,
+   10000003,
+   10000004,
+   10000005,
+   10000006,
+   10000007,
+   10000008,
+   10000009
+  ],
+  "eval_noise_seed": 777,
+  "eval_every_min": 15.0,
+  "train_until_min": 47.0,
+  "max_iters": 10000,
+  "baseline_h": 25
+ },
+ "git": "ef24c7f3547d51d460feed2270df1a94c2b7bdf1",
+ "host": "x1001c1s7b0n0",
+ "slurm_job": "8779289",
+ "start": "2026-10-30 12:36:06",
+ "checkpoint": "/N/scratch/jindjia/arli/checkpoints/pi0_aloha_sim",
+ "h_range": [
+  1,
+  50
+ ],
+ "delay": 0,
+ "rtc": false,
+ "actor_in": 795,
+ "critic_in": 42,
+ "jax": "0.5.0"
+}
