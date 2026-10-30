@@ -1,0 +1,4 @@
+# DEHP pilot run A: no simulated delay, RTC off, h in {1..50}; matched baseline h = 25 (same executor).
+name: run_A_nodelay
+run: A
+seed: 0

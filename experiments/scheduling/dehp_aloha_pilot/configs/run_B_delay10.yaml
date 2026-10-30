@@ -1,0 +1,5 @@
+# DEHP pilot run B: simulated delay 10 control steps, RTC on (committed prefix 10), h in {10..40};
+# matched baseline h = 25 (launch after 15, handoff after 25) with the same delayed executor.
+name: run_B_delay10
+run: B
+seed: 0
